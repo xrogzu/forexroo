@@ -45,7 +45,7 @@
                 <configuration>
                     <jdbc>
                         <driver>com.mysql.jdbc.Driver</driver>
-                        <url>jdbc:mysql://localhost:3306/wzb</url>
+                        <url>jdbc:mysql://localhost:3306/forexroo</url>
                         <user>root</user>
                         <password>123456</password>
                     </jdbc>
@@ -54,14 +54,14 @@
                             <name>org.jooq.util.mysql.MySQLDatabase</name>
                             <includes>.*</includes>
                             <excludes></excludes>
-                            <inputSchema>wzb</inputSchema>
+                            <inputSchema>forexroo</inputSchema>
                         </database>
                         <generate>
                             <pojos>true</pojos>
                             <daos>true</daos>
                         </generate>
                         <target>
-                            <packageName>com.github.xuzw.wzb.entity</packageName>
+                            <packageName>com.github.xuzw.forexroo.entity</packageName>
                             <directory>target/generated-sources/jooq</directory>
                         </target>
                     </generator>
