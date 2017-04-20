@@ -1,5 +1,10 @@
 # 微宗宝文档
 
+## 阿里云
+* 账号: forexroo
+* 密码: qwer@0000
+* [登录](https://account.aliyun.com/login/login.htm)
+
 ### 云服务器 ECS
 * IP地址: 119.23.62.18(公)
 * CPU: 2核
@@ -26,3 +31,32 @@
 * 存储空间: 20G
 * 地域可用区: 华南 1 可用区 A + 可用区 B
 * [文档](https://help.aliyun.com/product/26090.html?spm=5176.750001.2.16.8ImS8W)
+
+## MOB
+* 账号: tonyjonestop@gmail.com
+* 密码: qwer@0000
+* [登录](http://www.mob.com/developer/login)
+
+### 短信验证码
+* [Web-Api验证码发送（密码: sms-sdk-2.0）](http://wiki.mob.com/smssdk2-0-web-api/)
+* [Web-Api验证码校验（密码: sms-sdk-2.0）](http://wiki.mob.com/web-api-checkcode/)
+
+### ShareSDK社会化分享
+* [文档](http://wiki.mob.com/android_快速集成指南/)
+
+### MobAPI IP地址
+* [文档](http://wiki.mob.com/api-android/)
+
+## 寻程数据
+* 账号: 15811003838
+* 密码: qwer@0000
+* [登录](http://www.apistore.cn/user/Login)
+
+### 全国身份证返照认证
+* [文档](http://www.apistore.cn/data/2)
+
+### 银行卡四要素认证
+* [文档](http://www.apistore.cn/data/6)
+
+
+
