@@ -1,5 +1,8 @@
 # 微宗宝文档
 
+## ZEPLIN
+* [登录](https://app.zeplin.io/login.html)
+
 ## 阿里云
 * 账号: forexroo
 * 密码: qwer@0000
@@ -56,6 +59,17 @@
 
 ### 短信API服务
 * [文档](http://www.apistore.cn/data/88)
+
+## 支付平台
+
+### 智付
+* [登录](https://merchants.dinpay.com/merchantUserLogin)
+
+### Ping++
+* [登录](https://dashboard.pingxx.com/login)
+
+
+
 
 
 
