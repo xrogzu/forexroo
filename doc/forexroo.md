@@ -37,10 +37,6 @@
 * 密码: qwer@0000
 * [登录](http://www.mob.com/developer/login)
 
-### 短信验证码
-* [Web-Api验证码发送（密码: sms-sdk-2.0）](http://wiki.mob.com/smssdk2-0-web-api/)
-* [Web-Api验证码校验（密码: sms-sdk-2.0）](http://wiki.mob.com/web-api-checkcode/)
-
 ### ShareSDK社会化分享
 * [文档](http://wiki.mob.com/android_快速集成指南/)
 
@@ -57,6 +53,10 @@
 
 ### 银行卡四要素认证
 * [文档](http://www.apistore.cn/data/6)
+
+### 短信API服务
+* [文档](http://www.apistore.cn/data/88)
+
 
 
 
