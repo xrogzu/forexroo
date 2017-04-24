@@ -10,11 +10,13 @@
 
 ### 云服务器 ECS
 * IP地址: 119.23.62.18(公)
+* 远程桌面账号: administrator
+* 远程桌面密码: qwer@0000
 * CPU: 2核
 * 内存: 4096 MB (I/O优化)
 * SSD云盘: 40GB 
 * 带宽: 100Mbps（峰值）
-* 操作系统: Ubuntu 16.04 64位
+* 操作系统:  Windows Server 2008 R2 企业版 64位中文版
 * 所在可用区：华南 1 可用区 A
 * [文档](https://help.aliyun.com/product/25365.html?spm=5176.750001.2.1.JEAjS4)
 
