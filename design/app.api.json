@@ -38,9 +38,14 @@
         {
             "comment": "发送短信验证码",
             "javaClassName": "System_SendSms_Api",
+            "imports": [
+            	"java.util.Map"
+            ],
             "requestDefinition": {
                 "fieldDefinitions": [
-                    { "comment": "手机号码", "javaType": "Integer", "name": "mobile", "required": true }
+                    { "comment": "手机号码", "javaType": "Integer", "name": "mobile", "required": true },
+                    { "comment": "模板ID", "javaType": "Integer", "name": "templateId", "required": true },
+                    { "comment": "模板变量", "javaType": "Map<String, String>", "name": "args", "required": true }
                 ]
             }
         }
