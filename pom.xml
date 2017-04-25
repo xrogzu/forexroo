@@ -90,6 +90,11 @@
     <dependencies>
         <dependency>
             <groupId>com.github.xuzw</groupId>
+            <artifactId>api-engine-sdk</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xuzw</groupId>
             <artifactId>modeler-sdk</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
