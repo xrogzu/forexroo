@@ -89,6 +89,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.jcabi</groupId>
+            <artifactId>jcabi-http</artifactId>
+            <version>1.16</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.xuzw</groupId>
             <artifactId>api-engine-sdk</artifactId>
             <version>0.0.1-SNAPSHOT</version>

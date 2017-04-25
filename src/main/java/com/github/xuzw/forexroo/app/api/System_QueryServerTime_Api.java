@@ -4,16 +4,15 @@ import java.text.SimpleDateFormat;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
-import com.github.xuzw.api_engine_runtime.exception.ApiExecuteException;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.04.25 12:22:56.188", version = "v0.0.1")
+@GenerateByApiEngineSdk(time = "2017.04.25 05:20:15.247", version = "v0.0.1")
 public class System_QueryServerTime_Api implements Api {
 
     @Override()
-    public Response execute(Request request) throws ApiExecuteException {
+    public Response execute(Request request) throws Exception {
         Resp resp = new Resp();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         long timestamp = System.currentTimeMillis();
