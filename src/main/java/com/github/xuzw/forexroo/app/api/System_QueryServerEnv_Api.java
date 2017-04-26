@@ -8,7 +8,7 @@ import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.04.25 06:23:18.733", version = "v0.0.1")
+@GenerateByApiEngineSdk(time = "2017.04.26 01:04:52.621", version = "v0.0.1")
 public class System_QueryServerEnv_Api implements Api {
 
     @Override()

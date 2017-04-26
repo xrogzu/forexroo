@@ -9,7 +9,7 @@ import com.github.xuzw.forexroo.app.utils.AppApiEngineHolder;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.04.25 06:23:18.665", version = "v0.0.1")
+@GenerateByApiEngineSdk(time = "2017.04.26 01:04:52.567", version = "v0.0.1")
 public class ApiEngine_Query_Api implements Api {
 
     @Override()

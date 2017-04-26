@@ -43,7 +43,7 @@
             ],
             "requestDefinition": {
                 "fieldDefinitions": [
-                    { "comment": "手机号码", "javaType": "Integer", "name": "mobile", "required": true },
+                    { "comment": "手机号码", "javaType": "String", "name": "mobile", "required": true },
                     { "comment": "模板ID", "javaType": "Integer", "name": "templateId", "required": true },
                     { "comment": "模板变量", "javaType": "Map<String, String>", "name": "args", "required": true }
                 ]
@@ -70,5 +70,10 @@
         }
     ],
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
+    "serverAddressDefinition": {
+        "host": "localhost",
+        "port": 8080,
+        "url": "/forexroo/app/api"
+    },
     "version": "v0.0.1"
 }
