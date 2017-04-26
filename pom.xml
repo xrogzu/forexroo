@@ -106,12 +106,12 @@
         <dependency>
             <groupId>com.github.xuzw</groupId>
             <artifactId>api-engine-sdk</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.xuzw</groupId>
             <artifactId>modeler-sdk</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -167,7 +167,7 @@
         <dependency>
             <groupId>com.github.xuzw</groupId>
             <artifactId>api-engine-runtime-http-wrapper</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -175,4 +175,11 @@
             <version>6.11</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>xuzw-maven-repo</id>
+            <url>https://raw.githubusercontent.com/xuzw/maven-repo/master/repository</url>
+        </repository>
+    </repositories>
 </project>
