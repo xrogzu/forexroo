@@ -10,8 +10,8 @@
 
 ### 云服务器 ECS
 * IP地址: 119.23.62.18(公)
-* 远程桌面账号: administrator
-* 远程桌面密码: qwer@0000
+* SSH密码: qwer@0000
+* 管理终端连接密码: 818867
 * CPU: 2核
 * 内存: 4096 MB (I/O优化)
 * SSD云盘: 40GB 
@@ -27,6 +27,9 @@
 * [文档](https://help.aliyun.com/product/31815.html?spm=5176.750001.2.6.IJA4Kp)
 
 ### 云数据库 RDS
+* 外网地址: rm-wz9g37e75ha54f140o.mysql.rds.aliyuncs.com
+* 高权限账号: forexroo
+* 密码: qwer@0000
 * MySQL 5.6
 * 内网端口: 3306
 * 最大连接数: 600
