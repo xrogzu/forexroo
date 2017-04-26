@@ -45,9 +45,9 @@
                 <configuration>
                     <jdbc>
                         <driver>com.mysql.jdbc.Driver</driver>
-                        <url>jdbc:mysql://localhost:3306/forexroo</url>
-                        <user>root</user>
-                        <password>123456</password>
+                        <url>jdbc:mysql://rm-wz9g37e75ha54f140o.mysql.rds.aliyuncs.com:3306/forexroo</url>
+                        <user>forexroo</user>
+                        <password>qwer@0000</password>
                     </jdbc>
                     <generator>
                         <database>
