@@ -20,6 +20,17 @@
         <finalName>forexroo</finalName>
         <plugins>
             <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://119.23.62.18:8080/manager/text</url>
+                    <server>ForexrooAliyunTomcatServer</server>
+                    <username>forexroo</username>
+                    <password>qwer@0000</password>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen-maven</artifactId>
                 <version>3.9.1</version>
