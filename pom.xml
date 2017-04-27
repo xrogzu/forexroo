@@ -97,11 +97,6 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>com.github.xuzw</groupId>
-            <artifactId>modeler-sdk</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.0.29</version>
