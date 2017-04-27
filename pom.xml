@@ -17,6 +17,7 @@
     </properties>
 
     <build>
+        <finalName>forexroo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.projectlombok</groupId>
