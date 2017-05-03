@@ -7,7 +7,7 @@
 				{ "comment": "卖出价", "javaType": "String", "name": "ask", "required": true },
 				{ "comment": "买入价", "javaType": "String", "name": "bid", "required": true },
 				{ "comment": "品种", "javaType": "String", "name": "symbol", "required": true },
-				{ "comment": "时间", "javaType": "Integer", "name": "time", "required": true }
+				{ "comment": "时间", "javaType": "Long", "name": "time", "required": true }
 			],
 			"javaClassName": "MarketQuotation"
 		}

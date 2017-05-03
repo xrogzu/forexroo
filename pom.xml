@@ -11,6 +11,12 @@
     <url>http://maven.apache.org</url>
 
     <properties>
+        <db.url>jdbc:mysql://rm-wz9g37e75ha54f140o.mysql.rds.aliyuncs.com:3306/forexroo</db.url>
+        <db.user>forexroo</db.user>
+        <db.password>qwer@0000</db.password>
+        <db.schema>forexroo</db.schema>
+        <db.migration.location>classpath:com.github.xuzw.forexroo.utils.database.migration</db.migration.location>
+        <db.entity.packageName>com.github.xuzw.forexroo.entity</db.entity.packageName>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
@@ -19,6 +25,22 @@
     <build>
         <finalName>forexroo</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <configuration>
+                    <url>${db.url}</url>
+                    <user>${db.user}</user>
+                    <password>${db.password}</password>
+                    <schemas>
+                        <schema>${db.schema}</schema>
+                    </schemas>
+                    <locations>
+                        <location>${db.migration.location}</location>
+                    </locations>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
@@ -44,23 +66,23 @@
                 <configuration>
                     <jdbc>
                         <driver>com.mysql.jdbc.Driver</driver>
-                        <url>jdbc:mysql://rm-wz9g37e75ha54f140o.mysql.rds.aliyuncs.com:3306/forexroo</url>
-                        <user>forexroo</user>
-                        <password>qwer@0000</password>
+                        <url>${db.url}</url>
+                        <user>${db.user}</user>
+                        <password>${db.password}</password>
                     </jdbc>
                     <generator>
                         <database>
                             <name>org.jooq.util.mysql.MySQLDatabase</name>
                             <includes>.*</includes>
                             <excludes></excludes>
-                            <inputSchema>forexroo</inputSchema>
+                            <inputSchema>${db.schema}</inputSchema>
                         </database>
                         <generate>
                             <pojos>true</pojos>
                             <daos>true</daos>
                         </generate>
                         <target>
-                            <packageName>com.github.xuzw.forexroo.entity</packageName>
+                            <packageName>${db.entity.packageName}</packageName>
                             <directory>target/generated-sources/jooq</directory>
                         </target>
                     </generator>
@@ -87,6 +109,16 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.xuzw</groupId>
+            <artifactId>migration-builder</artifactId>
+            <version>0.1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>4.2.0</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-client</artifactId>
