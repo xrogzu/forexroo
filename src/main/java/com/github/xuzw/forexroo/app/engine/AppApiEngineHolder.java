@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.app.utils;
+package com.github.xuzw.forexroo.app.engine;
 
 import com.github.xuzw.api_engine_runtime.impl.AutoScanEngine;
 

@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.utils.database.migration;
+package com.github.xuzw.forexroo.database.migration;
 
 import java.sql.Connection;
 

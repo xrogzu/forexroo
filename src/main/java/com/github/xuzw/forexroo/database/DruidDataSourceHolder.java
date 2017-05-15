@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.utils.database;
+package com.github.xuzw.forexroo.database;
 
 import com.alibaba.druid.pool.DruidDataSource;
 

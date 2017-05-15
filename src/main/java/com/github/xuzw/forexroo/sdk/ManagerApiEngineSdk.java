@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.utils.sdk;
+package com.github.xuzw.forexroo.sdk;
 
 import java.io.IOException;
 

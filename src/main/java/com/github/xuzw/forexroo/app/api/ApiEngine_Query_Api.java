@@ -5,7 +5,7 @@ import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
-import com.github.xuzw.forexroo.app.utils.AppApiEngineHolder;
+import com.github.xuzw.forexroo.app.engine.AppApiEngineHolder;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 

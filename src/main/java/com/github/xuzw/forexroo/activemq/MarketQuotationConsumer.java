@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.service;
+package com.github.xuzw.forexroo.activemq;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;

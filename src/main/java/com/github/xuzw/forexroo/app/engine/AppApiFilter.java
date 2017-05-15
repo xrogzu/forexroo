@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.app.utils.web;
+package com.github.xuzw.forexroo.app.engine;
 
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.github.xuzw.api_engine_runtime_http_wrapper.ApiEngineRuntimeHttpWrapper;
-import com.github.xuzw.forexroo.app.utils.AppApiEngineHolder;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
