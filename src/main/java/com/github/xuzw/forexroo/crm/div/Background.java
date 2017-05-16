@@ -4,7 +4,7 @@ import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
 import com.github.xuzw.ui_engine_runtime.div.Div;
-import com.github.xuzw.ui_engine_runtime.div.container.Wrapper;
+import com.github.xuzw.ui_engine_runtime.div.wrapper.Wrapper;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
