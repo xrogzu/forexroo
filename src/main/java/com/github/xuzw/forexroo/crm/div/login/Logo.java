@@ -1,6 +1,6 @@
 package com.github.xuzw.forexroo.crm.div.login;
 
-import com.github.xuzw.forexroo.crm.engine.CrmUri;
+import com.github.xuzw.forexroo.crm.web.CrmUri;
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;

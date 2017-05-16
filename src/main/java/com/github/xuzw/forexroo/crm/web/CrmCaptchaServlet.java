@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.crm.engine;
+package com.github.xuzw.forexroo.crm.web;
 
 import javax.servlet.annotation.WebServlet;
 

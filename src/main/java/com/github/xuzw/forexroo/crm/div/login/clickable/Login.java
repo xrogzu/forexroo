@@ -44,7 +44,6 @@ public class Login extends ClickableDiv {
     public static class Event extends ClickEvent {
         @Override
         public void onClick() {
-            System.out.println("c");
         }
     }
 }
