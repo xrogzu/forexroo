@@ -1,6 +1,6 @@
 package com.github.xuzw.forexroo.crm.div.login;
 
-import com.github.xuzw.forexroo.crm.div.login.button.Captcha;
+import com.github.xuzw.forexroo.crm.div.login.clickable.Captcha;
 import com.github.xuzw.forexroo.crm.div.login.input.VerificationCode;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;

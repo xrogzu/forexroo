@@ -1,6 +1,6 @@
 package com.github.xuzw.forexroo.crm.div.login;
 
-import com.github.xuzw.forexroo.crm.div.login.button.Login;
+import com.github.xuzw.forexroo.crm.div.login.clickable.Login;
 import com.github.xuzw.forexroo.crm.div.login.input.Password;
 import com.github.xuzw.forexroo.crm.div.login.input.Phone;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
