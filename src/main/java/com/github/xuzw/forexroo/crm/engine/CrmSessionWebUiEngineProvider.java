@@ -18,15 +18,13 @@ public class CrmSessionWebUiEngineProvider extends AbstractSessionWebUiEnginePro
 
     @Override
     public UiEngine newInstance(HttpSession session) {
-        String contextPath = session.getServletContext().getContextPath();
-        // ----
         List<ExternalStyleSheet> externalStyleSheets = new ArrayList<>();
-        externalStyleSheets.add(new ExternalStyleSheet(String.format("%s/style/default.css", contextPath)));
+        externalStyleSheets.add(new ExternalStyleSheet(CrmUri.of("/style/default.css")));
         // ----
         List<ExternalScript> externalScripts = new ArrayList<>();
-        externalScripts.add(new ExternalScript(String.format("%s/script/startswith.js", contextPath)));
-        externalScripts.add(new ExternalScript(String.format("%s/script/cookie.js", contextPath)));
-        externalScripts.add(new ExternalScript(String.format("%s/script/ui-engine.js", contextPath)));
+        externalScripts.add(new ExternalScript(CrmUri.of("/script/startswith.js")));
+        externalScripts.add(new ExternalScript(CrmUri.of("/script/cookie.js")));
+        externalScripts.add(new ExternalScript(CrmUri.of("/script/ui-engine.js")));
         // ----
         return new CrmWebUiEngine(externalStyleSheets, externalScripts);
     }

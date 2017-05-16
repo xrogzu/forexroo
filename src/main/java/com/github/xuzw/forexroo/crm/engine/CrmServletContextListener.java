@@ -2,6 +2,7 @@ package com.github.xuzw.forexroo.crm.engine;
 
 import java.io.IOException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -24,8 +25,10 @@ public class CrmServletContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent event) {
         log.info("contextInitialized");
         try {
-            StyleGeneratorUtils.updateCssFiles(event.getServletContext().getRealPath("style"));
-            ScriptGeneratorUtils.updateScriptFile(event.getServletContext().getRealPath("script/ui-engine.js"));
+            ServletContext context = event.getServletContext();
+            CrmUri.setContextPath(context.getContextPath());
+            StyleGeneratorUtils.updateCssFiles(context.getRealPath("style"));
+            ScriptGeneratorUtils.updateScriptFile(context.getRealPath("script/ui-engine.js"));
         } catch (IOException e) {
             log.error("", e);
         }

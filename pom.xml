@@ -113,7 +113,7 @@
         <dependency>
             <groupId>com.github.xuzw</groupId>
             <artifactId>ui-engine-sdk</artifactId>
-            <version>${ui-engine-runtime.version}</version>
+            <version>${ui-engine-runtime.version}.r1</version>
         </dependency>
         <dependency>
             <groupId>com.github.xuzw</groupId>
