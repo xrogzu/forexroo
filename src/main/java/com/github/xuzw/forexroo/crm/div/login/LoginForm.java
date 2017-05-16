@@ -1,11 +1,8 @@
-package com.github.xuzw.forexroo.crm.div.login.container;
+package com.github.xuzw.forexroo.crm.div.login;
 
-import com.github.xuzw.forexroo.crm.div.login.Logo;
-import com.github.xuzw.forexroo.crm.div.login.Text;
 import com.github.xuzw.forexroo.crm.div.login.button.Login;
 import com.github.xuzw.forexroo.crm.div.login.input.Password;
 import com.github.xuzw.forexroo.crm.div.login.input.Phone;
-import com.github.xuzw.forexroo.crm.div.login.input.VerificationCode;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
@@ -32,7 +29,7 @@ public class LoginForm extends YList {
         add(new Text());
         add(new Phone());
         add(new Password());
-        add(new VerificationCode());
+        add(new VerificationCodeContainer());
         add(new Login());
     }
 }
