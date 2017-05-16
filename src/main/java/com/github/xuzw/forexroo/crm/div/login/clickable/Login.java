@@ -1,11 +1,21 @@
 package com.github.xuzw.forexroo.crm.div.login.clickable;
 
+import java.util.Optional;
+
+import com.github.xuzw.captcha.CaptchaServlet;
+import com.github.xuzw.forexroo.crm.div.login.input.VerificationCode;
+import com.github.xuzw.forexroo.crm.engine.InputId;
+import com.github.xuzw.forexroo.crm.script.DocumentReadyCallback;
+import com.github.xuzw.forexroo.crm.script.Tooltip;
+import com.github.xuzw.forexroo.crm.web.CrmSessionHolder;
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
 import com.github.xuzw.ui_engine_runtime.div.ClickableDiv;
 import com.github.xuzw.ui_engine_runtime.event.ClickEvent;
+import com.github.xuzw.ui_engine_runtime.input.Input;
+import com.github.xuzw.ui_engine_runtime.page.Header;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
@@ -44,6 +54,17 @@ public class Login extends ClickableDiv {
     public static class Event extends ClickEvent {
         @Override
         public void onClick() {
+            Header header = getSource().getHeader();
+            String captcha = (String) CrmSessionHolder.get().getAttribute(CaptchaServlet.CAPTCHA_KEY);
+            Optional<Input> verificationCode = getInputs().get(InputId.of(VerificationCode.class));
+            if (!verificationCode.isPresent()) {
+                header.addScript(new DocumentReadyCallback(new Tooltip(InputId.of(VerificationCode.class), "请输入验证码")));
+                return;
+            }
+            if (!captcha.equals(verificationCode.get().getValue())) {
+                header.addScript(new DocumentReadyCallback(new Tooltip(InputId.of(VerificationCode.class), "验证码不正确")));
+                return;
+            }
         }
     }
 }

@@ -32,5 +32,4 @@ public class Input extends InputDiv {
     public Input(String inputId) {
         super(inputId);
     }
-
 }

@@ -1,5 +1,6 @@
 package com.github.xuzw.forexroo.crm.div.login.input;
 
+import com.github.xuzw.forexroo.crm.engine.InputId;
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 
@@ -11,7 +12,7 @@ import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 public class Phone extends Input {
 
     public Phone() {
-        super(Phone.class.getName());
+        super(InputId.of(Phone.class));
     }
 
     @Override

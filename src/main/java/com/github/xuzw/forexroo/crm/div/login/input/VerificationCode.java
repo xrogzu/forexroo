@@ -1,5 +1,6 @@
 package com.github.xuzw.forexroo.crm.div.login.input;
 
+import com.github.xuzw.forexroo.crm.engine.InputId;
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
@@ -23,7 +24,7 @@ import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
 public class VerificationCode extends Input {
 
     public VerificationCode() {
-        super(VerificationCode.class.getName());
+        super(InputId.of(VerificationCode.class));
     }
 
     @Override
