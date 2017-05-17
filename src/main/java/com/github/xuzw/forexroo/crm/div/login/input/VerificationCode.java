@@ -1,6 +1,5 @@
 package com.github.xuzw.forexroo.crm.div.login.input;
 
-import com.github.xuzw.forexroo.crm.engine.InputId;
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
@@ -22,14 +21,8 @@ import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
                 @StyleDeclarationAnnotation(property = "color", value = "#bbbbbb"), //
         }) })
 public class VerificationCode extends Input {
-
-    public VerificationCode() {
-        super(InputId.of(VerificationCode.class));
-    }
-
     @Override
     protected void buildInput(HtmlBuilder input) {
         input.attr("placeholder", "请输入验证码").attr("maxlength", "5");
     }
-
 }

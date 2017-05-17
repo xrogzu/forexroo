@@ -3,7 +3,7 @@ package com.github.xuzw.forexroo.crm.div.login.input;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
-import com.github.xuzw.ui_engine_runtime.div.InputDiv;
+import com.github.xuzw.ui_engine_runtime.div.input.SingletonInputDiv;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
@@ -27,9 +27,5 @@ import com.github.xuzw.ui_engine_runtime.div.InputDiv;
         }), @StyleBlockAnnotation(selector = ">input::-webkit-input-placeholder", value = { //
                 @StyleDeclarationAnnotation(property = "color", value = "#bbbbbb"), //
         }) })
-public class Input extends InputDiv {
-
-    public Input(String inputId) {
-        super(inputId);
-    }
+public class Input extends SingletonInputDiv {
 }

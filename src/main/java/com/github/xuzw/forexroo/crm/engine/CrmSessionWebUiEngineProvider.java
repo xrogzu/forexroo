@@ -5,8 +5,11 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.github.xuzw.forexroo.crm.div.Background;
+import com.github.xuzw.forexroo.crm.div.login.LoginForm;
 import com.github.xuzw.forexroo.crm.web.CrmUri;
 import com.github.xuzw.ui_engine_runtime.UiEngine;
+import com.github.xuzw.ui_engine_runtime.impl.CommonUiEngine;
 import com.github.xuzw.ui_engine_runtime.script.ExternalScript;
 import com.github.xuzw.ui_engine_runtime.style.ExternalStyleSheet;
 import com.github.xuzw.ui_engine_runtime_http_wrapper.provider.AbstractSessionWebUiEngineProvider;
@@ -19,19 +22,25 @@ public class CrmSessionWebUiEngineProvider extends AbstractSessionWebUiEnginePro
 
     @Override
     public UiEngine newInstance(HttpSession session) {
-        List<ExternalStyleSheet> externalStyleSheets = new ArrayList<>();
-        externalStyleSheets.add(new ExternalStyleSheet(CrmUri.of("/tooltipster/css/tooltipster.bundle.min.css")));
-        externalStyleSheets.add(new ExternalStyleSheet(CrmUri.of("/tooltipster/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css")));
-        externalStyleSheets.add(new ExternalStyleSheet(CrmUri.of("/style/default.css")));
+        List<ExternalStyleSheet> commonExternalStyleSheets = new ArrayList<>();
+        commonExternalStyleSheets.add(new ExternalStyleSheet(CrmUri.of("/tooltipster/css/tooltipster.bundle.min.css")));
+        commonExternalStyleSheets.add(new ExternalStyleSheet(CrmUri.of("/tooltipster/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css")));
+        commonExternalStyleSheets.add(new ExternalStyleSheet(CrmUri.of("/style/default.css")));
         // ----
-        List<ExternalScript> externalScripts = new ArrayList<>();
-        externalScripts.add(new ExternalScript(CrmUri.of("/script/cookie.js")));
-        externalScripts.add(new ExternalScript(CrmUri.of("/script/jquery-3.2.1.js")));
-        externalScripts.add(new ExternalScript(CrmUri.of("/script/startswith.js")));
-        externalScripts.add(new ExternalScript(CrmUri.of("/tooltipster/js/tooltipster.bundle.js")));
-        externalScripts.add(new ExternalScript(CrmUri.of("/script/tooltip.js")));
-        externalScripts.add(new ExternalScript(CrmUri.of("/script/ui-engine.js")));
+        List<ExternalScript> commonExternalScripts = new ArrayList<>();
+        commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/cookie.js")));
+        commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/jquery-3.2.1.js")));
+        commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/startswith.js")));
+        commonExternalScripts.add(new ExternalScript(CrmUri.of("/tooltipster/js/tooltipster.bundle.js")));
+        commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/tooltip.js")));
+        commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/ui-engine.js")));
         // ----
-        return new CrmWebUiEngine(externalStyleSheets, externalScripts);
+        CommonUiEngine commonUiEngine = new CommonUiEngine(commonExternalStyleSheets, commonExternalScripts);
+        addPages(commonUiEngine);
+        return commonUiEngine;
+    }
+
+    private void addPages(CommonUiEngine engine) {
+        engine.addPage("login", "登录", new Background(new LoginForm()));
     }
 }
