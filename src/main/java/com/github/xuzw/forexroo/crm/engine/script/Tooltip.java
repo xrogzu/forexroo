@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.crm.script;
+package com.github.xuzw.forexroo.crm.engine.script;
 
 import com.github.xuzw.ui_engine_runtime.script.Script;
 
@@ -7,7 +7,6 @@ import com.github.xuzw.ui_engine_runtime.script.Script;
  * @time 2017年5月16日 下午4:31:52
  */
 public class Tooltip extends Script {
-
     public Tooltip(String id, String title) {
         super(String.format("tooltip('%s', '%s');", id, title));
     }

@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.crm.web;
+package com.github.xuzw.forexroo.crm.engine.web;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com

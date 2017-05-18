@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.crm.web;
+package com.github.xuzw.forexroo.crm.engine.web;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.crm.div.login.input;
+package com.github.xuzw.forexroo.crm.ui.login.input;
 
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;

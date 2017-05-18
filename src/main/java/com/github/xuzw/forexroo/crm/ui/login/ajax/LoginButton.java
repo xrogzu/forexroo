@@ -1,7 +1,6 @@
-package com.github.xuzw.forexroo.crm.div.login.event;
+package com.github.xuzw.forexroo.crm.ui.login.ajax;
 
-import com.github.xuzw.forexroo.crm.ajax.LoginFormPage;
-import com.github.xuzw.forexroo.crm.div.login.LoginForm;
+import com.github.xuzw.forexroo.crm.ui.login.LoginForm;
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
@@ -34,7 +33,7 @@ import com.github.xuzw.ui_engine_runtime.script.AjaxScript;
         }), @StyleBlockAnnotation(selector = "input:hover", value = { //
                 @StyleDeclarationAnnotation(property = "background-color", value = "#eeeeee"), //
         }) })
-public class Login extends Div {
+public class LoginButton extends Div {
     @Override
     protected void build(HtmlBuilder div) {
         div.button().value("登录").onClick(new AjaxScript(PageName.of(LoginFormPage.class), DynamicDiv.id(LoginForm.class)).toString());

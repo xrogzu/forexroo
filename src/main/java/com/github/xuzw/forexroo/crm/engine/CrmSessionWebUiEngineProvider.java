@@ -5,9 +5,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import com.github.xuzw.forexroo.crm.ajax.LoginFormPage;
-import com.github.xuzw.forexroo.crm.page.LoginPage;
-import com.github.xuzw.forexroo.crm.web.CrmUri;
+import com.github.xuzw.forexroo.crm.engine.web.CrmUri;
+import com.github.xuzw.forexroo.crm.ui.login.LoginPage;
+import com.github.xuzw.forexroo.crm.ui.login.ajax.LoginFormPage;
 import com.github.xuzw.ui_engine_runtime.UiEngine;
 import com.github.xuzw.ui_engine_runtime.impl.CommonUiEngine;
 import com.github.xuzw.ui_engine_runtime.script.ExternalScript;

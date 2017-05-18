@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.crm.div;
+package com.github.xuzw.forexroo.crm.ui.login;
 
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
