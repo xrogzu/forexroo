@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import com.github.xuzw.forexroo.crm.div.Background;
-import com.github.xuzw.forexroo.crm.div.login.LoginForm;
+import com.github.xuzw.forexroo.crm.ajax.LoginFormPage;
+import com.github.xuzw.forexroo.crm.page.LoginPage;
 import com.github.xuzw.forexroo.crm.web.CrmUri;
 import com.github.xuzw.ui_engine_runtime.UiEngine;
 import com.github.xuzw.ui_engine_runtime.impl.CommonUiEngine;
@@ -37,10 +37,15 @@ public class CrmSessionWebUiEngineProvider extends AbstractSessionWebUiEnginePro
         // ----
         CommonUiEngine commonUiEngine = new CommonUiEngine(commonExternalStyleSheets, commonExternalScripts);
         addPages(commonUiEngine);
+        addAjaxPages(commonUiEngine);
         return commonUiEngine;
     }
 
     private void addPages(CommonUiEngine engine) {
-        engine.addPage("login", "登录", new Background(new LoginForm()));
+        engine.addPage(new LoginPage());
+    }
+
+    private void addAjaxPages(CommonUiEngine engine) {
+        engine.addPage(new LoginFormPage());
     }
 }

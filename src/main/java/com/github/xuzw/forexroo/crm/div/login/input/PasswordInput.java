@@ -8,7 +8,7 @@ import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
  * @time 2017年5月15日 下午11:18:45
  */
 @StyleAnnotation
-public class Password extends Input {
+public class PasswordInput extends Input {
     @Override
     protected void buildInput(HtmlBuilder input) {
         input.attr("type", "password").attr("placeholder", "请输入登录密码");

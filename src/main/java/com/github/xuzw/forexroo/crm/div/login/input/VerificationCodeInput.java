@@ -20,7 +20,7 @@ import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
         }), @StyleBlockAnnotation(selector = ">input::-webkit-input-placeholder", value = { //
                 @StyleDeclarationAnnotation(property = "color", value = "#bbbbbb"), //
         }) })
-public class VerificationCode extends Input {
+public class VerificationCodeInput extends Input {
     @Override
     protected void buildInput(HtmlBuilder input) {
         input.attr("placeholder", "请输入验证码").attr("maxlength", "5");

@@ -1,7 +1,7 @@
 package com.github.xuzw.forexroo.crm.div.login;
 
 import com.github.xuzw.forexroo.crm.div.login.event.Captcha;
-import com.github.xuzw.forexroo.crm.div.login.input.VerificationCode;
+import com.github.xuzw.forexroo.crm.div.login.input.VerificationCodeInput;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
@@ -21,7 +21,7 @@ import com.github.xuzw.ui_engine_runtime.div.container.XList;
         }) })
 public class VerificationCodeContainer extends XList {
     public VerificationCodeContainer() {
-        add(new VerificationCode());
+        add(new VerificationCodeInput());
         add(new Captcha());
     }
 }
