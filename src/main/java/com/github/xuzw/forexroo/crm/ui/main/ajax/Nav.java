@@ -14,6 +14,8 @@ import com.github.xuzw.ui_engine_runtime.div.container.XList;
 @StyleAnnotation({ //
         @StyleBlockAnnotation({ //
                 @StyleDeclarationAnnotation(property = "height", value = "40px"), //
+        }), @StyleBlockAnnotation(selector = ":hover", value = { //
+                @StyleDeclarationAnnotation(property = "background-color", value = "#313a46"), //
         }), })
 public class Nav extends XList {
     public Nav(String iconPath, String title) {
