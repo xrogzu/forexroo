@@ -11,7 +11,7 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <ui-engine-runtime.version>1.7.2</ui-engine-runtime.version>
+        <ui-engine-runtime.version>1.7.3</ui-engine-runtime.version>
         <db.url>jdbc:mysql://rm-wz9g37e75ha54f140o.mysql.rds.aliyuncs.com:3306/forexroo</db.url>
         <db.user>forexroo</db.user>
         <db.password>qwer@0000</db.password>

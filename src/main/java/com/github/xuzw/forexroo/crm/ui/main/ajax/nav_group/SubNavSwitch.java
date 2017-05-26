@@ -1,6 +1,5 @@
-package com.github.xuzw.forexroo.crm.ui.main.ajax;
+package com.github.xuzw.forexroo.crm.ui.main.ajax.nav_group;
 
-import com.github.xuzw.forexroo.crm.engine.web.CrmUri;
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
@@ -18,12 +17,11 @@ import com.github.xuzw.ui_engine_runtime.div.Div;
                 @StyleDeclarationAnnotation(property = "margin-top", value = "12px"), //
                 @StyleDeclarationAnnotation(property = "margin-left", value = "16px"), //
                 @StyleDeclarationAnnotation(property = "margin-right", value = "16px"), //
-        }), @StyleBlockAnnotation(selector = "img", value = { //
+                @StyleDeclarationAnnotation(property = "background-image", value = "url(/forexroo/icon/arrow.svg)"), //
         }), })
 public class SubNavSwitch extends Div {
 
     @Override
     protected void build(HtmlBuilder div) {
-        div.child("img").src(CrmUri.of("/icon/arrow.svg"));
     }
 }

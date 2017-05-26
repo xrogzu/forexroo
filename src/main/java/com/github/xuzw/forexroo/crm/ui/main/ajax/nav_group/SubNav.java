@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.crm.ui.main.ajax;
+package com.github.xuzw.forexroo.crm.ui.main.ajax.nav_group;
 
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
@@ -12,6 +12,7 @@ import com.github.xuzw.ui_engine_runtime.div.container.XList;
 @StyleAnnotation({ //
         @StyleBlockAnnotation({ //
                 @StyleDeclarationAnnotation(property = "height", value = "40px"), //
+                @StyleDeclarationAnnotation(property = "display", value = "none"), //
         }), @StyleBlockAnnotation(selector = ":hover", value = { //
                 @StyleDeclarationAnnotation(property = "background-color", value = "#313a46"), //
         }), })
