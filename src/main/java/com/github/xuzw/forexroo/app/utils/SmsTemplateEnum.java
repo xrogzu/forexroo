@@ -38,6 +38,10 @@ public enum SmsTemplateEnum {
         return id;
     }
 
+    public String getIdString() {
+        return String.valueOf(id);
+    }
+
     public String getTemplate() {
         return template;
     }
