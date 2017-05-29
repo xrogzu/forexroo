@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.github.xuzw.forexroo.database.DruidDataSourceHolder;
 import com.github.xuzw.ui_engine_sdk.ScriptGeneratorUtils;
 import com.github.xuzw.ui_engine_sdk.StyleGeneratorUtils;
 
@@ -29,6 +30,7 @@ public class CrmServletContextListener implements ServletContextListener {
             CrmUri.setContextPath(context.getContextPath());
             StyleGeneratorUtils.updateCssFiles(context.getRealPath("style"));
             ScriptGeneratorUtils.updateScriptFile(context.getRealPath("script/ui-engine.js"));
+            DruidDataSourceHolder.init();
         } catch (IOException e) {
             log.error("", e);
         }

@@ -16,7 +16,7 @@
         <db.user>forexroo</db.user>
         <db.password>qwer@0000</db.password>
         <db.schema>forexroo</db.schema>
-        <db.migration.location>classpath:com.github.xuzw.forexroo.utils.database.migration</db.migration.location>
+        <db.migration.location>classpath:com.github.xuzw.forexroo.database.migration</db.migration.location>
         <db.entity.packageName>com.github.xuzw.forexroo.entity</db.entity.packageName>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -128,7 +128,7 @@
         <dependency>
             <groupId>com.github.xuzw</groupId>
             <artifactId>migration-builder</artifactId>
-            <version>0.1.7</version>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>

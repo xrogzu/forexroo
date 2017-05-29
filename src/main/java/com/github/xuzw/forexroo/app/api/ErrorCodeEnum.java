@@ -3,13 +3,15 @@ package com.github.xuzw.forexroo.app.api;
 import com.github.xuzw.api_engine_runtime.api.ResponseCode;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 
-@GenerateByApiEngineSdk(time = "2017.05.26 03:14:42.060", version = "v0.0.1")
+@GenerateByApiEngineSdk(time = "2017.05.29 02:46:22.675", version = "v0.0.1")
 public enum ErrorCodeEnum implements ResponseCode {
 
     /**数据库异常*/
     database_error(1000, "数据库异常"), /**资源不存在或已被删除*/
     not_exists(1001, "资源不存在或已被删除"), /**验证码发送失败*/
-    sms_send_error(1002, "验证码发送失败");
+    sms_send_error(1002, "验证码发送失败"), /**验证码错误*/
+    verification_code_error(1003, "验证码错误"), /**用户唯一标识码错误*/
+    token_error(1004, "用户唯一标识码错误");
 
     private ErrorCodeEnum(int code, String message) {
         this.code = code;

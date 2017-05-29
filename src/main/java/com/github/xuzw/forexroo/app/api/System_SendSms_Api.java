@@ -14,7 +14,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 import com.jcabi.http.request.JdkRequest;
 
-@GenerateByApiEngineSdk(time = "2017.05.26 03:14:41.806", version = "v0.0.1")
+@GenerateByApiEngineSdk(time = "2017.05.29 02:46:22.450", version = "v0.0.1")
 public class System_SendSms_Api implements Api {
 
     public static final String url = "http://v.apistore.cn/api/v14/xsend";

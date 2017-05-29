@@ -41,7 +41,9 @@
     "errorCodeDefinitions": [
         { "code": 1000, "message": "数据库异常", "name": "database_error" },
         { "code": 1001, "message": "资源不存在或已被删除", "name": "not_exists" },
-        { "code": 1002, "message": "验证码发送失败", "name": "sms_send_error" }
+        { "code": 1002, "message": "验证码发送失败", "name": "sms_send_error" },
+        { "code": 1003, "message": "验证码错误", "name": "verification_code_error" },
+        { "code": 1004, "message": "用户唯一标识码错误", "name": "token_error" }
     ],
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
     "serverAddressDefinition": {
