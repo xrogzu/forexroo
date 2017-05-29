@@ -3,9 +3,11 @@ package com.github.xuzw.forexroo.crm.ui.login.ajax;
 import java.util.Optional;
 
 import com.github.xuzw.captcha.CaptchaServlet;
+import com.github.xuzw.forexroo.crm.engine.script.GotoPage;
 import com.github.xuzw.forexroo.crm.engine.script.Tooltip;
 import com.github.xuzw.forexroo.crm.engine.web.CrmSessionHolder;
 import com.github.xuzw.forexroo.crm.ui.login.input.VerificationCodeInput;
+import com.github.xuzw.forexroo.crm.ui.main.MainPage;
 import com.github.xuzw.ui_engine_runtime.div.location.Id;
 import com.github.xuzw.ui_engine_runtime.input.Input;
 import com.github.xuzw.ui_engine_runtime.input.Inputs;
@@ -34,5 +36,6 @@ public class LoginScriptPage extends ScriptPage {
             addScript(new JQueryDocumentReadyCallback(new Tooltip(Id.of(VerificationCodeInput.class), "验证码不正确")));
             return;
         }
+        addScript(new GotoPage(PageName.of(MainPage.class)));
     }
 }
