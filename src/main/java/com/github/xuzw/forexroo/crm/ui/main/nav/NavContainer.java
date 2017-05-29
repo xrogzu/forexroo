@@ -1,8 +1,8 @@
-package com.github.xuzw.forexroo.crm.ui.main.ajax;
+package com.github.xuzw.forexroo.crm.ui.main.nav;
 
-import com.github.xuzw.forexroo.crm.ui.main.ajax.nav_group.NavFolder;
-import com.github.xuzw.forexroo.crm.ui.main.ajax.nav_group.NavGroup;
-import com.github.xuzw.forexroo.crm.ui.main.ajax.nav_group.SubNav;
+import com.github.xuzw.forexroo.crm.ui.main.nav.nav_group.NavFolder;
+import com.github.xuzw.forexroo.crm.ui.main.nav.nav_group.NavGroup;
+import com.github.xuzw.forexroo.crm.ui.main.nav.nav_group.SubNav;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;

@@ -1,7 +1,7 @@
-package com.github.xuzw.forexroo.crm.ui.main.ajax.nav_group;
+package com.github.xuzw.forexroo.crm.ui.main.nav.nav_group;
 
-import com.github.xuzw.forexroo.crm.ui.main.ajax.NavIcon;
-import com.github.xuzw.forexroo.crm.ui.main.ajax.NavTitle;
+import com.github.xuzw.forexroo.crm.ui.main.nav.NavIcon;
+import com.github.xuzw.forexroo.crm.ui.main.nav.NavTitle;
 import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;

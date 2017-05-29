@@ -1,4 +1,4 @@
-package com.github.xuzw.forexroo.crm.ui.main.ajax;
+package com.github.xuzw.forexroo.crm.ui.main.nav;
 
 import org.apache.commons.lang3.StringUtils;
 

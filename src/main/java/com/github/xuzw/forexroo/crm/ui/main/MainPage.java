@@ -1,6 +1,6 @@
 package com.github.xuzw.forexroo.crm.ui.main;
 
-import com.github.xuzw.forexroo.crm.ui.main.ajax.NavContainer;
+import com.github.xuzw.forexroo.crm.ui.main.nav.NavContainer;
 import com.github.xuzw.ui_engine_runtime.page.Page;
 import com.github.xuzw.ui_engine_runtime.page.PageName;
 
