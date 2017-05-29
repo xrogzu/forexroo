@@ -1,6 +1,5 @@
 package com.github.xuzw.forexroo.crm.ui.login;
 
-import com.github.xuzw.ui_engine_runtime.div.ajax.DynamicDiv;
 import com.github.xuzw.ui_engine_runtime.page.Page;
 import com.github.xuzw.ui_engine_runtime.page.PageName;
 
@@ -11,6 +10,6 @@ import com.github.xuzw.ui_engine_runtime.page.PageName;
 public class LoginPage extends Page {
     public LoginPage() {
         super(PageName.of(LoginPage.class));
-        title("登录").body(new Background(new DynamicDiv(new LoginForm())));
+        title("登录").body(new Background(new LoginForm()));
     }
 }

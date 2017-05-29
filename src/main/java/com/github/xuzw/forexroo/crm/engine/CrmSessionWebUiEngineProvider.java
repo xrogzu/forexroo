@@ -7,9 +7,8 @@ import javax.servlet.http.HttpSession;
 
 import com.github.xuzw.forexroo.crm.engine.web.CrmUri;
 import com.github.xuzw.forexroo.crm.ui.login.LoginPage;
-import com.github.xuzw.forexroo.crm.ui.login.ajax.LoginFormPage;
+import com.github.xuzw.forexroo.crm.ui.login.ajax.LoginScriptPage;
 import com.github.xuzw.forexroo.crm.ui.main.MainPage;
-import com.github.xuzw.forexroo.crm.ui.main.ajax.NavPage;
 import com.github.xuzw.ui_engine_runtime.UiEngine;
 import com.github.xuzw.ui_engine_runtime.impl.CommonUiEngine;
 import com.github.xuzw.ui_engine_runtime.script.ExternalScript;
@@ -49,7 +48,6 @@ public class CrmSessionWebUiEngineProvider extends AbstractSessionWebUiEnginePro
     }
 
     private void addAjaxPages(CommonUiEngine engine) {
-        engine.addPage(new LoginFormPage());
-        engine.addPage(new NavPage());
+        engine.addPage(new LoginScriptPage());
     }
 }
