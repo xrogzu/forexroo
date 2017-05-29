@@ -13,9 +13,9 @@ import com.github.xuzw.ui_engine_runtime.div.wrapper.Label;
  */
 @StyleAnnotation({ //
         @StyleBlockAnnotation({ //
-        }), @StyleBlockAnnotation(selector = "input:checked ~ ul .com-github-xuzw-forexroo-crm-ui-main-ajax-nav_group-SubNavSwitch", value = { //
+        }), @StyleBlockAnnotation(selector = "input:checked ~ ul .com-github-xuzw-forexroo-crm-ui-main-nav-nav_group-SubNavSwitch", value = { //
                 @StyleDeclarationAnnotation(property = "background-image", value = "url(/forexroo/icon/down-arrow.svg)"), //
-        }), @StyleBlockAnnotation(selector = "input:checked ~ ul .com-github-xuzw-forexroo-crm-ui-main-ajax-nav_group-SubNav", value = { //
+        }), @StyleBlockAnnotation(selector = "input:checked ~ ul .com-github-xuzw-forexroo-crm-ui-main-nav-nav_group-SubNav", value = { //
                 @StyleDeclarationAnnotation(property = "display", value = "block"), //
         }), })
 public class NavGroup extends YList {
