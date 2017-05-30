@@ -9,8 +9,10 @@ import com.github.xuzw.forexroo.crm.engine.web.CrmUri;
 import com.github.xuzw.forexroo.crm.ui.login.LoginPage;
 import com.github.xuzw.forexroo.crm.ui.login.ajax.LoginScriptPage;
 import com.github.xuzw.forexroo.crm.ui.main.MainPage;
+import com.github.xuzw.forexroo.crm.ui.main.dealer.DealerContainer;
 import com.github.xuzw.ui_engine_runtime.UiEngine;
 import com.github.xuzw.ui_engine_runtime.impl.CommonUiEngine;
+import com.github.xuzw.ui_engine_runtime.page.SegmentPage;
 import com.github.xuzw.ui_engine_runtime.script.ExternalScript;
 import com.github.xuzw.ui_engine_runtime.style.ExternalStyleSheet;
 import com.github.xuzw.ui_engine_runtime_http_wrapper.provider.AbstractSessionWebUiEngineProvider;
@@ -39,7 +41,8 @@ public class CrmSessionWebUiEngineProvider extends AbstractSessionWebUiEnginePro
         // ----
         CommonUiEngine commonUiEngine = new CommonUiEngine(commonExternalStyleSheets, commonExternalScripts);
         addPages(commonUiEngine);
-        addAjaxPages(commonUiEngine);
+        addScriptPages(commonUiEngine);
+        addSegmentPages(commonUiEngine);
         return commonUiEngine;
     }
 
@@ -48,7 +51,11 @@ public class CrmSessionWebUiEngineProvider extends AbstractSessionWebUiEnginePro
         engine.addPage(new MainPage());
     }
 
-    private void addAjaxPages(CommonUiEngine engine) {
+    private void addScriptPages(CommonUiEngine engine) {
         engine.addPage(new LoginScriptPage());
+    }
+
+    private void addSegmentPages(CommonUiEngine engine) {
+        engine.addPage(new SegmentPage(new DealerContainer()));
     }
 }
