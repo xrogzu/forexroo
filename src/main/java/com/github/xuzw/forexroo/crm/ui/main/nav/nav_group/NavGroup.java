@@ -13,16 +13,18 @@ import com.github.xuzw.ui_engine_runtime.div.wrapper.Label;
  */
 @StyleAnnotation({ //
         @StyleBlockAnnotation({ //
+        }), @StyleBlockAnnotation(selector = "input", value = { //
+                @StyleDeclarationAnnotation(property = "display", value = "none"), //
         }), @StyleBlockAnnotation(selector = "input:checked ~ ul .com-github-xuzw-forexroo-crm-ui-main-nav-nav_group-SubNavSwitch", value = { //
                 @StyleDeclarationAnnotation(property = "background-image", value = "url(/forexroo/icon/down-arrow.svg)"), //
         }), @StyleBlockAnnotation(selector = "input:checked ~ ul .com-github-xuzw-forexroo-crm-ui-main-nav-nav_group-SubNav", value = { //
                 @StyleDeclarationAnnotation(property = "display", value = "block"), //
         }), })
 public class NavGroup extends YList {
-    private String checkboxId = "toggle-checkbox-" + getId();
+    private String radioId = "nav-radio-" + getId();
 
     public NavGroup(NavFolder navFolder) {
-        add(new Label(checkboxId, navFolder));
+        add(new Label(radioId, navFolder));
     }
 
     public NavGroup add(SubNav subNav) {
@@ -31,6 +33,6 @@ public class NavGroup extends YList {
 
     @Override
     protected void beforeBuild(HtmlBuilder div) {
-        div.input().attr("type", "checkbox").attr("style", "display:none;").id(checkboxId);
+        div.input().attr("type", "radio").id(radioId).attr("name", "nav").cssClass("toggle");
     }
 }

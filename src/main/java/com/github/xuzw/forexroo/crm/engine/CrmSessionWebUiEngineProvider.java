@@ -32,6 +32,7 @@ public class CrmSessionWebUiEngineProvider extends AbstractSessionWebUiEnginePro
         commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/cookie.js")));
         commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/jquery-3.2.1.js")));
         commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/startswith.js")));
+        commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/toggle.js")));
         commonExternalScripts.add(new ExternalScript(CrmUri.of("/tooltipster/js/tooltipster.bundle.js")));
         commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/tooltip.js")));
         commonExternalScripts.add(new ExternalScript(CrmUri.of("/script/ui-engine.js")));
