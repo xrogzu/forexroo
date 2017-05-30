@@ -27,7 +27,7 @@ public class NavFolder extends XList {
     }
 
     @Override
-    protected void onBuildElement(HtmlBuilder li, Div element) {
+    protected void onBuildElement(HtmlBuilder li, Div element, int index) {
         if (element instanceof SubNavSwitch) {
             li.attr("style", "float:right");
         }

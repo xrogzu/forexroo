@@ -15,6 +15,7 @@ import com.github.xuzw.ui_engine_runtime.div.container.YList;
 @StyleAnnotation({ //
         @StyleBlockAnnotation({ //
                 @StyleDeclarationAnnotation(property = "width", value = "200px"), //
+                @StyleDeclarationAnnotation(property = "padding-top", value = "62px"), //
                 @StyleDeclarationAnnotation(property = "background-color", value = "#252834"), //
         }), })
 public class NavContainer extends YList {
