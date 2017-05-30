@@ -10,5 +10,6 @@ import com.github.xuzw.ui_engine_runtime.div.container.YList;
 public class ContentContainer extends YList {
     public ContentContainer() {
         add(new Header());
+        add(new Workspace());
     }
 }
