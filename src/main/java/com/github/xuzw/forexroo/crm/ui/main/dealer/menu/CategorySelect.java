@@ -15,7 +15,7 @@ public class CategorySelect extends Select {
         HtmlBuilder selectAgent = div.child("select");
         selectAgent.child("option").text("选择代理商");
         selectAgent.child("option").text("禁用");
-        div.child("span").text("-");
+        div.child("span").attr("style", "color:#666666;").text("-");
         HtmlBuilder selectBroker = div.child("select");
         selectBroker.child("option").text("选择经纪人");
         selectBroker.child("option").text("禁用");
