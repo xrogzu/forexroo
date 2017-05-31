@@ -20,7 +20,6 @@ public class MenuContainer extends XList {
     public MenuContainer() {
         add(new StatusSelect());
         add(new CategorySelect());
-        add(new SearchButton());
         add(new ResetButton());
         add(new QuickSearch());
     }
