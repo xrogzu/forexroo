@@ -1,7 +1,7 @@
 package com.github.xuzw.forexroo.crm.ui.main.dealer;
 
 import com.github.xuzw.forexroo.crm.ui.main.dealer.menu.MenuContainer;
-import com.github.xuzw.forexroo.crm.ui.main.dealer.table.TableContainer;
+import com.github.xuzw.forexroo.crm.ui.main.dealer.table.Table;
 import com.github.xuzw.ui_engine_runtime.div.container.YList;
 
 /**
@@ -11,6 +11,6 @@ import com.github.xuzw.ui_engine_runtime.div.container.YList;
 public class DealerContainer extends YList {
     public DealerContainer() {
         add(new MenuContainer());
-        add(new TableContainer());
+        add(new Table());
     }
 }
