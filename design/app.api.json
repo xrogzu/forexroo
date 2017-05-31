@@ -1,17 +1,17 @@
 {
     "apiDefinitions": [
         {
-            "comment": "发送短信验证码",
+            "comment": "系统 - 发送短信验证码",
             "javaClassName": "System_SendSms_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
                     { "comment": "手机号码", "javaType": "String", "name": "phone", "required": true },
-                    { "comment": "1:注册", "javaType": "Integer", "name": "type", "required": true }
+                    { "comment": "类型（1:注册）", "javaType": "Integer", "name": "type", "required": true }
                 ]
             }
         },
         {
-            "comment": "登录即注册",
+            "comment": "用户 - 登录即注册",
             "javaClassName": "User_Login_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
@@ -26,12 +26,98 @@
             }
         },
         {
-            "comment": "设置用户登录密码",
+            "comment": "用户 - 设置登录密码",
             "javaClassName": "User_SetLoginPassword_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
                     { "comment": "登录密码", "javaType": "String", "name": "password", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "用户 - 忘记登录密码",
+            "javaClassName": "User_ForgetLoginPassword_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "手机号码", "javaType": "String", "name": "phone", "required": true },
+                    { "comment": "验证码", "javaType": "String", "name": "verificationCode", "required": true },
+                    { "comment": "新密码", "javaType": "String", "name": "newPassword", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "用户 - 修改登录密码",
+            "javaClassName": "User_UpdateLoginPassword_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "原密码", "javaType": "String", "name": "password", "required": true },
+                    { "comment": "新密码", "javaType": "String", "name": "newPassword", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "我的品种 - 查询全部",
+            "javaClassName": "MySymbol_QueryAll_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "我的品种 - 添加",
+            "javaClassName": "MySymbol_Add_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "品种", "javaType": "String", "name": "symbol", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "我的品种 - 删除",
+            "javaClassName": "MySymbol_Delete_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "品种", "javaType": "String", "name": "symbol", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "开户 - 第一步：提交实名信息（姓名和身份证号）",
+            "javaClassName": "OpenAccount_SubmitRealName_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "姓名", "javaType": "String", "name": "realName", "required": true },
+                    { "comment": "身份证号", "javaType": "String", "name": "identityCardNumber", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "开户 - 第二步：提交手持身份证正面照（URL）",
+            "javaClassName": "OpenAccount_SubmitPicture_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "手持身份证正面照URL", "javaType": "String", "name": "pictureUrl", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "开户 - 第三步：签订协议",
+            "imports": [
+                "java.util.List"
+            ],
+            "javaClassName": "OpenAccount_SignAgreements_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "签订协议（1:交易商告知书 2:交易商协议书 3:入市交易协议书 4:本人是该账户的最终且唯一受益拥有人）", "javaType": "List<String>", "name": "agreements", "required": true },
+                    { "comment": "签名图片URL", "javaType": "String", "name": "signUrl", "required": true }
                 ]
             }
         }
@@ -43,7 +129,8 @@
         { "code": 1001, "message": "资源不存在或已被删除", "name": "not_exists" },
         { "code": 1002, "message": "验证码发送失败", "name": "sms_send_error" },
         { "code": 1003, "message": "验证码错误", "name": "verification_code_error" },
-        { "code": 1004, "message": "用户唯一标识码错误", "name": "token_error" }
+        { "code": 1004, "message": "用户唯一标识码错误", "name": "token_error" },
+        { "code": 1005, "message": "姓名和身份证号不匹配", "name": "realName_identityCardNumber_not_match" }
     ],
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
     "serverAddressDefinition": {
@@ -51,5 +138,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.1"
+    "version": "v0.0.4"
 }

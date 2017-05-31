@@ -33,6 +33,6 @@ public class NavGroup extends YList {
 
     @Override
     protected void beforeBuild(HtmlBuilder div) {
-        div.input().attr("type", "radio").id(radioId).attr("name", "nav").cssClass("toggle");
+        div.input().attr("type", "radio").id(radioId).attr("name", "navRadio").cssClass("toggle");
     }
 }

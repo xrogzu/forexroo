@@ -19,7 +19,6 @@ import com.github.xuzw.ui_engine_runtime.div.Div;
                 @StyleDeclarationAnnotation(property = "height", value = "16px"), //
                 @StyleDeclarationAnnotation(property = "margin-top", value = "12px"), //
                 @StyleDeclarationAnnotation(property = "margin-left", value = "16px"), //
-        }), @StyleBlockAnnotation(selector = "img", value = { //
         }), })
 public class NavIcon extends Div {
     private String iconPath;

@@ -11,15 +11,15 @@ import org.jooq.impl.DefaultConfiguration;
  * @author 徐泽威 xuzewei_2012@126.com
  * @time 2017年4月7日 下午11:58:42
  */
-public class JooqConfigurationBuilder {
-    public static Configuration build(Connection conn) {
+public class Jooq {
+    public static Configuration buildConfiguration(Connection conn) {
         DefaultConfiguration configuration = new DefaultConfiguration();
         configuration.set(conn);
         configuration.setSQLDialect(SQLDialect.MYSQL);
         return configuration;
     }
 
-    public static Configuration build() throws SQLException {
-        return build(DruidDataSourceHolder.get().getConnection());
+    public static Configuration buildConfiguration() throws SQLException {
+        return buildConfiguration(Druid.get().getConnection());
     }
 }

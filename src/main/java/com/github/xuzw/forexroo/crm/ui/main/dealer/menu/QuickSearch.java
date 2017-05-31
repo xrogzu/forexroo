@@ -29,14 +29,20 @@ import com.github.xuzw.ui_engine_runtime.div.Div;
                 @StyleDeclarationAnnotation(property = "border", value = "solid 1px #ff6350"), //
                 @StyleDeclarationAnnotation(property = "background-color", value = "#ff6350"), //
                 @StyleDeclarationAnnotation(property = "box-sizing", value = "content-box"), //
+                @StyleDeclarationAnnotation(property = "background-image", value = "url(/forexroo/icon/search.svg)"), //
+                @StyleDeclarationAnnotation(property = "background-position", value = "center"), //
+                @StyleDeclarationAnnotation(property = "background-repeat", value = "no-repeat"), //
+                @StyleDeclarationAnnotation(property = "outline", value = "none"), //
         }), @StyleBlockAnnotation(selector = ">input::-webkit-input-placeholder", value = { //
                 @StyleDeclarationAnnotation(property = "color", value = "#bbbbbb"), //
+        }), @StyleBlockAnnotation(selector = ">input", value = { //
+                @StyleDeclarationAnnotation(property = "vertical-align", value = "middle"), //
         }), })
 public class QuickSearch extends Div {
 
     @Override
     protected void build(HtmlBuilder div) {
         div.input().attr("placeholder", "快速查找（代理商/经纪人）");
-        div.button().value("Go");
+        div.button();
     }
 }

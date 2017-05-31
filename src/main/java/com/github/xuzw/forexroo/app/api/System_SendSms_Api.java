@@ -14,7 +14,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 import com.jcabi.http.request.JdkRequest;
 
-@GenerateByApiEngineSdk(time = "2017.05.29 02:46:22.450", version = "v0.0.1")
+@GenerateByApiEngineSdk(time = "2017.05.31 12:30:17.672", version = "v0.0.4")
 public class System_SendSms_Api implements Api {
 
     public static final String url = "http://v.apistore.cn/api/v14/xsend";
@@ -55,7 +55,7 @@ public class System_SendSms_Api implements Api {
             this.phone = phone;
         }
 
-        @Comment(value = "1:注册")
+        @Comment(value = "类型（1:注册）")
         @Required(value = true)
         private Integer type;
 

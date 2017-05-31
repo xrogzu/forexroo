@@ -1,19 +1,21 @@
 package com.github.xuzw.forexroo.app.api;
 
-import java.util.UUID;
+import static com.github.xuzw.forexroo.entity.Tables.USER;
+import org.jooq.impl.DSL;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.exception.ApiExecuteException;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
-import com.github.xuzw.forexroo.database.JooqConfigurationBuilder;
+import com.github.xuzw.forexroo.app.utils.Tokens;
+import com.github.xuzw.forexroo.database.Jooq;
 import com.github.xuzw.forexroo.entity.Tables;
 import com.github.xuzw.forexroo.entity.tables.daos.UserDao;
 import com.github.xuzw.forexroo.entity.tables.pojos.User;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.05.29 02:46:22.496", version = "v0.0.1")
+@GenerateByApiEngineSdk(time = "2017.05.31 12:30:17.726", version = "v0.0.4")
 public class User_Login_Api implements Api {
 
     @Override()
@@ -22,18 +24,23 @@ public class User_Login_Api implements Api {
         if (!req.getVerificationCode().equals("1234")) {
             throw new ApiExecuteException(ErrorCodeEnum.verification_code_error);
         }
-        UserDao userDao = new UserDao(JooqConfigurationBuilder.build());
+        Resp resp = new Resp();
+        UserDao userDao = new UserDao(Jooq.buildConfiguration());
         User user = userDao.fetchOne(Tables.USER.PHONE, req.getPhone());
+        String newToken = Tokens.newToken();
         if (user == null) {
+            // 注册新用户
             User newUser = new User();
             newUser.setPhone(req.getPhone());
             newUser.setRegisterTime(System.currentTimeMillis());
-            newUser.setToken(UUID.randomUUID().toString());
+            newUser.setToken(newToken);
             userDao.insert(newUser);
-            user = newUser;
+        } else {
+            // 旧用户
+            String oldToken = user.getToken();
+            DSL.using(Jooq.buildConfiguration()).update(USER).set(USER.TOKEN, newToken).where(USER.TOKEN.equal(oldToken)).execute();
         }
-        Resp resp = new Resp();
-        resp.setToken(user.getToken());
+        resp.setToken(newToken);
         return resp;
     }
 

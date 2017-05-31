@@ -13,7 +13,7 @@ import com.github.xuzw.ui_engine_runtime.div.Div;
 @StyleAnnotation({ //
         @StyleBlockAnnotation({ //
                 @StyleDeclarationAnnotation(property = "position", value = "absolute"), //
-                @StyleDeclarationAnnotation(property = "transform", value = "translate(281px, -42px);"), //
+                @StyleDeclarationAnnotation(property = "transform", value = "translate(281px, -42px)"), //
         }), })
 public class Captcha extends Div {
     @Override

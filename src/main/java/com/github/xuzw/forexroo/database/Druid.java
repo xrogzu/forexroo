@@ -11,8 +11,8 @@ import com.alibaba.druid.pool.DruidDataSource;
  * @author 徐泽威 xuzewei_2012@126.com
  * @time 2017年4月7日 下午11:04:45
  */
-public class DruidDataSourceHolder {
-    private static final Logger log = LoggerFactory.getLogger(DruidDataSourceHolder.class);
+public class Druid {
+    private static final Logger log = LoggerFactory.getLogger(Druid.class);
     private static DruidDataSource druidDataSource;
 
     public static DruidDataSource get() {
@@ -20,7 +20,7 @@ public class DruidDataSourceHolder {
     }
 
     public static void init() {
-        DruidDataSourceHolder.druidDataSource = buildDruidDataSource();
+        Druid.druidDataSource = buildDruidDataSource();
     }
 
     private static DruidDataSource buildDruidDataSource() {

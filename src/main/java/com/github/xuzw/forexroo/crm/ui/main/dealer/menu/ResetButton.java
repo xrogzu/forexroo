@@ -20,6 +20,8 @@ import com.github.xuzw.ui_engine_runtime.div.Div;
                 @StyleDeclarationAnnotation(property = "border-radius", value = "3px"), //
                 @StyleDeclarationAnnotation(property = "border", value = "solid 1px #cccccc"), //
                 @StyleDeclarationAnnotation(property = "background-color", value = "#ffffff"), //
+                @StyleDeclarationAnnotation(property = "color", value = "#000000"), //
+                @StyleDeclarationAnnotation(property = "outline", value = "none"), //
         }), })
 public class ResetButton extends Div {
 

@@ -21,6 +21,7 @@ import com.github.xuzw.ui_engine_runtime.div.Div;
                 @StyleDeclarationAnnotation(property = "border", value = "solid 1px #ff6350"), //
                 @StyleDeclarationAnnotation(property = "background-color", value = "#ff6350"), //
                 @StyleDeclarationAnnotation(property = "color", value = "#ffffff"), //
+                @StyleDeclarationAnnotation(property = "outline", value = "none"), //
         }), })
 public class SearchButton extends Div {
 

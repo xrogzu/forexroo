@@ -24,6 +24,7 @@ import com.github.xuzw.ui_engine_runtime.div.Div;
                 @StyleDeclarationAnnotation(property = "height", value = "28px"), //
                 @StyleDeclarationAnnotation(property = "border-radius", value = "3px"), //
                 @StyleDeclarationAnnotation(property = "border", value = "solid 1px #cccccc"), //
+                @StyleDeclarationAnnotation(property = "outline", value = "none"), //
         }), })
 public abstract class Select extends Div {
     @Override
