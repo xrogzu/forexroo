@@ -1,8 +1,10 @@
 package com.github.xuzw.forexroo.crm.ui.main.dealer.table.paging;
 
+import com.github.xuzw.html_builder.HtmlBuilder;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleBlockAnnotation;
 import com.github.xuzw.ui_engine_runtime.annotation.StyleDeclarationAnnotation;
+import com.github.xuzw.ui_engine_runtime.div.Div;
 import com.github.xuzw.ui_engine_runtime.div.container.XList;
 
 /**
@@ -23,5 +25,12 @@ public class PagingContainer extends XList {
         add(new PagingButtonGroup().add(0).add(1).add(2).add(3).add(4));
         add(new GotoNextPageButton());
         add(new GotoLastPageButton());
+    }
+
+    @Override
+    protected void onBuildElement(HtmlBuilder li, Div element, int index) {
+        if (!(element instanceof PagingTip)) {
+            li.attr("style", "float:right");
+        }
     }
 }
