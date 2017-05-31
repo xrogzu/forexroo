@@ -19,7 +19,9 @@ public class PagingContainer extends XList {
     public PagingContainer() {
         add(new PagingTip());
         add(new GotoFirstPageButton());
+        add(new GotoPreviousPageButton());
         add(new PagingButtonGroup().add(0).add(1).add(2).add(3).add(4));
+        add(new GotoNextPageButton());
         add(new GotoLastPageButton());
     }
 }
