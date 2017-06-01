@@ -1,5 +1,6 @@
 package com.github.xuzw.forexroo.app.api;
 
+import java.util.List;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -7,8 +8,8 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.06.01 03:37:38.503", version = "v0.0.5")
-public class User_UpdateLoginPassword_Api implements Api {
+@GenerateByApiEngineSdk(time = "2017.06.01 03:37:38.525", version = "v0.0.5")
+public class User_Feedback_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
@@ -31,28 +32,28 @@ public class User_UpdateLoginPassword_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "原密码")
+        @Comment(value = "意见反馈详细描述")
         @Required(value = true)
-        private String password;
+        private String content;
 
-        public String getPassword() {
-            return password;
+        public String getContent() {
+            return content;
         }
 
-        public void setPassword(String password) {
-            this.password = password;
+        public void setContent(String content) {
+            this.content = content;
         }
 
-        @Comment(value = "新密码")
+        @Comment(value = "截图照片URL")
         @Required(value = true)
-        private String newPassword;
+        private List<String> pictureUrls;
 
-        public String getNewPassword() {
-            return newPassword;
+        public List<String> getPictureUrls() {
+            return pictureUrls;
         }
 
-        public void setNewPassword(String newPassword) {
-            this.newPassword = newPassword;
+        public void setPictureUrls(List<String> pictureUrls) {
+            this.pictureUrls = pictureUrls;
         }
     }
 }

@@ -7,7 +7,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.05.31 12:30:17.783", version = "v0.0.4")
+@GenerateByApiEngineSdk(time = "2017.06.01 03:37:38.551", version = "v0.0.5")
 public class MySymbol_Add_Api implements Api {
 
     @Override()

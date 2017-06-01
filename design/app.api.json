@@ -26,6 +26,15 @@
             }
         },
         {
+            "comment": "用户 - 退出",
+            "javaClassName": "User_Logout_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
+                ]
+            }
+        },
+        {
             "comment": "用户 - 设置登录密码",
             "javaClassName": "User_SetLoginPassword_Api",
             "requestDefinition": {
@@ -54,6 +63,45 @@
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
                     { "comment": "原密码", "javaType": "String", "name": "password", "required": true },
                     { "comment": "新密码", "javaType": "String", "name": "newPassword", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "用户 - 修改个人信息",
+            "description": "字段不为空则更新，否则忽略",
+            "javaClassName": "User_UpdateProfile_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "头像", "javaType": "String", "name": "avatar", "required": true },
+                    { "comment": "昵称", "javaType": "String", "name": "nickname", "required": true },
+                    { "comment": "性别", "javaType": "String", "name": "sex", "required": true },
+                    { "comment": "国家", "javaType": "String", "name": "country", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "用户 - 意见反馈",
+            "imports": [
+                "java.util.List"
+            ],
+            "javaClassName": "User_Feedback_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "意见反馈详细描述", "javaType": "String", "name": "content", "required": true },
+                    { "comment": "截图照片URL", "javaType": "List<String>", "name": "pictureUrls", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "用户 - 更换手机号",
+            "javaClassName": "User_UpdatePhone_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "新手机号码", "javaType": "String", "name": "newPhone", "required": true },
+                    { "comment": "验证码", "javaType": "String", "name": "verificationCode", "required": true }
                 ]
             }
         },
@@ -120,6 +168,22 @@
                     { "comment": "签名图片URL", "javaType": "String", "name": "signUrl", "required": true }
                 ]
             }
+        },
+        {
+            "comment": "品种 - 查询详情",
+            "javaClassName": "Symbol_QueryDetail_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "品种", "javaType": "String", "name": "symbol", "required": true }
+                ]
+            },
+            "responseDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "涨跌点数", "javaType": "String", "name": "change", "required": true },
+                    { "comment": "涨跌幅度", "javaType": "String", "name": "chg", "required": true },
+                    { "comment": "当前时间", "javaType": "String", "name": "time", "required": true }
+                ]
+            }
         }
     ],
     "comment": "APP接口文档",
@@ -138,5 +202,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.4"
+    "version": "v0.0.5"
 }

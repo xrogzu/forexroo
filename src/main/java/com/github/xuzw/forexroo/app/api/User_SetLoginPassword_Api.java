@@ -13,7 +13,7 @@ import com.github.xuzw.forexroo.entity.tables.pojos.User;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.05.31 12:30:17.744", version = "v0.0.4")
+@GenerateByApiEngineSdk(time = "2017.06.01 03:37:38.477", version = "v0.0.5")
 public class User_SetLoginPassword_Api implements Api {
 
     @Override()

@@ -7,8 +7,8 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.06.01 03:37:38.503", version = "v0.0.5")
-public class User_UpdateLoginPassword_Api implements Api {
+@GenerateByApiEngineSdk(time = "2017.06.01 03:37:38.467", version = "v0.0.5")
+public class User_Logout_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
@@ -29,30 +29,6 @@ public class User_UpdateLoginPassword_Api implements Api {
 
         public void setToken(String token) {
             this.token = token;
-        }
-
-        @Comment(value = "原密码")
-        @Required(value = true)
-        private String password;
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        @Comment(value = "新密码")
-        @Required(value = true)
-        private String newPassword;
-
-        public String getNewPassword() {
-            return newPassword;
-        }
-
-        public void setNewPassword(String newPassword) {
-            this.newPassword = newPassword;
         }
     }
 }
