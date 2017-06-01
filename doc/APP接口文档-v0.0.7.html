@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>APP接口文档 v0.0.5</title>
+    <title>APP接口文档 v0.0.7</title>
     <style type="text/css">
     .tail {
           font-size: 14px;
@@ -63,7 +63,7 @@
 </head>
 <body>
     <div>
-        <h4>APP接口文档 v0.0.5</h4>
+        <h4>APP接口文档 v0.0.7</h4>
     </div>
     <h5>小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口，短关键字搜索范围大，长关键字搜索结果精确、接口名、接口描述、参数名、参数描述、响应字段名、响应字段描述等都可作为搜索关键字<br/>每个接口都已定义快速跳转书签，点击超链接即可跳转，跳转后URL末尾会添加路径名做区分，可添加该URL到浏览器书签，以便下次打开时自动定位到该接口</h5>
     <div class="alert alert-warning">
@@ -80,9 +80,6 @@
             </li>
             <li class="api-name-bookmark">
                 <a href="#User_SetLoginPassword_Api">User_SetLoginPassword_Api 用户 - 设置登录密码</a>
-            </li>
-            <li class="api-name-bookmark">
-                <a href="#User_ForgetLoginPassword_Api">User_ForgetLoginPassword_Api 用户 - 忘记登录密码</a>
             </li>
             <li class="api-name-bookmark">
                 <a href="#User_UpdateLoginPassword_Api">User_UpdateLoginPassword_Api 用户 - 修改登录密码</a>
@@ -116,6 +113,9 @@
             </li>
             <li class="api-name-bookmark">
                 <a href="#Symbol_QueryDetail_Api">Symbol_QueryDetail_Api 品种 - 查询详情</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#MasterTraderRankings_QueryAll_Api">MasterTraderRankings_QueryAll_Api 交易大师排行榜 - 查询全部</a>
             </li>
         </ul>
     </div>
@@ -283,30 +283,6 @@
             <span class="api-field-type">String</span>
             <span class="api-field-required">required</span>
             <span class="api-field-comment">登录密码</span>
-        </dd>
-    </div>
-    <div class="alert alert-info">
-        <a name="User_ForgetLoginPassword_Api">
-        </a>
-        <h4 class="api-name">User_ForgetLoginPassword_Api 用户 - 忘记登录密码</h4>
-        <dt class="request-and-response-title">请求参数字段</dt>
-        <dd>
-            <span class="api-field-name">phone</span>
-            <span class="api-field-type">String</span>
-            <span class="api-field-required">required</span>
-            <span class="api-field-comment">手机号码</span>
-        </dd>
-        <dd>
-            <span class="api-field-name">verificationCode</span>
-            <span class="api-field-type">String</span>
-            <span class="api-field-required">required</span>
-            <span class="api-field-comment">验证码</span>
-        </dd>
-        <dd>
-            <span class="api-field-name">newPassword</span>
-            <span class="api-field-type">String</span>
-            <span class="api-field-required">required</span>
-            <span class="api-field-comment">新密码</span>
         </dd>
     </div>
     <div class="alert alert-info">
@@ -563,11 +539,23 @@
             <span class="api-field-comment">当前时间</span>
         </dd>
     </div>
+    <div class="alert alert-info">
+        <a name="MasterTraderRankings_QueryAll_Api">
+        </a>
+        <h4 class="api-name">MasterTraderRankings_QueryAll_Api 交易大师排行榜 - 查询全部</h4>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">list</span>
+            <span class="api-field-type">List&lt;MasterTraderRankings&gt;</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">列表</span>
+        </dd>
+    </div>
     <div class="tail">
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/xuzw/api-engine-sdk">ApiEngineSdk</a>
-            <span>2017.06.01 03:37:38.811</span>
+            <span>2017.06.01 06:39:45.795</span>
         </p>
     </div>
 </body>

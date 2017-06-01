@@ -45,17 +45,6 @@
             }
         },
         {
-            "comment": "用户 - 忘记登录密码",
-            "javaClassName": "User_ForgetLoginPassword_Api",
-            "requestDefinition": {
-                "fieldDefinitions": [
-                    { "comment": "手机号码", "javaType": "String", "name": "phone", "required": true },
-                    { "comment": "验证码", "javaType": "String", "name": "verificationCode", "required": true },
-                    { "comment": "新密码", "javaType": "String", "name": "newPassword", "required": true }
-                ]
-            }
-        },
-        {
             "comment": "用户 - 修改登录密码",
             "javaClassName": "User_UpdateLoginPassword_Api",
             "requestDefinition": {
@@ -184,6 +173,19 @@
                     { "comment": "当前时间", "javaType": "String", "name": "time", "required": true }
                 ]
             }
+        },
+        {
+            "comment": "交易大师排行榜 - 查询全部",
+            "imports": [
+                "java.util.List",
+                "com.github.xuzw.forexroo.entity.tables.pojos.MasterTraderRankings"
+            ],
+            "javaClassName": "MasterTraderRankings_QueryAll_Api",
+            "responseDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "列表", "javaType": "List<MasterTraderRankings>", "name": "list", "required": true }
+                ]
+            }
         }
     ],
     "comment": "APP接口文档",
@@ -202,5 +204,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.5"
+    "version": "v0.0.7"
 }

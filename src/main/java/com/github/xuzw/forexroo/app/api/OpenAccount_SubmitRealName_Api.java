@@ -7,7 +7,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.06.01 03:37:38.568", version = "v0.0.5")
+@GenerateByApiEngineSdk(time = "2017.06.01 06:39:45.538", version = "v0.0.7")
 public class OpenAccount_SubmitRealName_Api implements Api {
 
     @Override()

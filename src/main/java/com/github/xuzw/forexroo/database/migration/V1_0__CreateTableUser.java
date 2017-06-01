@@ -6,6 +6,7 @@ import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
 
 import com.github.xuzw.migration_builder.C;
 import com.github.xuzw.migration_builder.Migration;
+import com.github.xuzw.migration_builder.Table;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
@@ -15,15 +16,15 @@ public class V1_0__CreateTableUser implements JdbcMigration {
 
     @Override
     public void migrate(Connection connection) throws Exception {
-        Migration m = new Migration();
-        m.createTable("user")// 用户
-                .addColumn("phone", "手机号", C.STRING)//
-                .addColumn("password", "登录密码", C.STRING)//
-                .addColumn("token", "用户唯一标识码", C.STRING)//
-                .addColumn("register_time", "注册时间", C.BIGINT)//
-                .addPKColumn("id", "主键", C.AUTOINC) //
-                .addUniqueIndex("phone") //
-                .addUniqueIndex("token");
-        m.run(connection);
+        Migration migration = new Migration();
+        Table table = migration.createTable("user");
+        table.addColumn("phone", "手机号", C.STRING);
+        table.addColumn("password", "登录密码", C.STRING);
+        table.addColumn("token", "用户唯一标识码", C.STRING);
+        table.addColumn("register_time", "注册时间", C.BIGINT);
+        table.addPKColumn("id", "主键", C.AUTOINC);
+        table.addUniqueIndex("phone");
+        table.addUniqueIndex("token");
+        migration.run(connection);
     }
 }
