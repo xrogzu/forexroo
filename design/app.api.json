@@ -185,6 +185,23 @@
                     { "comment": "列表", "javaType": "List<MasterTraderRankings>", "name": "list", "required": true }
                 ]
             }
+        },
+        {
+            "comment": "OSS - 创建STS授权TOKEN",
+            "javaClassName": "Oss_CreateStsToken_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
+                ]
+            },
+            "responseDefinition": {
+                "fieldDefinitions": [
+                    { "javaType": "String", "name": "accessKeyId", "required": true },
+                    { "javaType": "String", "name": "accessKeySecret", "required": true },
+                    { "javaType": "String", "name": "expiration", "required": true },
+                    { "javaType": "String", "name": "securityToken", "required": true }
+                ]
+            }
         }
     ],
     "comment": "APP接口文档",
@@ -195,7 +212,8 @@
         { "code": 1002, "message": "验证码发送失败", "name": "sms_send_error" },
         { "code": 1003, "message": "验证码错误", "name": "verification_code_error" },
         { "code": 1004, "message": "用户唯一标识码错误", "name": "token_error" },
-        { "code": 1005, "message": "姓名和身份证号不匹配", "name": "realName_identityCardNumber_not_match" }
+        { "code": 1005, "message": "姓名和身份证号不匹配", "name": "realName_identityCardNumber_not_match" },
+        { "code": 1006, "message": "OSS创建STS授权TOKEN异常", "name": "oss_createStsToken_exception" }
     ],
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
     "modelDefinitions": [
@@ -217,5 +235,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.9"
+    "version": "v0.0.11"
 }

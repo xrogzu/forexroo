@@ -9,7 +9,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 意见反馈")
-@GenerateByApiEngineSdk(time = "2017.06.02 01:59:29.927", version = "v0.0.9")
+@GenerateByApiEngineSdk(time = "2017.06.02 03:44:05.557", version = "v0.0.11")
 public class User_Feedback_Api implements Api {
 
     @Override()
