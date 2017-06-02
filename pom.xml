@@ -113,6 +113,22 @@
     <dependencies>
         <dependency>
             <groupId>com.github.xuzw</groupId>
+            <artifactId>api-engine-sdk</artifactId>
+            <version>${api-engine-runtime.version}.r1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.github.xuzw</groupId>
+                    <artifactId>html-builder</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xuzw</groupId>
+            <artifactId>api-engine-runtime-http-wrapper</artifactId>
+            <version>${api-engine-runtime.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xuzw</groupId>
             <artifactId>captcha</artifactId>
             <version>1.0.1</version>
         </dependency>
@@ -155,16 +171,6 @@
             <groupId>com.jcabi</groupId>
             <artifactId>jcabi-http</artifactId>
             <version>1.16</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.xuzw</groupId>
-            <artifactId>api-engine-sdk</artifactId>
-            <version>${api-engine-runtime.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.xuzw</groupId>
-            <artifactId>api-engine-runtime-http-wrapper</artifactId>
-            <version>${api-engine-runtime.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
