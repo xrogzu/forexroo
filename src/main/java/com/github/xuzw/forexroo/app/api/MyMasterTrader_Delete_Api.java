@@ -8,7 +8,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我关注的交易大师 - 删除")
-@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.555", version = "v0.0.15")
+@GenerateByApiEngineSdk(time = "2017.06.02 06:48:22.224", version = "v0.0.16")
 public class MyMasterTrader_Delete_Api implements Api {
 
     @Override()

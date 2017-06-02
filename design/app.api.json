@@ -322,6 +322,7 @@
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
     "modelDefinitions": [
         {
+			"comment": "交易大师榜单",
             "fieldDefinitions": [
                 { "comment": "用户ID", "javaType": "Long", "name": "userId", "required": true },
                 { "comment": "头像", "javaType": "String", "name": "avatar", "required": true },
@@ -334,6 +335,7 @@
             "javaClassName": "MasterTraderRankings"
         },
         {
+			"comment": "交易大师盈利",
             "fieldDefinitions": [
                 { "comment": "盈亏总额", "javaType": "Long", "name": "profit", "required": true },
                 { "comment": "盈亏比例", "javaType": "String", "name": "profitRate", "required": true }
@@ -341,6 +343,7 @@
             "javaClassName": "MasterTraderProfit"
         },
         {
+			"comment": "历史订单",
             "fieldDefinitions": [
                 { "comment": "订单类型", "javaType": "String", "name": "cmd", "required": true },
                 { "comment": "注释", "javaType": "String", "name": "comment", "required": true },
@@ -362,5 +365,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.15"
+    "version": "v0.0.16"
 }

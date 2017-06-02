@@ -6,7 +6,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @ModelAnnotation()
-@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.939", version = "v0.0.15")
+@GenerateByApiEngineSdk(time = "2017.06.02 06:48:22.505", version = "v0.0.16")
 public class MasterTraderProfit {
 
     @Comment(value = "盈亏总额")

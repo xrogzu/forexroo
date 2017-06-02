@@ -1,7 +1,6 @@
 package com.github.xuzw.forexroo.app.api;
 
 import java.util.Arrays;
-
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.aliyuncs.DefaultAcsClient;
@@ -22,7 +21,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "系统 - 创建阿里云OSS STS授权TOKEN")
-@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.237", version = "v0.0.15")
+@GenerateByApiEngineSdk(time = "2017.06.02 06:48:21.983", version = "v0.0.16")
 public class System_CreateOssStsToken_Api implements Api {
 
     public static final String REGION_ID = "cn-hangzhou";
@@ -74,7 +73,9 @@ public class System_CreateOssStsToken_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "ID") @Required(value = true) private String accessKeyId;
+        @Comment(value = "ID")
+        @Required(value = true)
+        private String accessKeyId;
 
         public String getAccessKeyId() {
             return accessKeyId;
@@ -84,7 +85,9 @@ public class System_CreateOssStsToken_Api implements Api {
             this.accessKeyId = accessKeyId;
         }
 
-        @Comment(value = "密匙") @Required(value = true) private String accessKeySecret;
+        @Comment(value = "密匙")
+        @Required(value = true)
+        private String accessKeySecret;
 
         public String getAccessKeySecret() {
             return accessKeySecret;
@@ -94,7 +97,9 @@ public class System_CreateOssStsToken_Api implements Api {
             this.accessKeySecret = accessKeySecret;
         }
 
-        @Comment(value = "截止期限") @Required(value = true) private String expiration;
+        @Comment(value = "截止期限")
+        @Required(value = true)
+        private String expiration;
 
         public String getExpiration() {
             return expiration;
@@ -104,7 +109,9 @@ public class System_CreateOssStsToken_Api implements Api {
             this.expiration = expiration;
         }
 
-        @Comment(value = "授权TOKEN") @Required(value = true) private String securityToken;
+        @Comment(value = "授权TOKEN")
+        @Required(value = true)
+        private String securityToken;
 
         public String getSecurityToken() {
             return securityToken;
