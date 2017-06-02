@@ -11,6 +11,7 @@
     <url>http://maven.apache.org</url>
 
     <properties>
+        <api-engine-runtime.version>1.0.2</api-engine-runtime.version>
         <ui-engine-runtime.version>1.8.3</ui-engine-runtime.version>
         <db.url>jdbc:mysql://rm-wz9g37e75ha54f140o.mysql.rds.aliyuncs.com:3306/forexroo</db.url>
         <db.user>forexroo</db.user>
@@ -158,7 +159,12 @@
         <dependency>
             <groupId>com.github.xuzw</groupId>
             <artifactId>api-engine-sdk</artifactId>
-            <version>1.0.1</version>
+            <version>${api-engine-runtime.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xuzw</groupId>
+            <artifactId>api-engine-runtime-http-wrapper</artifactId>
+            <version>${api-engine-runtime.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -204,11 +210,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.xuzw</groupId>
-            <artifactId>api-engine-runtime-http-wrapper</artifactId>
-            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>

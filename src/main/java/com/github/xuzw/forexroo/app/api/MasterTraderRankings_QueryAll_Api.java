@@ -1,7 +1,6 @@
 package com.github.xuzw.forexroo.app.api;
 
 import java.util.List;
-import com.github.xuzw.forexroo.entity.tables.pojos.MasterTraderRankings;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -9,7 +8,8 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.06.01 06:39:45.578", version = "v0.0.7")
+@Comment(value = "交易大师排行榜 - 查询全部")
+@GenerateByApiEngineSdk(time = "2017.06.02 12:53:10.073", version = "v0.0.8")
 public class MasterTraderRankings_QueryAll_Api implements Api {
 
     @Override()

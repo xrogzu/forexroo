@@ -177,8 +177,7 @@
         {
             "comment": "交易大师排行榜 - 查询全部",
             "imports": [
-                "java.util.List",
-                "com.github.xuzw.forexroo.entity.tables.pojos.MasterTraderRankings"
+                "java.util.List"
             ],
             "javaClassName": "MasterTraderRankings_QueryAll_Api",
             "responseDefinition": {
@@ -199,10 +198,24 @@
         { "code": 1005, "message": "姓名和身份证号不匹配", "name": "realName_identityCardNumber_not_match" }
     ],
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
+    "modelDefinitions": [
+        {
+            "fieldDefinitions": [
+                { "comment": "用户ID", "javaType": "Long", "name": "userId", "required": true },
+                { "comment": "头像", "javaType": "String", "name": "avatar", "required": true },
+                { "comment": "昵称", "javaType": "String", "name": "nickname", "required": true },
+                { "comment": "关注人数", "javaType": "Long", "name": "followerCount", "required": true },
+                { "comment": "总盈利", "javaType": "String", "name": "totalProfit", "required": true },
+                { "comment": "均单盈利", "javaType": "String", "name": "singleProfit", "required": true },
+                { "comment": "成功率", "javaType": "String", "name": "successRate", "required": true }
+            ],
+            "javaClassName": "MasterTraderRankings"
+        }
+    ],
     "serverAddressDefinition": {
         "host": "localhost",
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.7"
+    "version": "v0.0.8"
 }

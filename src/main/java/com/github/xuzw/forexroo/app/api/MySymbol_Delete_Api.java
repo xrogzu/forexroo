@@ -7,7 +7,8 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.06.01 06:39:45.529", version = "v0.0.7")
+@Comment(value = "我的品种 - 删除")
+@GenerateByApiEngineSdk(time = "2017.06.02 12:53:10.030", version = "v0.0.8")
 public class MySymbol_Delete_Api implements Api {
 
     @Override()

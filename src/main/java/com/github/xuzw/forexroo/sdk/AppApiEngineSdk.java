@@ -15,12 +15,11 @@ public class AppApiEngineSdk {
         String srcFolder = "src/main/java";
         EngineDefinition engineDefinition = ApiEngineGeneratorUtils.buildEngineDefinition("design/app.api.json");
         ApiEngineGeneratorUtils.updateApiJavaFiles(srcFolder, engineDefinition);
-        System.out.println("updateApiJavaFiles done.");
         ApiEngineGeneratorUtils.deleteUnusedApiJavaFiles(srcFolder, engineDefinition);
-        System.out.println("deleteUnusedApiJavaFiles done.");
         ApiEngineGeneratorUtils.updateErrorCodeJavaFile(srcFolder, engineDefinition);
-        System.out.println("updateErrorCodeJavaFile done.");
         ApiDocumentUtils.writeApiHtmlDocumentFile("doc", engineDefinition);
-        System.out.println("writeApiHtmlDocumentFile done.");
+        ApiEngineGeneratorUtils.deleteModelJavaFiles(srcFolder, engineDefinition);
+        ApiEngineGeneratorUtils.createModelJavaFiles(srcFolder, engineDefinition);
+        System.out.println("done.");
     }
 }

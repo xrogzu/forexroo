@@ -15,7 +15,8 @@ import com.github.xuzw.forexroo.entity.tables.pojos.User;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@GenerateByApiEngineSdk(time = "2017.06.01 06:39:45.419", version = "v0.0.7")
+@Comment(value = "用户 - 登录即注册")
+@GenerateByApiEngineSdk(time = "2017.06.02 12:53:09.938", version = "v0.0.8")
 public class User_Login_Api implements Api {
 
     @Override()
