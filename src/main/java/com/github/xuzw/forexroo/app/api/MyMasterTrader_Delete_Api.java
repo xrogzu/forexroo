@@ -1,15 +1,15 @@
 package com.github.xuzw.forexroo.app.api;
 
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
-import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@Comment(value = "用户 - 更换手机号")
-@GenerateByApiEngineSdk(time = "2017.06.02 05:48:31.196", version = "v0.0.14")
-public class User_UpdatePhone_Api implements Api {
+@Comment(value = "我关注的交易大师 - 删除")
+@GenerateByApiEngineSdk(time = "2017.06.02 05:48:31.380", version = "v0.0.14")
+public class MyMasterTrader_Delete_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
@@ -32,28 +32,16 @@ public class User_UpdatePhone_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "新手机号码")
+        @Comment(value = "交易大师ID")
         @Required(value = true)
-        private String newPhone;
+        private Long userId;
 
-        public String getNewPhone() {
-            return newPhone;
+        public Long getUserId() {
+            return userId;
         }
 
-        public void setNewPhone(String newPhone) {
-            this.newPhone = newPhone;
-        }
-
-        @Comment(value = "验证码")
-        @Required(value = true)
-        private String verificationCode;
-
-        public String getVerificationCode() {
-            return verificationCode;
-        }
-
-        public void setVerificationCode(String verificationCode) {
-            this.verificationCode = verificationCode;
+        public void setUserId(Long userId) {
+            this.userId = userId;
         }
     }
 }

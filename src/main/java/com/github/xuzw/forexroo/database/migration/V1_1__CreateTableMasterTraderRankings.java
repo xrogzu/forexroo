@@ -19,9 +19,7 @@ public class V1_1__CreateTableMasterTraderRankings implements JdbcMigration {
         Migration migration = new Migration();
         Table table = migration.createTable("master_trader_rankings");
         table.addColumn("user_id", "用户ID", C.BIGINT);
-        table.addColumn("avatar", "头像", C.STRING);
         table.addColumn("nickname", "昵称", C.STRING);
-        table.addColumn("follower_count", "关注人数", C.BIGINT);
         table.addColumn("total_profit", "总盈利", C.STRING);
         table.addColumn("single_profit", "均单盈利", C.STRING);
         table.addColumn("success_rate", "成功率", C.STRING);

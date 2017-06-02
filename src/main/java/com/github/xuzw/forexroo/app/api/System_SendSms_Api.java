@@ -15,7 +15,7 @@ import com.github.xuzw.modeler_runtime.annotation.Required;
 import com.jcabi.http.request.JdkRequest;
 
 @Comment(value = "系统 - 发送短信验证码")
-@GenerateByApiEngineSdk(time = "2017.06.02 03:44:05.438", version = "v0.0.11")
+@GenerateByApiEngineSdk(time = "2017.06.02 05:48:31.021", version = "v0.0.14")
 public class System_SendSms_Api implements Api {
 
     public static final String url = "http://v.apistore.cn/api/v14/xsend";

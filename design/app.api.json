@@ -11,6 +11,18 @@
             }
         },
         {
+            "comment": "系统 - 创建阿里云OSS STS授权TOKEN",
+            "javaClassName": "System_CreateOssStsToken_Api",
+            "responseDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "ID", "javaType": "String", "name": "accessKeyId", "required": true },
+                    { "comment": "密匙", "javaType": "String", "name": "accessKeySecret", "required": true },
+                    { "comment": "截止期限", "javaType": "String", "name": "expiration", "required": true },
+                    { "comment": "授权TOKEN", "javaType": "String", "name": "securityToken", "required": true }
+                ]
+            }
+        },
+        {
             "comment": "用户 - 登录即注册",
             "javaClassName": "User_Login_Api",
             "requestDefinition": {
@@ -187,8 +199,49 @@
             }
         },
         {
-            "comment": "OSS - 创建STS授权TOKEN",
-            "javaClassName": "Oss_CreateStsToken_Api",
+            "comment": "交易大师排行榜 - 查询详情",
+            "imports": [
+                "java.util.List"
+            ],
+            "javaClassName": "MasterTraderRankings_QueryDetail_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "交易大师ID", "javaType": "Long", "name": "userId", "required": true }
+                ]
+            },
+            "responseDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "日图（最近24日，不包含本日）", "javaType": "List<MasterTraderProfit>", "name": "dailyReportList", "required": true },
+                    { "comment": "周图（最近24周，不包含本周）", "javaType": "List<MasterTraderProfit>", "name": "weeklyReportList", "required": true },
+                    { "comment": "月图（最近24月，不包含本月）", "javaType": "List<MasterTraderProfit>", "name": "monthlyReportList", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "交易大师排行榜 - 查询历史订单列表",
+            "imports": [
+                "java.util.List"
+            ],
+            "javaClassName": "MasterTraderRankings_QueryHistoryOrderList_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "交易大师ID", "javaType": "Long", "name": "userId", "required": true },
+                    { "comment": "页码（从0开始）", "javaType": "Integer", "name": "pageIndex", "required": true },
+                    { "comment": "页大小", "javaType": "Integer", "name": "pageSize", "required": true }
+                ]
+            },
+            "responseDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "列表", "javaType": "List<HistoryOrder>", "name": "list", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "我关注的交易大师 - 查询列表",
+            "imports": [
+                "java.util.List"
+            ],
+            "javaClassName": "MyMasterTrader_QueryAll_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
@@ -196,10 +249,27 @@
             },
             "responseDefinition": {
                 "fieldDefinitions": [
-                    { "javaType": "String", "name": "accessKeyId", "required": true },
-                    { "javaType": "String", "name": "accessKeySecret", "required": true },
-                    { "javaType": "String", "name": "expiration", "required": true },
-                    { "javaType": "String", "name": "securityToken", "required": true }
+                    { "comment": "列表", "javaType": "List<MasterTraderRankings>", "name": "list", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "我关注的交易大师 - 添加",
+            "javaClassName": "MyMasterTrader_Add_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "交易大师ID", "javaType": "Long", "name": "userId", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "我关注的交易大师 - 删除",
+            "javaClassName": "MyMasterTrader_Delete_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "交易大师ID", "javaType": "Long", "name": "userId", "required": true }
                 ]
             }
         }
@@ -213,7 +283,8 @@
         { "code": 1003, "message": "验证码错误", "name": "verification_code_error" },
         { "code": 1004, "message": "用户唯一标识码错误", "name": "token_error" },
         { "code": 1005, "message": "姓名和身份证号不匹配", "name": "realName_identityCardNumber_not_match" },
-        { "code": 1006, "message": "OSS创建STS授权TOKEN异常", "name": "oss_createStsToken_exception" }
+        { "code": 1006, "message": "创建OSS STS授权TOKEN异常", "name": "create_oss_stsToken_exception" },
+        { "code": 1007, "message": "已达到关注数量上限", "name": "maximum_myMasterTrader_size_exceeded" }
     ],
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
     "modelDefinitions": [
@@ -228,6 +299,29 @@
                 { "comment": "成功率", "javaType": "String", "name": "successRate", "required": true }
             ],
             "javaClassName": "MasterTraderRankings"
+        },
+        {
+            "fieldDefinitions": [
+                { "comment": "盈亏总额", "javaType": "Long", "name": "profit", "required": true },
+                { "comment": "盈亏比例", "javaType": "String", "name": "profitRate", "required": true }
+            ],
+            "javaClassName": "MasterTraderProfit"
+        },
+        {
+            "fieldDefinitions": [
+                { "comment": "订单类型", "javaType": "String", "name": "cmd", "required": true },
+                { "comment": "注释", "javaType": "String", "name": "comment", "required": true },
+                { "comment": "开仓价格", "javaType": "String", "name": "openprice", "required": true },
+                { "comment": "开仓时间", "javaType": "String", "name": "opentime", "required": true },
+                { "comment": "订单ID", "javaType": "String", "name": "orderId", "required": true },
+                { "comment": "盈亏", "javaType": "String", "name": "profit", "required": true },
+                { "comment": "止损", "javaType": "String", "name": "sl", "required": true },
+                { "comment": "品种", "javaType": "String", "name": "symbol", "required": true },
+                { "comment": "税金", "javaType": "String", "name": "taxes", "required": true },
+                { "comment": "止盈", "javaType": "String", "name": "tp", "required": true },
+                { "comment": "MT4手数*100", "javaType": "String", "name": "volume", "required": true }
+            ],
+            "javaClassName": "HistoryOrder"
         }
     ],
     "serverAddressDefinition": {
@@ -235,5 +329,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.11"
+    "version": "v0.0.14"
 }

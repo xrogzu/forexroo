@@ -1,20 +1,21 @@
 package com.github.xuzw.forexroo.app.api;
 
+import java.util.List;
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
-import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@Comment(value = "用户 - 更换手机号")
-@GenerateByApiEngineSdk(time = "2017.06.02 05:48:31.196", version = "v0.0.14")
-public class User_UpdatePhone_Api implements Api {
+@Comment(value = "我关注的交易大师 - 查询列表")
+@GenerateByApiEngineSdk(time = "2017.06.02 05:48:31.355", version = "v0.0.14")
+public class MyMasterTrader_QueryAll_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
+        Resp resp = new Resp();
         return resp;
     }
 
@@ -31,29 +32,20 @@ public class User_UpdatePhone_Api implements Api {
         public void setToken(String token) {
             this.token = token;
         }
+    }
 
-        @Comment(value = "新手机号码")
+    public static class Resp extends Response {
+
+        @Comment(value = "列表")
         @Required(value = true)
-        private String newPhone;
+        private List<MasterTraderRankings> list;
 
-        public String getNewPhone() {
-            return newPhone;
+        public List<MasterTraderRankings> getList() {
+            return list;
         }
 
-        public void setNewPhone(String newPhone) {
-            this.newPhone = newPhone;
-        }
-
-        @Comment(value = "验证码")
-        @Required(value = true)
-        private String verificationCode;
-
-        public String getVerificationCode() {
-            return verificationCode;
-        }
-
-        public void setVerificationCode(String verificationCode) {
-            this.verificationCode = verificationCode;
+        public void setList(List<MasterTraderRankings> list) {
+            this.list = list;
         }
     }
 }
