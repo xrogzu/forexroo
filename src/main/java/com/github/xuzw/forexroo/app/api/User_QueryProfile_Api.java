@@ -1,20 +1,20 @@
 package com.github.xuzw.forexroo.app.api;
 
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
-import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@Comment(value = "用户 - 修改个人信息")
-@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.337", version = "v0.0.15")
-public class User_UpdateProfile_Api implements Api {
+@Comment(value = "用户 - 查询个人信息详情")
+@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.355", version = "v0.0.15")
+public class User_QueryProfile_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
+        Resp resp = new Resp();
         return resp;
     }
 
@@ -31,6 +31,9 @@ public class User_UpdateProfile_Api implements Api {
         public void setToken(String token) {
             this.token = token;
         }
+    }
+
+    public static class Resp extends Response {
 
         @Comment(value = "头像")
         @Required(value = true)
@@ -78,6 +81,30 @@ public class User_UpdateProfile_Api implements Api {
 
         public void setCountry(String country) {
             this.country = country;
+        }
+
+        @Comment(value = "姓名")
+        @Required(value = true)
+        private String realName;
+
+        public String getRealName() {
+            return realName;
+        }
+
+        public void setRealName(String realName) {
+            this.realName = realName;
+        }
+
+        @Comment(value = "身份证号")
+        @Required(value = true)
+        private String identityCardNumber;
+
+        public String getIdentityCardNumber() {
+            return identityCardNumber;
+        }
+
+        public void setIdentityCardNumber(String identityCardNumber) {
+            this.identityCardNumber = identityCardNumber;
         }
     }
 }

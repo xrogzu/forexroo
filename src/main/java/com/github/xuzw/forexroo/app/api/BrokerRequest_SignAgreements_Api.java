@@ -1,15 +1,16 @@
 package com.github.xuzw.forexroo.app.api;
 
+import java.util.List;
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
-import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@Comment(value = "用户 - 更换手机号")
-@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.394", version = "v0.0.15")
-public class User_UpdatePhone_Api implements Api {
+@Comment(value = "经纪人申请 - 签订协议")
+@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.482", version = "v0.0.15")
+public class BrokerRequest_SignAgreements_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
@@ -32,28 +33,28 @@ public class User_UpdatePhone_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "新手机号码")
+        @Comment(value = "签订协议（1:经纪人协议 2:经纪人承诺书 3:经纪人劳务服务协议）")
         @Required(value = true)
-        private String newPhone;
+        private List<String> agreements;
 
-        public String getNewPhone() {
-            return newPhone;
+        public List<String> getAgreements() {
+            return agreements;
         }
 
-        public void setNewPhone(String newPhone) {
-            this.newPhone = newPhone;
+        public void setAgreements(List<String> agreements) {
+            this.agreements = agreements;
         }
 
-        @Comment(value = "验证码")
+        @Comment(value = "签名图片URL")
         @Required(value = true)
-        private String verificationCode;
+        private String signUrl;
 
-        public String getVerificationCode() {
-            return verificationCode;
+        public String getSignUrl() {
+            return signUrl;
         }
 
-        public void setVerificationCode(String verificationCode) {
-            this.verificationCode = verificationCode;
+        public void setSignUrl(String signUrl) {
+            this.signUrl = signUrl;
         }
     }
 }

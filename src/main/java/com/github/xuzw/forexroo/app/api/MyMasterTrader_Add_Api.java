@@ -8,7 +8,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我关注的交易大师 - 添加")
-@GenerateByApiEngineSdk(time = "2017.06.02 05:48:31.364", version = "v0.0.14")
+@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.546", version = "v0.0.15")
 public class MyMasterTrader_Add_Api implements Api {
 
     @Override()

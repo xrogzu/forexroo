@@ -9,7 +9,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "交易大师排行榜 - 查询历史订单列表")
-@GenerateByApiEngineSdk(time = "2017.06.02 05:48:31.343", version = "v0.0.14")
+@GenerateByApiEngineSdk(time = "2017.06.02 06:06:35.529", version = "v0.0.15")
 public class MasterTraderRankings_QueryHistoryOrderList_Api implements Api {
 
     @Override()
