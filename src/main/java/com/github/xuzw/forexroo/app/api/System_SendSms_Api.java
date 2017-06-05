@@ -2,6 +2,7 @@ package com.github.xuzw.forexroo.app.api;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.api_engine_runtime.api.Api;
@@ -10,6 +11,8 @@ import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.exception.ApiExecuteException;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.forexroo.app.utils.SmsTemplateEnum;
+import com.github.xuzw.forexroo.app.utils.SmsVerificationCodeCache;
+import com.github.xuzw.forexroo.app.utils.VerificationCodeBuilder;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 import com.jcabi.http.request.JdkRequest;
@@ -25,15 +28,17 @@ public class System_SendSms_Api implements Api {
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
+        String phone = req.getPhone();
         Map<String, String> params = new HashMap<>();
         Map<String, String> tplArgs = new HashMap<>();
         params.put("key", key);
-        params.put("mobile", req.getPhone());
-        if (1 == req.getType()) {
-            params.put("tpl_id", SmsTemplateEnum.register.getIdString());
-            tplArgs.put("code", "1234");
-            params.put("tpl_val", JSON.toJSONString(tplArgs));
-        }
+        params.put("mobile", phone);
+        SmsTemplateEnum smsTemplateEnum = SmsTemplateEnum.parse(req.getType());
+        params.put("tpl_id", String.valueOf(smsTemplateEnum.getTemplateId()));
+        String verificationCode = VerificationCodeBuilder.build();
+        SmsVerificationCodeCache.put(phone, smsTemplateEnum.name(), verificationCode);
+        tplArgs.put("code", verificationCode);
+        params.put("tpl_val", JSON.toJSONString(tplArgs));
         String json = new JdkRequest(url).uri().queryParams(params).back().method(com.jcabi.http.Request.GET).fetch().body();
         JSONObject jsonObject = JSON.parseObject(json);
         if (jsonObject.getIntValue("error_code") != 0) {
@@ -44,9 +49,7 @@ public class System_SendSms_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "手机号码")
-        @Required(value = true)
-        private String phone;
+        @Comment(value = "手机号码") @Required(value = true) private String phone;
 
         public String getPhone() {
             return phone;
@@ -56,9 +59,7 @@ public class System_SendSms_Api implements Api {
             this.phone = phone;
         }
 
-        @Comment(value = "类型（1:登录即注册 2:更换手机号 3:绑定银行卡 4:解绑银行卡）")
-        @Required(value = true)
-        private Integer type;
+        @Comment(value = "类型（1:登录即注册 2:更换手机号 3:绑定银行卡 4:解绑银行卡）") @Required(value = true) private Integer type;
 
         public Integer getType() {
             return type;

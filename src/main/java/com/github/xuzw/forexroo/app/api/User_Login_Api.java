@@ -1,12 +1,16 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
+
 import org.jooq.impl.DSL;
+
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.exception.ApiExecuteException;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import com.github.xuzw.forexroo.app.utils.SmsTemplateEnum;
+import com.github.xuzw.forexroo.app.utils.SmsVerificationCodeCache;
 import com.github.xuzw.forexroo.app.utils.Tokens;
 import com.github.xuzw.forexroo.database.Jooq;
 import com.github.xuzw.forexroo.entity.Tables;
@@ -22,7 +26,8 @@ public class User_Login_Api implements Api {
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        if (!req.getVerificationCode().equals("1234")) {
+        String phone = req.getPhone();
+        if (!req.getVerificationCode().equals(SmsVerificationCodeCache.getIfPresent(phone, SmsTemplateEnum.register.name()))) {
             throw new ApiExecuteException(ErrorCodeEnum.verification_code_error);
         }
         Resp resp = new Resp();
@@ -47,9 +52,7 @@ public class User_Login_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "手机号码")
-        @Required(value = true)
-        private String phone;
+        @Comment(value = "手机号码") @Required(value = true) private String phone;
 
         public String getPhone() {
             return phone;
@@ -59,9 +62,7 @@ public class User_Login_Api implements Api {
             this.phone = phone;
         }
 
-        @Comment(value = "验证码")
-        @Required(value = true)
-        private String verificationCode;
+        @Comment(value = "验证码") @Required(value = true) private String verificationCode;
 
         public String getVerificationCode() {
             return verificationCode;
@@ -74,9 +75,7 @@ public class User_Login_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
