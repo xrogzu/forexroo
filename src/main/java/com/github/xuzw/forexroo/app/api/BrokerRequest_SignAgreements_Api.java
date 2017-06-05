@@ -9,7 +9,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "经纪人申请 - 签订协议")
-@GenerateByApiEngineSdk(time = "2017.06.02 06:48:22.161", version = "v0.0.16")
+@GenerateByApiEngineSdk(time = "2017.06.05 11:14:45.753", version = "v0.0.19")
 public class BrokerRequest_SignAgreements_Api implements Api {
 
     @Override()

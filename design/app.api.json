@@ -156,6 +156,7 @@
         },
         {
             "comment": "开户 - 第一步：提交实名信息（姓名和身份证号）",
+            "description": "后台调用“全国身份证实名认证”接口，成功后进行下一步",
             "javaClassName": "OpenAccount_SubmitRealName_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
@@ -305,6 +306,91 @@
                     { "comment": "交易大师ID", "javaType": "Long", "name": "userId", "required": true }
                 ]
             }
+        },
+        {
+            "comment": "绑定银行卡 - 第一步：提交银行卡信息（银行卡号和预留手机号）",
+            "description": "“持卡人姓名”和“身份证号”从开户信息中取，后台调用“银行卡四要素认证”接口，成功后进行下一步",
+            "javaClassName": "BindBankCard_SubmitBankCard_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "银行卡号", "javaType": "String", "name": "bankCardNumber", "required": true },
+                    { "comment": "预留手机号", "javaType": "String", "name": "reservedPhone", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "绑定银行卡 - 第二步：提交验证码（发送给预留手机号）",
+            "javaClassName": "BindBankCard_SubmitVerificationCode_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "验证码", "javaType": "String", "name": "verificationCode", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "已绑定的银行卡 - 查询详情",
+            "javaClassName": "BindedBankCard_QueryDetail_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "银行卡号", "javaType": "String", "name": "bankCardNumber", "required": true },
+                    { "comment": "银行LOGO", "javaType": "String", "name": "bankImage", "required": true },
+                    { "comment": "银行名称", "javaType": "String", "name": "bankName", "required": true },
+                    { "comment": "卡名称", "javaType": "String", "name": "cardName", "required": true },
+                    { "comment": "卡类型", "javaType": "String", "name": "cardType", "required": true },
+                    { "comment": "服务热线", "javaType": "String", "name": "servicePhone", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "解绑银行卡 - 第一步：提交预留手机号",
+            "description": "“持卡人姓名”和“身份证号”从开户信息中取，“银行卡号”从已绑定银行卡信息中取，后台调用“银行卡四要素认证”接口，成功后进行下一步",
+            "javaClassName": "UnbindBankCard_SubmitBankCard_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "预留手机号", "javaType": "String", "name": "reservedPhone", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "解绑银行卡 - 第二步：提交验证码（发送给预留手机号）",
+            "javaClassName": "UnbindBankCard_SubmitVerificationCode_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "验证码", "javaType": "String", "name": "verificationCode", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "账户 - 查询详情",
+            "javaClassName": "Account_QueryDetail_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "Forexroo账号", "javaType": "String", "name": "account", "required": true },
+                    { "comment": "MT4真实账号", "javaType": "String", "name": "mt4RealAccount", "required": true },
+                    { "comment": "MT4模拟账号", "javaType": "String", "name": "mt4AnalogAccount", "required": true },
+                    { "comment": "净值", "javaType": "String", "name": "balance", "required": true },
+                    { "comment": "信用", "javaType": "String", "name": "credit", "required": true },
+                    { "comment": "利率", "javaType": "String", "name": "interestrate", "required": true },
+                    { "comment": "税金", "javaType": "String", "name": "taxes", "required": true },
+                    { "comment": "杠杆率", "javaType": "String", "name": "leverage", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "出金 - 提交出金金额",
+            "javaClassName": "Withdraw_SubmitAmount_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "出金金额", "javaType": "String", "name": "amount", "required": true }
+                ]
+            }
         }
     ],
     "comment": "APP接口文档",
@@ -315,9 +401,11 @@
         { "code": 1002, "message": "验证码发送失败", "name": "sms_send_error" },
         { "code": 1003, "message": "验证码错误", "name": "verification_code_error" },
         { "code": 1004, "message": "用户唯一标识码错误", "name": "token_error" },
-        { "code": 1005, "message": "姓名和身份证号不匹配", "name": "realName_identityCardNumber_not_match" },
+        { "code": 1005, "message": "全国身份证实名认证失败", "name": "realName_authentication_failed" },
         { "code": 1006, "message": "创建OSS STS授权TOKEN异常", "name": "create_oss_stsToken_exception" },
-        { "code": 1007, "message": "已达到关注数量上限", "name": "maximum_myMasterTrader_size_exceeded" }
+        { "code": 1007, "message": "已达到关注数量上限", "name": "maximum_myMasterTrader_size_exceeded" },
+        { "code": 1008, "message": "仅允许绑定一张银行卡", "name": "maximum_bindBankCard_size_exceeded" },
+        { "code": 1009, "message": "银行卡四要素认证失败", "name": "bankCard_authentication_failed" }
     ],
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
     "modelDefinitions": [
@@ -365,5 +453,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.16"
+    "version": "v0.0.19"
 }

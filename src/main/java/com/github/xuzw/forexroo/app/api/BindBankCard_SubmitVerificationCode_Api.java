@@ -1,6 +1,5 @@
 package com.github.xuzw.forexroo.app.api;
 
-import java.util.List;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
@@ -8,14 +7,14 @@ import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@Comment(value = "我关注的交易大师 - 查询列表")
-@GenerateByApiEngineSdk(time = "2017.06.05 11:14:45.792", version = "v0.0.19")
-public class MyMasterTrader_QueryAll_Api implements Api {
+@Comment(value = "绑定银行卡 - 第二步：提交验证码（发送给预留手机号）")
+@GenerateByApiEngineSdk(time = "2017.06.05 11:14:45.815", version = "v0.0.19")
+public class BindBankCard_SubmitVerificationCode_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Resp resp = new Resp();
+        Response resp = new Response();
         return resp;
     }
 
@@ -32,20 +31,17 @@ public class MyMasterTrader_QueryAll_Api implements Api {
         public void setToken(String token) {
             this.token = token;
         }
-    }
 
-    public static class Resp extends Response {
-
-        @Comment(value = "列表")
+        @Comment(value = "验证码")
         @Required(value = true)
-        private List<MasterTraderRankings> list;
+        private String verificationCode;
 
-        public List<MasterTraderRankings> getList() {
-            return list;
+        public String getVerificationCode() {
+            return verificationCode;
         }
 
-        public void setList(List<MasterTraderRankings> list) {
-            this.list = list;
+        public void setVerificationCode(String verificationCode) {
+            this.verificationCode = verificationCode;
         }
     }
 }

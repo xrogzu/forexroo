@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>APP接口文档 v0.0.16</title>
+    <title>APP接口文档 v0.0.19</title>
     <style type="text/css">
     .tail {
           font-size: 14px;
@@ -63,11 +63,11 @@
 </head>
 <body>
     <div>
-        <h4>APP接口文档 v0.0.16</h4>
+        <h4>APP接口文档 v0.0.19</h4>
     </div>
     <h5>小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口，短关键字搜索范围大，长关键字搜索结果精确、接口名、接口描述、参数名、参数描述、响应字段名、响应字段描述等都可作为搜索关键字<br/>每个接口都已定义快速跳转书签，点击超链接即可跳转，跳转后URL末尾会添加路径名做区分，可添加该URL到浏览器书签，以便下次打开时自动定位到该接口</h5>
     <div class="alert alert-warning">
-        <p>共24个接口</p>
+        <p>共31个接口</p>
         <ul>
             <li class="api-name-bookmark">
                 <a href="#System_SendSms_Api">System_SendSms_Api 系统 - 发送短信验证码</a>
@@ -140,6 +140,27 @@
             </li>
             <li class="api-name-bookmark">
                 <a href="#MyMasterTrader_Delete_Api">MyMasterTrader_Delete_Api 我关注的交易大师 - 删除</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#BindBankCard_SubmitBankCard_Api">BindBankCard_SubmitBankCard_Api 绑定银行卡 - 第一步：提交银行卡信息（银行卡号和预留手机号）</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#BindBankCard_SubmitVerificationCode_Api">BindBankCard_SubmitVerificationCode_Api 绑定银行卡 - 第二步：提交验证码（发送给预留手机号）</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#BindedBankCard_QueryDetail_Api">BindedBankCard_QueryDetail_Api 已绑定的银行卡 - 查询详情</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#UnbindBankCard_SubmitBankCard_Api">UnbindBankCard_SubmitBankCard_Api 解绑银行卡 - 第一步：提交预留手机号</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#UnbindBankCard_SubmitVerificationCode_Api">UnbindBankCard_SubmitVerificationCode_Api 解绑银行卡 - 第二步：提交验证码（发送给预留手机号）</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Account_QueryDetail_Api">Account_QueryDetail_Api 账户 - 查询详情</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Withdraw_SubmitAmount_Api">Withdraw_SubmitAmount_Api 出金 - 提交出金金额</a>
             </li>
         </ul>
     </div>
@@ -231,9 +252,9 @@
             <span class="api-field-comment">用户唯一标识码错误</span>
         </dd>
         <dd>
-            <span class="api-field-name">realName_identityCardNumber_not_match</span>
+            <span class="api-field-name">realName_authentication_failed</span>
             <span class="api-field-type">1005</span>
-            <span class="api-field-comment">姓名和身份证号不匹配</span>
+            <span class="api-field-comment">全国身份证实名认证失败</span>
         </dd>
         <dd>
             <span class="api-field-name">create_oss_stsToken_exception</span>
@@ -244,6 +265,16 @@
             <span class="api-field-name">maximum_myMasterTrader_size_exceeded</span>
             <span class="api-field-type">1007</span>
             <span class="api-field-comment">已达到关注数量上限</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">maximum_bindBankCard_size_exceeded</span>
+            <span class="api-field-type">1008</span>
+            <span class="api-field-comment">仅允许绑定一张银行卡</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">bankCard_authentication_failed</span>
+            <span class="api-field-type">1009</span>
+            <span class="api-field-comment">银行卡四要素认证失败</span>
         </dd>
     </div>
     <div class="alert alert-info">
@@ -560,6 +591,7 @@
         <a name="OpenAccount_SubmitRealName_Api">
         </a>
         <h4 class="api-name">OpenAccount_SubmitRealName_Api 开户 - 第一步：提交实名信息（姓名和身份证号）</h4>
+        <h5 class="api-name">后台调用&ldquo;全国身份证实名认证&rdquo;接口，成功后进行下一步</h5>
         <dt class="request-and-response-title">请求参数字段</dt>
         <dd>
             <span class="api-field-name">token</span>
@@ -832,6 +864,212 @@
             <span class="api-field-comment">交易大师ID</span>
         </dd>
     </div>
+    <div class="alert alert-info">
+        <a name="BindBankCard_SubmitBankCard_Api">
+        </a>
+        <h4 class="api-name">BindBankCard_SubmitBankCard_Api 绑定银行卡 - 第一步：提交银行卡信息（银行卡号和预留手机号）</h4>
+        <h5 class="api-name">&ldquo;持卡人姓名&rdquo;和&ldquo;身份证号&rdquo;从开户信息中取，后台调用&ldquo;银行卡四要素认证&rdquo;接口，成功后进行下一步</h5>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">bankCardNumber</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">银行卡号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reservedPhone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">预留手机号</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="BindBankCard_SubmitVerificationCode_Api">
+        </a>
+        <h4 class="api-name">BindBankCard_SubmitVerificationCode_Api 绑定银行卡 - 第二步：提交验证码（发送给预留手机号）</h4>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">verificationCode</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">验证码</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="BindedBankCard_QueryDetail_Api">
+        </a>
+        <h4 class="api-name">BindedBankCard_QueryDetail_Api 已绑定的银行卡 - 查询详情</h4>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">bankCardNumber</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">银行卡号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">bankImage</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">银行LOGO</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">bankName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">银行名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">cardName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">卡名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">cardType</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">卡类型</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">servicePhone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">服务热线</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="UnbindBankCard_SubmitBankCard_Api">
+        </a>
+        <h4 class="api-name">UnbindBankCard_SubmitBankCard_Api 解绑银行卡 - 第一步：提交预留手机号</h4>
+        <h5 class="api-name">&ldquo;持卡人姓名&rdquo;和&ldquo;身份证号&rdquo;从开户信息中取，&ldquo;银行卡号&rdquo;从已绑定银行卡信息中取，后台调用&ldquo;银行卡四要素认证&rdquo;接口，成功后进行下一步</h5>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reservedPhone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">预留手机号</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="UnbindBankCard_SubmitVerificationCode_Api">
+        </a>
+        <h4 class="api-name">UnbindBankCard_SubmitVerificationCode_Api 解绑银行卡 - 第二步：提交验证码（发送给预留手机号）</h4>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">verificationCode</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">验证码</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Account_QueryDetail_Api">
+        </a>
+        <h4 class="api-name">Account_QueryDetail_Api 账户 - 查询详情</h4>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">account</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">Forexroo账号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">mt4RealAccount</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">MT4真实账号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">mt4AnalogAccount</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">MT4模拟账号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">balance</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">净值</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">credit</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">信用</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">interestrate</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">利率</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">taxes</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">税金</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">leverage</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">杠杆率</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Withdraw_SubmitAmount_Api">
+        </a>
+        <h4 class="api-name">Withdraw_SubmitAmount_Api 出金 - 提交出金金额</h4>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">amount</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">出金金额</span>
+        </dd>
+    </div>
     <div class="alert alert-success">
         <a name="MasterTraderRankings">
         </a>
@@ -971,7 +1209,7 @@
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/xuzw/api-engine-sdk">ApiEngineSdk</a>
-            <span>2017.06.02 06:48:22.450</span>
+            <span>2017.06.05 11:14:46.077</span>
         </p>
     </div>
 </body>
