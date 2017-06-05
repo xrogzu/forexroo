@@ -129,7 +129,7 @@
         <dependency>
             <groupId>com.github.xuzw</groupId>
             <artifactId>api-engine-sdk</artifactId>
-            <version>${api-engine-runtime.version}.r2</version>
+            <version>${api-engine-runtime.version}.r3</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.github.xuzw</groupId>
