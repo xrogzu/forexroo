@@ -1,22 +1,39 @@
 package com.github.xuzw.forexroo.app.api;
 
 import java.util.List;
-import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import com.alibaba.fastjson.JSON;
 import com.github.xuzw.api_engine_runtime.api.Api;
-import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
+import com.github.xuzw.api_engine_runtime.api.Response;
+import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import com.github.xuzw.forexroo.database.Jooq;
+import com.github.xuzw.forexroo.entity.Tables;
+import com.github.xuzw.forexroo.entity.tables.daos.FeedbackDao;
+import com.github.xuzw.forexroo.entity.tables.daos.UserDao;
+import com.github.xuzw.forexroo.entity.tables.pojos.Feedback;
+import com.github.xuzw.forexroo.entity.tables.pojos.User;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 意见反馈")
-@GenerateByApiEngineSdk(time = "2017.06.05 01:04:54.488", version = "v0.0.24")
+@GenerateByApiEngineSdk(time = "2017.06.05 05:03:00.654", version = "v0.0.25")
 public class User_Feedback_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
-        return resp;
+        FeedbackDao feedbackDao = new FeedbackDao(Jooq.buildConfiguration());
+        Feedback feedback = new Feedback();
+        UserDao userDao = new UserDao(Jooq.buildConfiguration());
+        User user = userDao.fetchOne(Tables.USER.TOKEN, req.getToken());
+        if (user != null) {
+            feedback.setUserid(user.getId());
+        }
+        feedback.setContent(req.getContent());
+        feedback.setTime(System.currentTimeMillis());
+        feedback.setPictureurls(JSON.toJSONString(req.getPictureUrls()));
+        feedbackDao.insert(feedback);
+        return new Response();
     }
 
     public static class Req extends Request {

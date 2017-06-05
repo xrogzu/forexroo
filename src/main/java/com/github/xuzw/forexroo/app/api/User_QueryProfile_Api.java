@@ -1,20 +1,32 @@
 package com.github.xuzw.forexroo.app.api;
 
-import com.github.xuzw.modeler_runtime.annotation.Comment;
-import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
-import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
+import com.github.xuzw.api_engine_runtime.api.Response;
+import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import com.github.xuzw.forexroo.database.Jooq;
+import com.github.xuzw.forexroo.entity.Tables;
+import com.github.xuzw.forexroo.entity.tables.daos.UserDao;
+import com.github.xuzw.forexroo.entity.tables.pojos.User;
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 查询个人信息详情")
-@GenerateByApiEngineSdk(time = "2017.06.05 01:04:54.471", version = "v0.0.24")
+@GenerateByApiEngineSdk(time = "2017.06.05 05:03:00.638", version = "v0.0.25")
 public class User_QueryProfile_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
+        UserDao userDao = new UserDao(Jooq.buildConfiguration());
+        User user = userDao.fetchOne(Tables.USER.TOKEN, req.getToken());
         Resp resp = new Resp();
+        resp.setAvatar(user.getAvatar());
+        resp.setNickname(user.getNickname());
+        resp.setSex(user.getSex());
+        resp.setCountry(user.getCountry());
+        resp.setRealName(user.getRealname());
+        resp.setIdentityCardNumber(user.getIdentitycardnumber());
         return resp;
     }
 

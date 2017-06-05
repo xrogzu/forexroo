@@ -4,8 +4,6 @@
 * [登录](https://app.zeplin.io/login.html)
 
 ## 阿里云
-* 账号: forexroo
-* 密码: Forexroo@00
 * [登录](https://account.aliyun.com/login/login.htm)
 
 ### 云服务器 ECS
