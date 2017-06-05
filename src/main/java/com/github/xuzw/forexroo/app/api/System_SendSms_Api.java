@@ -15,7 +15,7 @@ import com.github.xuzw.modeler_runtime.annotation.Required;
 import com.jcabi.http.request.JdkRequest;
 
 @Comment(value = "系统 - 发送短信验证码")
-@GenerateByApiEngineSdk(time = "2017.06.05 12:08:44.611", version = "v0.0.22")
+@GenerateByApiEngineSdk(time = "2017.06.05 01:04:54.312", version = "v0.0.24")
 public class System_SendSms_Api implements Api {
 
     public static final String url = "http://v.apistore.cn/api/v14/xsend";
@@ -56,7 +56,7 @@ public class System_SendSms_Api implements Api {
             this.phone = phone;
         }
 
-        @Comment(value = "类型（1:注册）")
+        @Comment(value = "类型（1:登录即注册 2:更换手机号 3:绑定银行卡 4:解绑银行卡）")
         @Required(value = true)
         private Integer type;
 

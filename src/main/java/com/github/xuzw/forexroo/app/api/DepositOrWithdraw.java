@@ -6,7 +6,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @ModelAnnotation()
-@GenerateByApiEngineSdk(time = "2017.06.05 12:08:45.300", version = "v0.0.22")
+@GenerateByApiEngineSdk(time = "2017.06.05 01:04:55.007", version = "v0.0.24")
 public class DepositOrWithdraw {
 
     @Comment(value = "类型（1:出金 2:入金 3:佣金入金 4:分享入金 5:奖励入金）")
