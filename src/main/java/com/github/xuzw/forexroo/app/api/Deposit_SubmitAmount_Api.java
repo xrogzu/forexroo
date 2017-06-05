@@ -1,15 +1,15 @@
 package com.github.xuzw.forexroo.app.api;
 
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
-import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@Comment(value = "我的品种 - 删除")
-@GenerateByApiEngineSdk(time = "2017.06.05 12:08:44.825", version = "v0.0.22")
-public class MySymbol_Delete_Api implements Api {
+@Comment(value = "入金 - 提交入金金额")
+@GenerateByApiEngineSdk(time = "2017.06.05 12:08:45.000", version = "v0.0.22")
+public class Deposit_SubmitAmount_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
@@ -32,16 +32,16 @@ public class MySymbol_Delete_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "品种")
+        @Comment(value = "入金金额")
         @Required(value = true)
-        private String symbol;
+        private String amount;
 
-        public String getSymbol() {
-            return symbol;
+        public String getAmount() {
+            return amount;
         }
 
-        public void setSymbol(String symbol) {
-            this.symbol = symbol;
+        public void setAmount(String amount) {
+            this.amount = amount;
         }
     }
 }

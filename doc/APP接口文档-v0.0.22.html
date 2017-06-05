@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>APP接口文档 v0.0.20</title>
+    <title>APP接口文档 v0.0.22</title>
     <style type="text/css">
     .tail {
           font-size: 14px;
@@ -63,11 +63,11 @@
 </head>
 <body>
     <div>
-        <h4>APP接口文档 v0.0.20</h4>
+        <h4>APP接口文档 v0.0.22</h4>
     </div>
     <h5>小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口，短关键字搜索范围大，长关键字搜索结果精确、接口名、接口描述、参数名、参数描述、响应字段名、响应字段描述等都可作为搜索关键字<br/>每个接口都已定义快速跳转书签，点击超链接即可跳转，跳转后URL末尾会添加路径名做区分，可添加该URL到浏览器书签，以便下次打开时自动定位到该接口</h5>
     <div class="alert alert-warning">
-        <p>共31个接口</p>
+        <p>共33个接口</p>
         <ul>
             <li class="api-name-bookmark">
                 <a href="#System_SendSms_Api">System_SendSms_Api 系统 - 发送短信验证码</a>
@@ -158,6 +158,12 @@
             </li>
             <li class="api-name-bookmark">
                 <a href="#Account_QueryDetail_Api">Account_QueryDetail_Api 账户 - 查询详情</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#DepositAndWithdraw_QueryList_Api">DepositAndWithdraw_QueryList_Api 出入金 - 查询列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Deposit_SubmitAmount_Api">Deposit_SubmitAmount_Api 入金 - 提交入金金额</a>
             </li>
             <li class="api-name-bookmark">
                 <a href="#Withdraw_SubmitAmount_Api">Withdraw_SubmitAmount_Api 出金 - 提交出金金额</a>
@@ -915,6 +921,13 @@
             <span class="api-field-required">required</span>
             <span class="api-field-comment">用户唯一标识码</span>
         </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
         <dd>
             <span class="api-field-name">bankCardNumber</span>
             <span class="api-field-type">String</span>
@@ -1000,6 +1013,13 @@
             <span class="api-field-required">required</span>
             <span class="api-field-comment">用户唯一标识码</span>
         </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
         <dd>
             <span class="api-field-name">account</span>
             <span class="api-field-type">String</span>
@@ -1047,6 +1067,47 @@
             <span class="api-field-type">String</span>
             <span class="api-field-required">required</span>
             <span class="api-field-comment">杠杆率</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="DepositAndWithdraw_QueryList_Api">
+        </a>
+        <h4 class="api-name">DepositAndWithdraw_QueryList_Api 出入金 - 查询列表</h4>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">list</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#DepositOrWithdraw">DepositOrWithdraw</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">列表</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Deposit_SubmitAmount_Api">
+        </a>
+        <h4 class="api-name">Deposit_SubmitAmount_Api 入金 - 提交入金金额</h4>
+        <dt class="request-and-response-title">请求参数字段</dt>
+        <dd>
+            <span class="api-field-name">token</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">用户唯一标识码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">amount</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">入金金额</span>
         </dd>
     </div>
     <div class="alert alert-info">
@@ -1202,11 +1263,34 @@
             <span class="api-field-comment">MT4手数*100</span>
         </dd>
     </div>
+    <div class="alert alert-success">
+        <a name="DepositOrWithdraw">
+        </a>
+        <h4 class="api-name">DepositOrWithdraw 出入金</h4>
+        <dd>
+            <span class="api-field-name">type</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">类型（1:出金 2:入金 3:佣金入金 4:分享入金 5:奖励入金）</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">amount</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">金额</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">time</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">时间</span>
+        </dd>
+    </div>
     <div class="tail">
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/xuzw/api-engine-sdk">ApiEngineSdk</a>
-            <span>2017.06.05 11:47:25.935</span>
+            <span>2017.06.05 12:08:45.222</span>
         </p>
     </div>
 </body>

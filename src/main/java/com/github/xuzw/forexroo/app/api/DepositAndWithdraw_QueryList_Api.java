@@ -1,20 +1,21 @@
 package com.github.xuzw.forexroo.app.api;
 
+import java.util.List;
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
-import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@Comment(value = "我的品种 - 删除")
-@GenerateByApiEngineSdk(time = "2017.06.05 12:08:44.825", version = "v0.0.22")
-public class MySymbol_Delete_Api implements Api {
+@Comment(value = "出入金 - 查询列表")
+@GenerateByApiEngineSdk(time = "2017.06.05 12:08:44.994", version = "v0.0.22")
+public class DepositAndWithdraw_QueryList_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
+        Resp resp = new Resp();
         return resp;
     }
 
@@ -31,17 +32,20 @@ public class MySymbol_Delete_Api implements Api {
         public void setToken(String token) {
             this.token = token;
         }
+    }
 
-        @Comment(value = "品种")
+    public static class Resp extends Response {
+
+        @Comment(value = "列表")
         @Required(value = true)
-        private String symbol;
+        private List<DepositOrWithdraw> list;
 
-        public String getSymbol() {
-            return symbol;
+        public List<DepositOrWithdraw> getList() {
+            return list;
         }
 
-        public void setSymbol(String symbol) {
-            this.symbol = symbol;
+        public void setList(List<DepositOrWithdraw> list) {
+            this.list = list;
         }
     }
 }

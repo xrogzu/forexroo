@@ -334,6 +334,11 @@
             "javaClassName": "BindedBankCard_QueryDetail_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
+                ]
+            },
+            "responseDefinition": {
+                "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
                     { "comment": "银行卡号", "javaType": "String", "name": "bankCardNumber", "required": true },
                     { "comment": "银行LOGO", "javaType": "String", "name": "bankImage", "required": true },
@@ -370,6 +375,11 @@
             "javaClassName": "Account_QueryDetail_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
+                ]
+            },
+            "responseDefinition": {
+                "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
                     { "comment": "Forexroo账号", "javaType": "String", "name": "account", "required": true },
                     { "comment": "MT4真实账号", "javaType": "String", "name": "mt4RealAccount", "required": true },
@@ -379,6 +389,33 @@
                     { "comment": "利率", "javaType": "String", "name": "interestrate", "required": true },
                     { "comment": "税金", "javaType": "String", "name": "taxes", "required": true },
                     { "comment": "杠杆率", "javaType": "String", "name": "leverage", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "出入金 - 查询列表",
+            "imports": [
+                "java.util.List"
+            ],
+            "javaClassName": "DepositAndWithdraw_QueryList_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
+                ]
+            },
+            "responseDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "列表", "javaType": "List<DepositOrWithdraw>", "name": "list", "required": true }
+                ]
+            }
+        },
+        {
+            "comment": "入金 - 提交入金金额",
+            "javaClassName": "Deposit_SubmitAmount_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "入金金额", "javaType": "String", "name": "amount", "required": true }
                 ]
             }
         },
@@ -446,6 +483,15 @@
                 { "comment": "MT4手数*100", "javaType": "String", "name": "volume", "required": true }
             ],
             "javaClassName": "HistoryOrder"
+        },
+        {
+			"comment": "出入金",
+            "fieldDefinitions": [
+                { "comment": "类型（1:出金 2:入金 3:佣金入金 4:分享入金 5:奖励入金）", "javaType": "String", "name": "type", "required": true },
+                { "comment": "金额", "javaType": "String", "name": "amount", "required": true },
+                { "comment": "时间", "javaType": "String", "name": "time", "required": true }
+            ],
+            "javaClassName": "DepositOrWithdraw"
         }
     ],
     "serverAddressDefinition": {
@@ -453,5 +499,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.20"
+    "version": "v0.0.22"
 }

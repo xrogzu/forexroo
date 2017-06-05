@@ -8,7 +8,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "账户 - 查询详情")
-@GenerateByApiEngineSdk(time = "2017.06.05 11:47:25.704", version = "v0.0.20")
+@GenerateByApiEngineSdk(time = "2017.06.05 12:08:44.980", version = "v0.0.22")
 public class Account_QueryDetail_Api implements Api {
 
     @Override()
@@ -19,6 +19,21 @@ public class Account_QueryDetail_Api implements Api {
     }
 
     public static class Req extends Request {
+
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
+    }
+
+    public static class Resp extends Response {
 
         @Comment(value = "用户唯一标识码")
         @Required(value = true)
