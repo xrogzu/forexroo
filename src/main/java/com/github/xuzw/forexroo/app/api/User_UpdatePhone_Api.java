@@ -1,9 +1,7 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
-
 import org.jooq.impl.DSL;
-
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -18,7 +16,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 更换手机号")
-@GenerateByApiEngineSdk(time = "2017.06.05 05:03:00.663", version = "v0.0.25")
+@GenerateByApiEngineSdk(time = "2017.06.05 05:52:48.632", version = "v0.0.27")
 public class User_UpdatePhone_Api implements Api {
 
     @Override()
@@ -40,7 +38,9 @@ public class User_UpdatePhone_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -50,7 +50,9 @@ public class User_UpdatePhone_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "新手机号码") @Required(value = true) private String newPhone;
+        @Comment(value = "新手机号码")
+        @Required(value = true)
+        private String newPhone;
 
         public String getNewPhone() {
             return newPhone;
@@ -60,7 +62,9 @@ public class User_UpdatePhone_Api implements Api {
             this.newPhone = newPhone;
         }
 
-        @Comment(value = "验证码") @Required(value = true) private String verificationCode;
+        @Comment(value = "验证码")
+        @Required(value = true)
+        private String verificationCode;
 
         public String getVerificationCode() {
             return verificationCode;

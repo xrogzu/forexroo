@@ -2,7 +2,6 @@ package com.github.xuzw.forexroo.app.api;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.api_engine_runtime.api.Api;
@@ -18,8 +17,8 @@ import com.github.xuzw.modeler_runtime.annotation.Required;
 import com.jcabi.http.request.JdkRequest;
 
 @Comment(value = "系统 - 发送短信验证码")
-@GenerateByApiEngineSdk(time = "2017.06.05 05:03:00.433", version = "v0.0.25")
-public class System_SendSms_Api implements Api {
+@GenerateByApiEngineSdk(time = "2017.06.05 05:52:48.424", version = "v0.0.27")
+public class System_SendSmsVerificationCode_Api implements Api {
 
     public static final String url = "http://v.apistore.cn/api/v14/xsend";
 
@@ -49,7 +48,9 @@ public class System_SendSms_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "手机号码") @Required(value = true) private String phone;
+        @Comment(value = "手机号码")
+        @Required(value = true)
+        private String phone;
 
         public String getPhone() {
             return phone;
@@ -59,7 +60,9 @@ public class System_SendSms_Api implements Api {
             this.phone = phone;
         }
 
-        @Comment(value = "类型（1:登录即注册 2:更换手机号 3:绑定银行卡 4:解绑银行卡）") @Required(value = true) private Integer type;
+        @Comment(value = "类型（1:登录即注册 2:更换手机号 3:绑定银行卡 4:解绑银行卡）")
+        @Required(value = true)
+        private Integer type;
 
         public Integer getType() {
             return type;

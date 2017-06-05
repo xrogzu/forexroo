@@ -8,7 +8,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我的品种 - 添加")
-@GenerateByApiEngineSdk(time = "2017.06.05 05:03:00.676", version = "v0.0.25")
+@GenerateByApiEngineSdk(time = "2017.06.05 05:52:48.653", version = "v0.0.27")
 public class MySymbol_Add_Api implements Api {
 
     @Override()
