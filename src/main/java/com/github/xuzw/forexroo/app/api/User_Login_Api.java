@@ -1,7 +1,9 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
+
 import org.jooq.impl.DSL;
+
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -12,7 +14,9 @@ import com.github.xuzw.forexroo.app.utils.SmsVerificationCodeCache;
 import com.github.xuzw.forexroo.app.utils.Tokens;
 import com.github.xuzw.forexroo.database.Jooq;
 import com.github.xuzw.forexroo.entity.Tables;
+import com.github.xuzw.forexroo.entity.tables.daos.MySymbolDao;
 import com.github.xuzw.forexroo.entity.tables.daos.UserDao;
+import com.github.xuzw.forexroo.entity.tables.pojos.MySymbol;
 import com.github.xuzw.forexroo.entity.tables.pojos.User;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
@@ -39,6 +43,15 @@ public class User_Login_Api implements Api {
             newUser.setRegisterTime(System.currentTimeMillis());
             newUser.setToken(newToken);
             userDao.insert(newUser);
+            // 初始化默认品种列表
+            Long userId = userDao.fetchOneByToken(newToken).getId();
+            Long time = System.currentTimeMillis();
+            MySymbolDao mySymbolDao = new MySymbolDao(Jooq.buildConfiguration());
+            mySymbolDao.insert(new MySymbol("EURUSD", userId, time, null));
+            mySymbolDao.insert(new MySymbol("USDJPY", userId, time, null));
+            mySymbolDao.insert(new MySymbol("AUDUSD", userId, time, null));
+            mySymbolDao.insert(new MySymbol("XAUUSD", userId, time, null));
+            mySymbolDao.insert(new MySymbol("XBPUSD", userId, time, null));
         } else {
             // 旧用户
             String oldToken = user.getToken();
@@ -50,9 +63,7 @@ public class User_Login_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "手机号码")
-        @Required(value = true)
-        private String phone;
+        @Comment(value = "手机号码") @Required(value = true) private String phone;
 
         public String getPhone() {
             return phone;
@@ -62,9 +73,7 @@ public class User_Login_Api implements Api {
             this.phone = phone;
         }
 
-        @Comment(value = "验证码")
-        @Required(value = true)
-        private String verificationCode;
+        @Comment(value = "验证码") @Required(value = true) private String verificationCode;
 
         public String getVerificationCode() {
             return verificationCode;
@@ -77,9 +86,7 @@ public class User_Login_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
