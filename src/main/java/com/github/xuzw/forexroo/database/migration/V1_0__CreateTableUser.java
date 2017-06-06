@@ -35,6 +35,9 @@ public class V1_0__CreateTableUser implements JdbcMigration {
         table.addColumn("broker_request_agreements", "经纪人申请-签订协议", C.STRING);
         table.addColumn("broker_request_sign_url", "经纪人申请-签名图片URL", C.STRING);
         table.addColumn("broker_request_status", "经纪人申请-状态", C.INT);
+        table.addColumn("master_trader_total_profit", "交易大师-总盈利", C.STRING);
+        table.addColumn("master_trader_single_profit", "交易大师-均单盈利", C.STRING);
+        table.addColumn("master_trader_success_rate", "交易大师-成功率", C.STRING);
         table.addPKColumn("id", "主键", C.AUTOINC);
         table.addUniqueIndex("phone");
         table.addUniqueIndex("token");

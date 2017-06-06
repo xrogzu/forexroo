@@ -12,12 +12,12 @@ import com.github.xuzw.migration_builder.Table;
  * @author 徐泽威 xuzewei_2012@126.com
  * @time 2017年6月1日 下午6:00:49
  */
-public class V1_1__CreateTableMasterTraderRankings implements JdbcMigration {
+public class V1_1__CreateTableMasterTraderRankingsHistory implements JdbcMigration {
 
     @Override
     public void migrate(Connection connection) throws Exception {
         Migration migration = new Migration();
-        Table table = migration.createTable("master_trader_rankings");
+        Table table = migration.createTable("master_trader_rankings_history");
         table.addColumn("user_id", "用户ID", C.BIGINT);
         table.addColumn("nickname", "昵称", C.STRING);
         table.addColumn("total_profit", "总盈利", C.STRING);
