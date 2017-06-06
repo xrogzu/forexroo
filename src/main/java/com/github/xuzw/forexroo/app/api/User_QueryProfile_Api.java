@@ -25,16 +25,14 @@ public class User_QueryProfile_Api implements Api {
         resp.setNickname(user.getNickname());
         resp.setSex(user.getSex());
         resp.setCountry(user.getCountry());
-        resp.setRealName(user.getRealname());
-        resp.setIdentityCardNumber(user.getIdentityCardNumber());
+        resp.setRealName(user.getOpenAccountRealname());
+        resp.setIdentityCardNumber(user.getOpenAccountIdentityCardNumber());
         return resp;
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -47,9 +45,7 @@ public class User_QueryProfile_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "头像")
-        @Required(value = true)
-        private String avatar;
+        @Comment(value = "头像") @Required(value = true) private String avatar;
 
         public String getAvatar() {
             return avatar;
@@ -59,9 +55,7 @@ public class User_QueryProfile_Api implements Api {
             this.avatar = avatar;
         }
 
-        @Comment(value = "昵称")
-        @Required(value = true)
-        private String nickname;
+        @Comment(value = "昵称") @Required(value = true) private String nickname;
 
         public String getNickname() {
             return nickname;
@@ -71,9 +65,7 @@ public class User_QueryProfile_Api implements Api {
             this.nickname = nickname;
         }
 
-        @Comment(value = "性别")
-        @Required(value = true)
-        private String sex;
+        @Comment(value = "性别") @Required(value = true) private String sex;
 
         public String getSex() {
             return sex;
@@ -83,9 +75,7 @@ public class User_QueryProfile_Api implements Api {
             this.sex = sex;
         }
 
-        @Comment(value = "国家")
-        @Required(value = true)
-        private String country;
+        @Comment(value = "国家") @Required(value = true) private String country;
 
         public String getCountry() {
             return country;
@@ -95,9 +85,7 @@ public class User_QueryProfile_Api implements Api {
             this.country = country;
         }
 
-        @Comment(value = "姓名")
-        @Required(value = true)
-        private String realName;
+        @Comment(value = "姓名") @Required(value = true) private String realName;
 
         public String getRealName() {
             return realName;
@@ -107,9 +95,7 @@ public class User_QueryProfile_Api implements Api {
             this.realName = realName;
         }
 
-        @Comment(value = "身份证号")
-        @Required(value = true)
-        private String identityCardNumber;
+        @Comment(value = "身份证号") @Required(value = true) private String identityCardNumber;
 
         public String getIdentityCardNumber() {
             return identityCardNumber;
