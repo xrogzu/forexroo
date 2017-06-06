@@ -23,6 +23,7 @@ public class V1_1__CreateTableMasterTraderRankings implements JdbcMigration {
         table.addColumn("total_profit", "总盈利", C.STRING);
         table.addColumn("single_profit", "均单盈利", C.STRING);
         table.addColumn("success_rate", "成功率", C.STRING);
+        table.addColumn("time", "时间", C.STRING);
         table.addPKColumn("id", "主键", C.AUTOINC);
         table.addUniqueIndex("user_id");
         migration.run(connection);
