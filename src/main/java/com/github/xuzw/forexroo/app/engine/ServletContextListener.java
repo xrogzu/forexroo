@@ -1,11 +1,13 @@
 package com.github.xuzw.forexroo.app.engine;
 
+import javax.jms.JMSException;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.annotation.WebListener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.github.xuzw.forexroo.activemq.ActiveMq;
 import com.github.xuzw.forexroo.database.Druid;
 
 /**
@@ -20,6 +22,11 @@ public class ServletContextListener implements javax.servlet.ServletContextListe
     public void contextInitialized(ServletContextEvent sce) {
         log.info("contextInitialized");
         Druid.init();
+        try {
+            ActiveMq.init();
+        } catch (JMSException e) {
+            log.error("", e);
+        }
     }
 
     @Override

@@ -29,12 +29,12 @@ public class Symbol_QueryDetail_Api implements Api {
         JSONObject jsonResponse = ActiveMq.sendRequestAndAwait("History_Rates_Info_Topic", jsonRequest);
         JSONObject rateinfo = jsonResponse.getJSONArray("rateinfos").getJSONObject(0);
         int close = rateinfo.getIntValue("open") + rateinfo.getIntValue("close");
-        int last = 1000;
+        int last = 112503;
         Resp resp = new Resp();
         resp.setChange(String.valueOf(last - close));
         NumberFormat nt = NumberFormat.getPercentInstance();
         nt.setMinimumFractionDigits(2);
-        resp.setChg(nt.format((last - close) / close));
+        resp.setChg(nt.format(Double.valueOf(last - close) / close));
         resp.setTime(String.valueOf(System.currentTimeMillis()));
         return resp;
     }
