@@ -16,7 +16,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 意见反馈")
-@GenerateByApiEngineSdk(time = "2017.06.05 05:52:48.620", version = "v0.0.27")
+@GenerateByApiEngineSdk(time = "2017.06.06 10:17:23.971", version = "v0.0.28")
 public class User_Feedback_Api implements Api {
 
     @Override()
@@ -27,11 +27,11 @@ public class User_Feedback_Api implements Api {
         UserDao userDao = new UserDao(Jooq.buildConfiguration());
         User user = userDao.fetchOne(Tables.USER.TOKEN, req.getToken());
         if (user != null) {
-            feedback.setUserid(user.getId());
+            feedback.setUserId(user.getId());
         }
         feedback.setContent(req.getContent());
         feedback.setTime(System.currentTimeMillis());
-        feedback.setPictureurls(JSON.toJSONString(req.getPictureUrls()));
+        feedback.setPictureUrls(JSON.toJSONString(req.getPictureUrls()));
         feedbackDao.insert(feedback);
         return new Response();
     }

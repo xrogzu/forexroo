@@ -21,7 +21,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "系统 - 创建阿里云OSS STS授权TOKEN")
-@GenerateByApiEngineSdk(time = "2017.06.05 05:52:48.489", version = "v0.0.27")
+@GenerateByApiEngineSdk(time = "2017.06.06 10:17:23.831", version = "v0.0.28")
 public class System_CreateOssStsToken_Api implements Api {
 
     public static final String REGION_ID = "cn-hangzhou";

@@ -1,21 +1,34 @@
 package com.github.xuzw.forexroo.app.api;
 
-import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import static com.github.xuzw.forexroo.entity.Tables.USER;
 import com.github.xuzw.api_engine_runtime.api.Api;
-import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
+import com.github.xuzw.api_engine_runtime.api.Response;
+import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import com.github.xuzw.forexroo.database.Jooq;
+import com.github.xuzw.forexroo.entity.tables.daos.MySymbolDao;
+import com.github.xuzw.forexroo.entity.tables.daos.UserDao;
+import com.github.xuzw.forexroo.entity.tables.pojos.MySymbol;
+import com.github.xuzw.forexroo.entity.tables.pojos.User;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我的品种 - 添加")
-@GenerateByApiEngineSdk(time = "2017.06.05 05:52:48.653", version = "v0.0.27")
+@GenerateByApiEngineSdk(time = "2017.06.06 10:17:24.014", version = "v0.0.28")
 public class MySymbol_Add_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
-        return resp;
+        UserDao userDao = new UserDao(Jooq.buildConfiguration());
+        User user = userDao.fetchOne(USER.TOKEN, req.getToken());
+        MySymbolDao mySymbolDao = new MySymbolDao(Jooq.buildConfiguration());
+        MySymbol mySymbol = new MySymbol();
+        mySymbol.setSymbol(req.getSymbol());
+        mySymbol.setTime(System.currentTimeMillis());
+        mySymbol.setUserId(user.getId());
+        mySymbolDao.insert(mySymbol);
+        return new Response();
     }
 
     public static class Req extends Request {

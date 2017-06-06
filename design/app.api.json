@@ -127,10 +127,18 @@
         },
         {
             "comment": "我的品种 - 查询全部",
+            "imports": [
+                "java.util.List"
+            ],
             "javaClassName": "MySymbol_QueryAll_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
+                ]
+            },
+            "responseDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "列表", "javaType": "List<String>", "name": "list", "required": true }
                 ]
             }
         },
@@ -500,5 +508,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.27"
+    "version": "v0.0.28"
 }

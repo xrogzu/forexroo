@@ -26,8 +26,8 @@ public class V1_0__CreateTableUser implements JdbcMigration {
         table.addColumn("nickname", "昵称", C.STRING);
         table.addColumn("sex", "性别", C.STRING);
         table.addColumn("country", "国家", C.STRING);
-        table.addColumn("realName", "姓名", C.STRING);
-        table.addColumn("identityCardNumber", "身份证号", C.STRING);
+        table.addColumn("realname", "姓名", C.STRING);
+        table.addColumn("identity_card_number", "身份证号", C.STRING);
         table.addPKColumn("id", "主键", C.AUTOINC);
         table.addUniqueIndex("phone");
         table.addUniqueIndex("token");

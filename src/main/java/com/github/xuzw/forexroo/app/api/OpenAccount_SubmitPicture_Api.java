@@ -8,7 +8,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "开户 - 第二步：提交手持身份证正面照（URL）")
-@GenerateByApiEngineSdk(time = "2017.06.05 05:52:48.675", version = "v0.0.27")
+@GenerateByApiEngineSdk(time = "2017.06.06 10:17:24.037", version = "v0.0.28")
 public class OpenAccount_SubmitPicture_Api implements Api {
 
     @Override()

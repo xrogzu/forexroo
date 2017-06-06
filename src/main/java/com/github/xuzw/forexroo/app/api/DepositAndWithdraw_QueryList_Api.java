@@ -9,7 +9,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "出入金 - 查询列表")
-@GenerateByApiEngineSdk(time = "2017.06.05 05:52:48.853", version = "v0.0.27")
+@GenerateByApiEngineSdk(time = "2017.06.06 10:17:24.181", version = "v0.0.28")
 public class DepositAndWithdraw_QueryList_Api implements Api {
 
     @Override()
