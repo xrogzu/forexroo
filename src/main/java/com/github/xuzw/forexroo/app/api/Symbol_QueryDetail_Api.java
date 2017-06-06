@@ -1,5 +1,6 @@
 package com.github.xuzw.forexroo.app.api;
 
+import java.text.NumberFormat;
 import java.util.Calendar;
 
 import com.alibaba.fastjson.JSONObject;
@@ -22,22 +23,19 @@ public class Symbol_QueryDetail_Api implements Api {
         jsonRequest.put("symbol", req.getSymbol());
         jsonRequest.put("period", 1440);
         Calendar fromTime = Calendar.getInstance();
-        fromTime.add(Calendar.DAY_OF_MONTH, -1);
-        fromTime.set(Calendar.HOUR_OF_DAY, 8 - 8);
-        fromTime.set(Calendar.MINUTE, 0);
-        fromTime.set(Calendar.SECOND, 0);
-        fromTime.set(Calendar.MILLISECOND, 0);
-        Calendar endTime = Calendar.getInstance();
-        endTime.add(Calendar.DAY_OF_MONTH, -1);
-        endTime.set(Calendar.HOUR_OF_DAY, 18 - 8);
-        endTime.set(Calendar.MINUTE, 0);
-        endTime.set(Calendar.SECOND, 0);
-        endTime.set(Calendar.MILLISECOND, 0);
-        jsonRequest.put("fromtime", fromTime.getTimeInMillis());
-        jsonRequest.put("endtime", endTime.getTimeInMillis());
+        fromTime.add(Calendar.HOUR_OF_DAY, -8);
+        jsonRequest.put("fromtime", fromTime.getTimeInMillis() / 1000);
+        jsonRequest.put("endtime", fromTime.getTimeInMillis() / 1000);
         JSONObject jsonResponse = ActiveMq.sendRequestAndAwait("History_Rates_Info_Topic", jsonRequest);
-        Integer close = jsonResponse.getJSONArray("rateinfos").getJSONObject(0).getInteger("close");
+        JSONObject rateinfo = jsonResponse.getJSONArray("rateinfos").getJSONObject(0);
+        int close = rateinfo.getIntValue("open") + rateinfo.getIntValue("close");
+        int last = 1000;
         Resp resp = new Resp();
+        resp.setChange(String.valueOf(last - close));
+        NumberFormat nt = NumberFormat.getPercentInstance();
+        nt.setMinimumFractionDigits(2);
+        resp.setChg(nt.format((last - close) / close));
+        resp.setTime(String.valueOf(System.currentTimeMillis()));
         return resp;
     }
 

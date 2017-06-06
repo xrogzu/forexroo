@@ -1,5 +1,7 @@
 package com.github.xuzw.forexroo;
 
+import java.util.Calendar;
+
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.forexroo.activemq.ActiveMq;
 
@@ -13,8 +15,10 @@ public class ActiveMqTest {
         JSONObject json = new JSONObject();
         json.put("symbol", "EURUSD");
         json.put("period", 1440);
-        json.put("fromtime", 1496592000);
-        json.put("endtime", 1496592000);
+        Calendar fromTime = Calendar.getInstance();
+        fromTime.add(Calendar.HOUR_OF_DAY, -8);
+        json.put("fromtime", fromTime.getTimeInMillis() / 1000);
+        json.put("endtime", fromTime.getTimeInMillis() / 1000);
         System.out.println(ActiveMq.sendRequestAndAwait("History_Rates_Info_Topic", json).toJSONString());
     }
 }
