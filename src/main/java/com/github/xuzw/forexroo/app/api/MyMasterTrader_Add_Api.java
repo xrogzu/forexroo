@@ -1,21 +1,34 @@
 package com.github.xuzw.forexroo.app.api;
 
-import com.github.xuzw.modeler_runtime.annotation.Comment;
-import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import static com.github.xuzw.forexroo.entity.Tables.USER;
 import com.github.xuzw.api_engine_runtime.api.Api;
-import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
+import com.github.xuzw.api_engine_runtime.api.Response;
+import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import com.github.xuzw.forexroo.database.Jooq;
+import com.github.xuzw.forexroo.entity.tables.daos.MyMasterTraderDao;
+import com.github.xuzw.forexroo.entity.tables.daos.UserDao;
+import com.github.xuzw.forexroo.entity.tables.pojos.MyMasterTrader;
+import com.github.xuzw.forexroo.entity.tables.pojos.User;
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我关注的交易大师 - 添加")
-@GenerateByApiEngineSdk(time = "2017.06.07 09:29:16.036", version = "v0.0.29")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:51:38.132", version = "v0.0.30")
 public class MyMasterTrader_Add_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
-        return resp;
+        UserDao userDao = new UserDao(Jooq.buildConfiguration());
+        User user = userDao.fetchOne(USER.TOKEN, req.getToken());
+        MyMasterTraderDao myMasterTraderDao = new MyMasterTraderDao(Jooq.buildConfiguration());
+        MyMasterTrader myMasterTrader = new MyMasterTrader();
+        myMasterTrader.setUserId(user.getId());
+        myMasterTrader.setTime(System.currentTimeMillis());
+        myMasterTrader.setMasterTraderUserId(req.getMasterTraderUserId());
+        myMasterTraderDao.insert(myMasterTrader);
+        return new Response();
     }
 
     public static class Req extends Request {

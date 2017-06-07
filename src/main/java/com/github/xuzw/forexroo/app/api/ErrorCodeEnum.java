@@ -3,7 +3,7 @@ package com.github.xuzw.forexroo.app.api;
 import com.github.xuzw.api_engine_runtime.api.ResponseCode;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 
-@GenerateByApiEngineSdk(time = "2017.06.07 09:29:16.400", version = "v0.0.29")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:51:38.399", version = "v0.0.30")
 public enum ErrorCodeEnum implements ResponseCode {
 
     /**数据库异常*/

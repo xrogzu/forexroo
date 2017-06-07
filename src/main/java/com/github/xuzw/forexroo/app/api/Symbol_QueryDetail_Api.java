@@ -12,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "品种 - 查询详情")
-@GenerateByApiEngineSdk(time = "2017.06.07 09:29:15.990", version = "v0.0.29")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:51:38.085", version = "v0.0.30")
 public class Symbol_QueryDetail_Api implements Api {
 
     @Override()

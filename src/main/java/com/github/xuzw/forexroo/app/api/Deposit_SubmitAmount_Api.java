@@ -8,7 +8,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "入金 - 提交入金金额")
-@GenerateByApiEngineSdk(time = "2017.06.07 09:29:16.115", version = "v0.0.29")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:51:38.196", version = "v0.0.30")
 public class Deposit_SubmitAmount_Api implements Api {
 
     @Override()
