@@ -38,6 +38,7 @@ public class ActiveMq {
         responseTopics.add("History_Rates_Info_Result_Topic");
         responseTopics.add("Register_User_Info_Result_Topic");
         responseTopics.add("Get_Tick_Last_Result_Topic");
+        responseTopics.add("Get_User_Info_Result_Topic");
         new JsonResponseListener(session, requestCache, responseTopics);
     }
 

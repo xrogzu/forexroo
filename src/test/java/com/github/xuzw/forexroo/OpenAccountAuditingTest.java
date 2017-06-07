@@ -25,7 +25,7 @@ public class OpenAccountAuditingTest {
         Druid.init();
         ActiveMq.init();
         UserDao userDao = new UserDao(Jooq.buildConfiguration());
-        User user = userDao.fetchOneByPhone("13550311857");
+        User user = userDao.fetchOneByPhone("13426290598");
         JSONObject json = new JSONObject();
         json.put("username", user.getPhone());
         json.put("leverage", 100);
@@ -33,6 +33,7 @@ public class OpenAccountAuditingTest {
         json.put("password", "abc123456");
         json.put("investor", "abc123456");
         json.put("phonepwd", "abc123456");
+        System.out.println(json.toJSONString());
         JSONObject resp = ActiveMq.sendRequestAndAwait("Register_User_Info_Topic", json);
         System.out.println(resp.toJSONString());
         String mt4Account = resp.getString("login");
