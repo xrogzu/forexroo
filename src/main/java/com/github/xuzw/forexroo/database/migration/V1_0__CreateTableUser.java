@@ -38,6 +38,7 @@ public class V1_0__CreateTableUser implements JdbcMigration {
         table.addColumn("master_trader_total_profit", "交易大师-总盈利", C.STRING);
         table.addColumn("master_trader_single_profit", "交易大师-均单盈利", C.STRING);
         table.addColumn("master_trader_success_rate", "交易大师-成功率", C.STRING);
+        table.addColumn("mt4_real_account", "MT4-真实账号", C.STRING);
         table.addPKColumn("id", "主键", C.AUTOINC);
         table.addUniqueIndex("phone");
         table.addUniqueIndex("token");
