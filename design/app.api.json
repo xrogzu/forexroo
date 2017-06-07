@@ -11,7 +11,7 @@
             }
         },
         {
-            "comment": "系统 - 创建阿里云OSS STS授权TOKEN",
+            "comment": "系统 - 创建阿里云OSS临时STS授权TOKEN",
             "javaClassName": "System_CreateOssStsToken_Api",
             "responseDefinition": {
                 "fieldDefinitions": [
@@ -338,8 +338,8 @@
             }
         },
         {
-            "comment": "已绑定的银行卡 - 查询详情",
-            "javaClassName": "BindedBankCard_QueryDetail_Api",
+            "comment": "我的银行卡 - 查询详情",
+            "javaClassName": "MyBankCard_QueryDetail_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
@@ -508,5 +508,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.30"
+    "version": "v0.0.31"
 }

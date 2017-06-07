@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>APP接口文档 v0.0.29</title>
+    <title>APP接口文档 v0.0.31</title>
     <style type="text/css">
     .tail {
           font-size: 14px;
@@ -63,7 +63,7 @@
 </head>
 <body>
     <div>
-        <h4>APP接口文档 v0.0.29</h4>
+        <h4>APP接口文档 v0.0.31</h4>
     </div>
     <h5>小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口，短关键字搜索范围大，长关键字搜索结果精确、接口名、接口描述、参数名、参数描述、响应字段名、响应字段描述等都可作为搜索关键字<br/>每个接口都已定义快速跳转书签，点击超链接即可跳转，跳转后URL末尾会添加路径名做区分，可添加该URL到浏览器书签，以便下次打开时自动定位到该接口</h5>
     <div class="alert alert-warning">
@@ -73,7 +73,7 @@
                 <a href="#System_SendSmsVerificationCode_Api">System_SendSmsVerificationCode_Api 系统 - 发送短信验证码</a>
             </li>
             <li class="api-name-bookmark">
-                <a href="#System_CreateOssStsToken_Api">System_CreateOssStsToken_Api 系统 - 创建阿里云OSS STS授权TOKEN</a>
+                <a href="#System_CreateOssStsToken_Api">System_CreateOssStsToken_Api 系统 - 创建阿里云OSS临时STS授权TOKEN</a>
             </li>
             <li class="api-name-bookmark">
                 <a href="#User_Login_Api">User_Login_Api 用户 - 登录即注册</a>
@@ -148,7 +148,7 @@
                 <a href="#BindBankCard_SubmitVerificationCode_Api">BindBankCard_SubmitVerificationCode_Api 绑定银行卡 - 第二步：提交验证码（发送给预留手机号）</a>
             </li>
             <li class="api-name-bookmark">
-                <a href="#BindedBankCard_QueryDetail_Api">BindedBankCard_QueryDetail_Api 已绑定的银行卡 - 查询详情</a>
+                <a href="#MyBankCard_QueryDetail_Api">MyBankCard_QueryDetail_Api 我的银行卡 - 查询详情</a>
             </li>
             <li class="api-name-bookmark">
                 <a href="#UnbindBankCard_SubmitBankCard_Api">UnbindBankCard_SubmitBankCard_Api 解绑银行卡 - 第一步：提交预留手机号</a>
@@ -309,7 +309,7 @@
     <div class="alert alert-info">
         <a name="System_CreateOssStsToken_Api">
         </a>
-        <h4 class="api-name">System_CreateOssStsToken_Api 系统 - 创建阿里云OSS STS授权TOKEN</h4>
+        <h4 class="api-name">System_CreateOssStsToken_Api 系统 - 创建阿里云OSS临时STS授权TOKEN</h4>
         <dt class="request-and-response-title">响应字段</dt>
         <dd>
             <span class="api-field-name">accessKeyId</span>
@@ -873,7 +873,7 @@
             <span class="api-field-comment">用户唯一标识码</span>
         </dd>
         <dd>
-            <span class="api-field-name">userId</span>
+            <span class="api-field-name">masterTraderUserId</span>
             <span class="api-field-type">Long</span>
             <span class="api-field-required">required</span>
             <span class="api-field-comment">交易大师ID</span>
@@ -923,9 +923,9 @@
         </dd>
     </div>
     <div class="alert alert-info">
-        <a name="BindedBankCard_QueryDetail_Api">
+        <a name="MyBankCard_QueryDetail_Api">
         </a>
-        <h4 class="api-name">BindedBankCard_QueryDetail_Api 已绑定的银行卡 - 查询详情</h4>
+        <h4 class="api-name">MyBankCard_QueryDetail_Api 我的银行卡 - 查询详情</h4>
         <dt class="request-and-response-title">请求参数字段</dt>
         <dd>
             <span class="api-field-name">token</span>
@@ -1302,7 +1302,7 @@
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/xuzw/api-engine-sdk">ApiEngineSdk</a>
-            <span>2017.06.07 09:29:16.471</span>
+            <span>2017.06.07 11:16:35.115</span>
         </p>
     </div>
 </body>

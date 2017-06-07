@@ -1,20 +1,40 @@
 package com.github.xuzw.forexroo.app.api;
 
-import com.github.xuzw.modeler_runtime.annotation.Comment;
-import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import static com.github.xuzw.forexroo.entity.Tables.USER;
 import com.github.xuzw.api_engine_runtime.api.Api;
-import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.api.Request;
+import com.github.xuzw.api_engine_runtime.api.Response;
+import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import com.github.xuzw.forexroo.database.Jooq;
+import com.github.xuzw.forexroo.database.model.MyBankCardStatusEnum;
+import com.github.xuzw.forexroo.entity.Tables;
+import com.github.xuzw.forexroo.entity.tables.daos.MyBankCardDao;
+import com.github.xuzw.forexroo.entity.tables.daos.UserDao;
+import com.github.xuzw.forexroo.entity.tables.pojos.MyBankCard;
+import com.github.xuzw.forexroo.entity.tables.pojos.User;
+import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
-@Comment(value = "已绑定的银行卡 - 查询详情")
-@GenerateByApiEngineSdk(time = "2017.06.07 09:51:38.161", version = "v0.0.30")
-public class BindedBankCard_QueryDetail_Api implements Api {
+@Comment(value = "我的银行卡 - 查询详情")
+@GenerateByApiEngineSdk(time = "2017.06.07 11:16:34.801", version = "v0.0.31")
+public class MyBankCard_QueryDetail_Api implements Api {
 
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
+        UserDao userDao = new UserDao(Jooq.buildConfiguration());
+        User user = userDao.fetchOne(USER.TOKEN, req.getToken());
+        MyBankCardDao myBankCardDao = new MyBankCardDao(Jooq.buildConfiguration());
+        MyBankCard myBankCard = myBankCardDao.fetchOne(Tables.MY_BANK_CARD.USER_ID, user.getId());
+        Resp resp = new Resp();
+        if (myBankCard != null && myBankCard.getStatus() == MyBankCardStatusEnum.binding_success.getValue()) {
+            resp.setBankCardNumber(myBankCard.getBankCardNumber());
+            resp.setBankImage(myBankCard.getBankImage());
+            resp.setBankName(myBankCard.getBankName());
+            resp.setCardName(myBankCard.getCardName());
+            resp.setCardType(myBankCard.getCardType());
+            resp.setServicePhone(myBankCard.getServicePhone());
+        }
         return resp;
     }
 

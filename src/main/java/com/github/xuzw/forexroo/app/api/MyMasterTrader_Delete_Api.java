@@ -2,9 +2,7 @@ package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.MY_MASTER_TRADER;
 import static com.github.xuzw.forexroo.entity.Tables.USER;
-
 import org.jooq.impl.DSL;
-
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -16,7 +14,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我关注的交易大师 - 删除")
-@GenerateByApiEngineSdk(time = "2017.06.07 09:51:38.140", version = "v0.0.30")
+@GenerateByApiEngineSdk(time = "2017.06.07 11:16:34.764", version = "v0.0.31")
 public class MyMasterTrader_Delete_Api implements Api {
 
     @Override()
@@ -30,7 +28,9 @@ public class MyMasterTrader_Delete_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -40,7 +40,9 @@ public class MyMasterTrader_Delete_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "交易大师ID") @Required(value = true) private Long masterTraderUserId;
+        @Comment(value = "交易大师ID")
+        @Required(value = true)
+        private Long masterTraderUserId;
 
         public Long getMasterTraderUserId() {
             return masterTraderUserId;

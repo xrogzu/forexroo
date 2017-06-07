@@ -14,7 +14,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我的品种 - 删除")
-@GenerateByApiEngineSdk(time = "2017.06.07 09:51:38.031", version = "v0.0.30")
+@GenerateByApiEngineSdk(time = "2017.06.07 11:16:34.648", version = "v0.0.31")
 public class MySymbol_Delete_Api implements Api {
 
     @Override()
