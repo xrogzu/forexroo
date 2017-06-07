@@ -6,7 +6,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @ModelAnnotation()
-@GenerateByApiEngineSdk(time = "2017.06.07 12:01:48.057", version = "v0.0.32")
+@GenerateByApiEngineSdk(time = "2017.06.07 04:22:25.558", version = "v0.0.33")
 public class MasterTraderRankings {
 
     @Comment(value = "用户ID")
