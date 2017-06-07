@@ -2,12 +2,14 @@ package com.github.xuzw.forexroo.app.api;
 
 import java.text.NumberFormat;
 import java.util.Calendar;
+
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.forexroo.activemq.ActiveMq;
+import com.github.xuzw.forexroo.app.service.SymbolService;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
@@ -18,17 +20,18 @@ public class Symbol_QueryDetail_Api implements Api {
     @Override()
     public Response execute(Request request) throws Exception {
         Req req = (Req) request;
+        String symbol = req.getSymbol();
         JSONObject jsonRequest = new JSONObject();
-        jsonRequest.put("symbol", req.getSymbol());
+        jsonRequest.put("symbol", symbol);
         jsonRequest.put("period", 1440);
         Calendar fromTime = Calendar.getInstance();
         fromTime.add(Calendar.HOUR_OF_DAY, -8);
         jsonRequest.put("fromtime", fromTime.getTimeInMillis() / 1000);
         jsonRequest.put("endtime", fromTime.getTimeInMillis() / 1000);
-        JSONObject jsonResponse = ActiveMq.sendRequestAndAwait("History_Rates_Info_Topic", jsonRequest);
-        JSONObject rateinfo = jsonResponse.getJSONArray("rateinfos").getJSONObject(0);
-        int close = rateinfo.getIntValue("open") + rateinfo.getIntValue("close");
-        int last = 112503;
+        JSONObject historyRatesjsonResponse = ActiveMq.sendRequestAndAwait("History_Rates_Info_Topic", jsonRequest);
+        JSONObject rateinfo = historyRatesjsonResponse.getJSONArray("rateinfos").getJSONObject(0);
+        double close = rateinfo.getDoubleValue("open") + rateinfo.getDoubleValue("close");
+        double last = SymbolService.getTickLast(symbol).getDoubleValue("bid");
         Resp resp = new Resp();
         resp.setChange(String.valueOf(last - close));
         NumberFormat nt = NumberFormat.getPercentInstance();
@@ -40,9 +43,7 @@ public class Symbol_QueryDetail_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "品种")
-        @Required(value = true)
-        private String symbol;
+        @Comment(value = "品种") @Required(value = true) private String symbol;
 
         public String getSymbol() {
             return symbol;
@@ -55,9 +56,7 @@ public class Symbol_QueryDetail_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "涨跌点数")
-        @Required(value = true)
-        private String change;
+        @Comment(value = "涨跌点数") @Required(value = true) private String change;
 
         public String getChange() {
             return change;
@@ -67,9 +66,7 @@ public class Symbol_QueryDetail_Api implements Api {
             this.change = change;
         }
 
-        @Comment(value = "涨跌幅度")
-        @Required(value = true)
-        private String chg;
+        @Comment(value = "涨跌幅度") @Required(value = true) private String chg;
 
         public String getChg() {
             return chg;
@@ -79,9 +76,7 @@ public class Symbol_QueryDetail_Api implements Api {
             this.chg = chg;
         }
 
-        @Comment(value = "当前时间")
-        @Required(value = true)
-        private String time;
+        @Comment(value = "当前时间") @Required(value = true) private String time;
 
         public String getTime() {
             return time;

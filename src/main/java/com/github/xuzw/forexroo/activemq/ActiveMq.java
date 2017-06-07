@@ -36,6 +36,8 @@ public class ActiveMq {
         Session session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
         List<String> responseTopics = new ArrayList<>();
         responseTopics.add("History_Rates_Info_Result_Topic");
+        responseTopics.add("Register_User_Info_Result_Topic");
+        responseTopics.add("Get_Tick_Last_Result_Topic");
         new JsonResponseListener(session, requestCache, responseTopics);
     }
 
