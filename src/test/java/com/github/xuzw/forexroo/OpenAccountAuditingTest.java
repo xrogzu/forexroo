@@ -25,7 +25,7 @@ public class OpenAccountAuditingTest {
         Druid.init();
         ActiveMq.init();
         UserDao userDao = new UserDao(Jooq.buildConfiguration());
-        User user = userDao.fetchOneById(1L);
+        User user = userDao.fetchOneByPhone("13550311857");
         JSONObject json = new JSONObject();
         json.put("username", user.getPhone());
         json.put("leverage", 100);
@@ -38,8 +38,8 @@ public class OpenAccountAuditingTest {
         String mt4Account = resp.getString("login");
         Map<Field<?>, Object> map = new HashMap<>();
         map.put(USER.MT4_REAL_ACCOUNT, mt4Account);
-        map.put(USER.OPEN_ACCOUNT_STATUS, OpenAccountStatusEnum.auditing_success);
+        map.put(USER.OPEN_ACCOUNT_STATUS, OpenAccountStatusEnum.auditing_success.getValue());
         DSL.using(Jooq.buildConfiguration()).update(USER).set(map).where(USER.ID.equal(user.getId())).execute();
-        System.out.println(mt4Account);
+        System.exit(0);
     }
 }
