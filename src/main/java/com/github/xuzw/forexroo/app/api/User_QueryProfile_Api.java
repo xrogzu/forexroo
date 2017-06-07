@@ -12,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 查询个人信息详情")
-@GenerateByApiEngineSdk(time = "2017.06.07 04:22:24.905", version = "v0.0.33")
+@GenerateByApiEngineSdk(time = "2017.06.07 04:47:02.152", version = "v0.0.34")
 public class User_QueryProfile_Api implements Api {
 
     @Override()
@@ -40,7 +40,9 @@ public class User_QueryProfile_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -53,7 +55,9 @@ public class User_QueryProfile_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "注册时间") @Required(value = true) private Long registerTime;
+        @Comment(value = "注册时间")
+        @Required(value = true)
+        private Long registerTime;
 
         public Long getRegisterTime() {
             return registerTime;
@@ -63,7 +67,9 @@ public class User_QueryProfile_Api implements Api {
             this.registerTime = registerTime;
         }
 
-        @Comment(value = "头像") @Required(value = true) private String avatar;
+        @Comment(value = "头像")
+        @Required(value = true)
+        private String avatar;
 
         public String getAvatar() {
             return avatar;
@@ -73,7 +79,9 @@ public class User_QueryProfile_Api implements Api {
             this.avatar = avatar;
         }
 
-        @Comment(value = "昵称") @Required(value = true) private String nickname;
+        @Comment(value = "昵称")
+        @Required(value = true)
+        private String nickname;
 
         public String getNickname() {
             return nickname;
@@ -83,7 +91,9 @@ public class User_QueryProfile_Api implements Api {
             this.nickname = nickname;
         }
 
-        @Comment(value = "性别") @Required(value = true) private String sex;
+        @Comment(value = "性别")
+        @Required(value = true)
+        private String sex;
 
         public String getSex() {
             return sex;
@@ -93,7 +103,9 @@ public class User_QueryProfile_Api implements Api {
             this.sex = sex;
         }
 
-        @Comment(value = "国家") @Required(value = true) private String country;
+        @Comment(value = "国家")
+        @Required(value = true)
+        private String country;
 
         public String getCountry() {
             return country;
@@ -103,7 +115,9 @@ public class User_QueryProfile_Api implements Api {
             this.country = country;
         }
 
-        @Comment(value = "开户-姓名") @Required(value = true) private String openAccountRealname;
+        @Comment(value = "开户-姓名")
+        @Required(value = true)
+        private String openAccountRealname;
 
         public String getOpenAccountRealname() {
             return openAccountRealname;
@@ -113,7 +127,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountRealname = openAccountRealname;
         }
 
-        @Comment(value = "开户-身份证号") @Required(value = true) private String openAccountIdentityCardNumber;
+        @Comment(value = "开户-身份证号")
+        @Required(value = true)
+        private String openAccountIdentityCardNumber;
 
         public String getOpenAccountIdentityCardNumber() {
             return openAccountIdentityCardNumber;
@@ -123,7 +139,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountIdentityCardNumber = openAccountIdentityCardNumber;
         }
 
-        @Comment(value = "开户-手持身份证正面照URL") @Required(value = true) private String openAccountPictureUrl;
+        @Comment(value = "开户-手持身份证正面照URL")
+        @Required(value = true)
+        private String openAccountPictureUrl;
 
         public String getOpenAccountPictureUrl() {
             return openAccountPictureUrl;
@@ -133,7 +151,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountPictureUrl = openAccountPictureUrl;
         }
 
-        @Comment(value = "开户-签订协议") @Required(value = true) private String openAccountAgreements;
+        @Comment(value = "开户-签订协议")
+        @Required(value = true)
+        private String openAccountAgreements;
 
         public String getOpenAccountAgreements() {
             return openAccountAgreements;
@@ -143,7 +163,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountAgreements = openAccountAgreements;
         }
 
-        @Comment(value = "开户-签名图片URL") @Required(value = true) private String openAccountSignUrl;
+        @Comment(value = "开户-签名图片URL")
+        @Required(value = true)
+        private String openAccountSignUrl;
 
         public String getOpenAccountSignUrl() {
             return openAccountSignUrl;
@@ -153,7 +175,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountSignUrl = openAccountSignUrl;
         }
 
-        @Comment(value = "开户-状态") @Required(value = true) private Integer openAccountStatus;
+        @Comment(value = "开户-状态")
+        @Required(value = true)
+        private Integer openAccountStatus;
 
         public Integer getOpenAccountStatus() {
             return openAccountStatus;
@@ -163,7 +187,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountStatus = openAccountStatus;
         }
 
-        @Comment(value = "经纪人申请-签订协议") @Required(value = true) private String brokerRequestAgreements;
+        @Comment(value = "经纪人申请-签订协议")
+        @Required(value = true)
+        private String brokerRequestAgreements;
 
         public String getBrokerRequestAgreements() {
             return brokerRequestAgreements;
@@ -173,7 +199,9 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestAgreements = brokerRequestAgreements;
         }
 
-        @Comment(value = "经纪人申请-签名图片URL") @Required(value = true) private String brokerRequestSignUrl;
+        @Comment(value = "经纪人申请-签名图片URL")
+        @Required(value = true)
+        private String brokerRequestSignUrl;
 
         public String getBrokerRequestSignUrl() {
             return brokerRequestSignUrl;
@@ -183,7 +211,9 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestSignUrl = brokerRequestSignUrl;
         }
 
-        @Comment(value = "经纪人申请-状态") @Required(value = true) private Integer brokerRequestStatus;
+        @Comment(value = "经纪人申请-状态")
+        @Required(value = true)
+        private Integer brokerRequestStatus;
 
         public Integer getBrokerRequestStatus() {
             return brokerRequestStatus;

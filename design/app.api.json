@@ -366,22 +366,13 @@
             }
         },
         {
-            "comment": "解绑银行卡 - 第一步：提交预留手机号",
-            "description": "“持卡人姓名”和“身份证号”从开户信息中取，“银行卡号”从已绑定银行卡信息中取，后台调用“银行卡四要素认证”接口，成功后进行下一步",
-            "javaClassName": "UnbindBankCard_SubmitBankCard_Api",
+            "comment": "解绑银行卡 - 提交预留手机号和验证码",
+            "description": "“持卡人姓名”和“身份证号”从开户信息中取，“银行卡号”从已绑定银行卡信息中取，后台先判断验证码，然后调用“银行卡四要素认证”接口",
+            "javaClassName": "UnbindBankCard_Submit_Api",
             "requestDefinition": {
                 "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
-                    { "comment": "预留手机号", "javaType": "String", "name": "reservedPhone", "required": true }
-                ]
-            }
-        },
-        {
-            "comment": "解绑银行卡 - 第二步：提交验证码（发送给预留手机号）",
-            "javaClassName": "UnbindBankCard_SubmitVerificationCode_Api",
-            "requestDefinition": {
-                "fieldDefinitions": [
-                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "预留手机号", "javaType": "String", "name": "reservedPhone", "required": true },
                     { "comment": "验证码", "javaType": "String", "name": "verificationCode", "required": true }
                 ]
             }
@@ -517,5 +508,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.33"
+    "version": "v0.0.34"
 }

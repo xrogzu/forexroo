@@ -20,7 +20,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "绑定银行卡 - 第二步：提交验证码（发送给预留手机号）")
-@GenerateByApiEngineSdk(time = "2017.06.07 04:22:25.117", version = "v0.0.33")
+@GenerateByApiEngineSdk(time = "2017.06.07 04:47:02.403", version = "v0.0.34")
 public class BindBankCard_SubmitVerificationCode_Api implements Api {
 
     @Override()
