@@ -20,7 +20,19 @@ public enum MyBankCardStatusEnum {
     /**
      * 绑定失败
      */
-    binding_fail(3);
+    binding_fail(3),
+    /**
+     * 解绑中
+     */
+    unbinding(4),
+    /**
+     * 解绑成功
+     */
+    unbinding_success(5),
+    /**
+     * 解绑失败
+     */
+    unbinding_fail(6);
 
     private int value;
 

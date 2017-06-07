@@ -20,7 +20,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "开户 - 第三步：签订协议")
-@GenerateByApiEngineSdk(time = "2017.06.07 11:16:34.680", version = "v0.0.31")
+@GenerateByApiEngineSdk(time = "2017.06.07 12:01:47.344", version = "v0.0.32")
 public class OpenAccount_SignAgreements_Api implements Api {
 
     @Override()

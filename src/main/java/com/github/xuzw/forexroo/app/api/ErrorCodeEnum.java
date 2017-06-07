@@ -3,7 +3,7 @@ package com.github.xuzw.forexroo.app.api;
 import com.github.xuzw.api_engine_runtime.api.ResponseCode;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 
-@GenerateByApiEngineSdk(time = "2017.06.07 11:16:35.061", version = "v0.0.31")
+@GenerateByApiEngineSdk(time = "2017.06.07 12:01:47.931", version = "v0.0.32")
 public enum ErrorCodeEnum implements ResponseCode {
 
     /**数据库异常*/
@@ -17,7 +17,8 @@ public enum ErrorCodeEnum implements ResponseCode {
     maximum_myMasterTrader_size_exceeded(1007, "已达到关注数量上限"), /**仅允许绑定一张银行卡*/
     maximum_bindBankCard_size_exceeded(1008, "仅允许绑定一张银行卡"), /**银行卡四要素认证失败*/
     bankCard_authentication_failed(1009, "银行卡四要素认证失败"), /**密码错误*/
-    password_error(1010, "密码错误");
+    password_error(1010, "密码错误"), /**状态异常*/
+    status_error(1011, "状态异常");
 
     private ErrorCodeEnum(int code, String message) {
         this.code = code;

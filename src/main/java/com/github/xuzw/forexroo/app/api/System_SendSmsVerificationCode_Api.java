@@ -9,6 +9,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.exception.ApiExecuteException;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
+import com.github.xuzw.forexroo.app.service.ApistoreService;
 import com.github.xuzw.forexroo.app.utils.SmsTemplateEnum;
 import com.github.xuzw.forexroo.app.utils.SmsVerificationCodeCache;
 import com.github.xuzw.forexroo.app.utils.VerificationCodeBuilder;
@@ -17,12 +18,10 @@ import com.github.xuzw.modeler_runtime.annotation.Required;
 import com.jcabi.http.request.JdkRequest;
 
 @Comment(value = "系统 - 发送短信验证码")
-@GenerateByApiEngineSdk(time = "2017.06.07 11:16:34.409", version = "v0.0.31")
+@GenerateByApiEngineSdk(time = "2017.06.07 12:01:47.044", version = "v0.0.32")
 public class System_SendSmsVerificationCode_Api implements Api {
 
     public static final String url = "http://v.apistore.cn/api/v14/xsend";
-
-    public static final String key = "23ea02288ae1b784c17de701d77cda4c";
 
     @Override()
     public Response execute(Request request) throws Exception {
@@ -30,7 +29,7 @@ public class System_SendSmsVerificationCode_Api implements Api {
         String phone = req.getPhone();
         Map<String, String> params = new HashMap<>();
         Map<String, String> tplArgs = new HashMap<>();
-        params.put("key", key);
+        params.put("key", ApistoreService.key);
         params.put("mobile", phone);
         SmsTemplateEnum smsTemplateEnum = SmsTemplateEnum.parse(req.getType());
         params.put("tpl_id", String.valueOf(smsTemplateEnum.getTemplateId()));

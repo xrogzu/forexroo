@@ -8,7 +8,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "账户 - 查询详情")
-@GenerateByApiEngineSdk(time = "2017.06.07 11:16:34.824", version = "v0.0.31")
+@GenerateByApiEngineSdk(time = "2017.06.07 12:01:47.602", version = "v0.0.32")
 public class Account_QueryDetail_Api implements Api {
 
     @Override()
