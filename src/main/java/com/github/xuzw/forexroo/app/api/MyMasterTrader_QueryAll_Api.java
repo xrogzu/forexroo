@@ -1,10 +1,8 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -18,7 +16,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我关注的交易大师 - 查询列表")
-@GenerateByApiEngineSdk(time = "2017.06.06 10:17:24.094", version = "v0.0.28")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:29:16.029", version = "v0.0.29")
 public class MyMasterTrader_QueryAll_Api implements Api {
 
     @Override()
@@ -48,7 +46,9 @@ public class MyMasterTrader_QueryAll_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -61,7 +61,9 @@ public class MyMasterTrader_QueryAll_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "列表") @Required(value = true) private List<MasterTraderRankings> list;
+        @Comment(value = "列表")
+        @Required(value = true)
+        private List<MasterTraderRankings> list;
 
         public List<MasterTraderRankings> getList() {
             return list;

@@ -1,7 +1,8 @@
 package com.github.xuzw.forexroo.database;
 
-import java.sql.Connection;
 import java.sql.SQLException;
+
+import javax.sql.DataSource;
 
 import org.jooq.Configuration;
 import org.jooq.SQLDialect;
@@ -12,14 +13,14 @@ import org.jooq.impl.DefaultConfiguration;
  * @time 2017年4月7日 下午11:58:42
  */
 public class Jooq {
-    public static Configuration buildConfiguration(Connection conn) {
+    public static Configuration buildConfiguration(DataSource dataSource) {
         DefaultConfiguration configuration = new DefaultConfiguration();
-        configuration.set(conn);
+        configuration.set(dataSource);
         configuration.setSQLDialect(SQLDialect.MYSQL);
         return configuration;
     }
 
     public static Configuration buildConfiguration() throws SQLException {
-        return buildConfiguration(Druid.get().getConnection());
+        return buildConfiguration(Druid.get());
     }
 }

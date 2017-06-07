@@ -1,13 +1,10 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import org.jooq.Field;
 import org.jooq.impl.DSL;
-
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -21,7 +18,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "开户 - 第一步：提交实名信息（姓名和身份证号）")
-@GenerateByApiEngineSdk(time = "2017.06.06 10:17:24.030", version = "v0.0.28")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:29:15.941", version = "v0.0.29")
 public class OpenAccount_SubmitRealName_Api implements Api {
 
     @Override()
@@ -43,7 +40,9 @@ public class OpenAccount_SubmitRealName_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -53,7 +52,9 @@ public class OpenAccount_SubmitRealName_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "姓名") @Required(value = true) private String realName;
+        @Comment(value = "姓名")
+        @Required(value = true)
+        private String realName;
 
         public String getRealName() {
             return realName;
@@ -63,7 +64,9 @@ public class OpenAccount_SubmitRealName_Api implements Api {
             this.realName = realName;
         }
 
-        @Comment(value = "身份证号") @Required(value = true) private String identityCardNumber;
+        @Comment(value = "身份证号")
+        @Required(value = true)
+        private String identityCardNumber;
 
         public String getIdentityCardNumber() {
             return identityCardNumber;

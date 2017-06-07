@@ -8,7 +8,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我关注的交易大师 - 添加")
-@GenerateByApiEngineSdk(time = "2017.06.06 10:17:24.101", version = "v0.0.28")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:29:16.036", version = "v0.0.29")
 public class MyMasterTrader_Add_Api implements Api {
 
     @Override()
@@ -34,14 +34,14 @@ public class MyMasterTrader_Add_Api implements Api {
 
         @Comment(value = "交易大师ID")
         @Required(value = true)
-        private Long userId;
+        private Long masterTraderUserId;
 
-        public Long getUserId() {
-            return userId;
+        public Long getMasterTraderUserId() {
+            return masterTraderUserId;
         }
 
-        public void setUserId(Long userId) {
-            this.userId = userId;
+        public void setMasterTraderUserId(Long masterTraderUserId) {
+            this.masterTraderUserId = masterTraderUserId;
         }
     }
 }

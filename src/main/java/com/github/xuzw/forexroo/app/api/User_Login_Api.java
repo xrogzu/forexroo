@@ -1,9 +1,7 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
-
 import org.jooq.impl.DSL;
-
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -22,7 +20,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 登录即注册")
-@GenerateByApiEngineSdk(time = "2017.06.06 10:17:23.873", version = "v0.0.28")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:29:15.788", version = "v0.0.29")
 public class User_Login_Api implements Api {
 
     @Override()
@@ -63,7 +61,9 @@ public class User_Login_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "手机号码") @Required(value = true) private String phone;
+        @Comment(value = "手机号码")
+        @Required(value = true)
+        private String phone;
 
         public String getPhone() {
             return phone;
@@ -73,7 +73,9 @@ public class User_Login_Api implements Api {
             this.phone = phone;
         }
 
-        @Comment(value = "验证码") @Required(value = true) private String verificationCode;
+        @Comment(value = "验证码")
+        @Required(value = true)
+        private String verificationCode;
 
         public String getVerificationCode() {
             return verificationCode;
@@ -86,7 +88,9 @@ public class User_Login_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;

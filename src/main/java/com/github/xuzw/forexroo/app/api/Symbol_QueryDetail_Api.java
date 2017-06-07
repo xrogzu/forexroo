@@ -2,7 +2,6 @@ package com.github.xuzw.forexroo.app.api;
 
 import java.text.NumberFormat;
 import java.util.Calendar;
-
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
@@ -13,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "品种 - 查询详情")
-@GenerateByApiEngineSdk(time = "2017.06.06 10:17:24.061", version = "v0.0.28")
+@GenerateByApiEngineSdk(time = "2017.06.07 09:29:15.990", version = "v0.0.29")
 public class Symbol_QueryDetail_Api implements Api {
 
     @Override()
@@ -41,7 +40,9 @@ public class Symbol_QueryDetail_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "品种") @Required(value = true) private String symbol;
+        @Comment(value = "品种")
+        @Required(value = true)
+        private String symbol;
 
         public String getSymbol() {
             return symbol;
@@ -54,7 +55,9 @@ public class Symbol_QueryDetail_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "涨跌点数") @Required(value = true) private String change;
+        @Comment(value = "涨跌点数")
+        @Required(value = true)
+        private String change;
 
         public String getChange() {
             return change;
@@ -64,7 +67,9 @@ public class Symbol_QueryDetail_Api implements Api {
             this.change = change;
         }
 
-        @Comment(value = "涨跌幅度") @Required(value = true) private String chg;
+        @Comment(value = "涨跌幅度")
+        @Required(value = true)
+        private String chg;
 
         public String getChg() {
             return chg;
@@ -74,7 +79,9 @@ public class Symbol_QueryDetail_Api implements Api {
             this.chg = chg;
         }
 
-        @Comment(value = "当前时间") @Required(value = true) private String time;
+        @Comment(value = "当前时间")
+        @Required(value = true)
+        private String time;
 
         public String getTime() {
             return time;

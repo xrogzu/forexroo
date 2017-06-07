@@ -301,7 +301,7 @@
             "requestDefinition": {
                 "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
-                    { "comment": "交易大师ID", "javaType": "Long", "name": "userId", "required": true }
+                    { "comment": "交易大师ID", "javaType": "Long", "name": "masterTraderUserId", "required": true }
                 ]
             }
         },
@@ -508,5 +508,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.28"
+    "version": "v0.0.29"
 }
