@@ -29,7 +29,7 @@ public class OpenAccountAuditingTest {
         JSONObject json = new JSONObject();
         json.put("username", user.getPhone());
         json.put("leverage", 100);
-        json.put("groupname", "Testab");
+        json.put("groupname", "testssss");
         json.put("password", "abc123456");
         json.put("investor", "abc123456");
         json.put("phonepwd", "abc123456");
