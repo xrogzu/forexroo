@@ -8,7 +8,7 @@ import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 import com.github.xuzw.forexroo.activemq.ActiveMq;
-import com.github.xuzw.forexroo.app.service.SymbolService;
+import com.github.xuzw.forexroo.app.service.Mt4MiddlewareService;
 import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
@@ -30,7 +30,7 @@ public class Symbol_QueryDetail_Api implements Api {
         JSONObject historyRatesjsonResponse = ActiveMq.sendRequestAndAwait("History_Rates_Info_Topic", jsonRequest);
         JSONObject rateinfo = historyRatesjsonResponse.getJSONArray("rateinfos").getJSONObject(0);
         double close = rateinfo.getDoubleValue("open") + rateinfo.getDoubleValue("close");
-        double last = SymbolService.getTickLast(symbol).getDoubleValue("bid");
+        double last = Mt4MiddlewareService.getTickLast(symbol).getDoubleValue("bid");
         Resp resp = new Resp();
         resp.setChange(String.valueOf(last - close));
         NumberFormat nt = NumberFormat.getPercentInstance();

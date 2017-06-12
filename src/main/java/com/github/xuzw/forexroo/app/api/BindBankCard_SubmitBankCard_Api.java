@@ -1,13 +1,14 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
+
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.exception.ApiExecuteException;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
-import com.github.xuzw.forexroo.app.service.MyBankCardService;
+import com.github.xuzw.forexroo.app.service.ApistoreService;
 import com.github.xuzw.forexroo.database.Jooq;
 import com.github.xuzw.forexroo.database.model.MyBankCardStatusEnum;
 import com.github.xuzw.forexroo.entity.tables.daos.MyBankCardDao;
@@ -28,7 +29,7 @@ public class BindBankCard_SubmitBankCard_Api implements Api {
         User user = userDao.fetchOne(USER.TOKEN, req.getToken());
         String bankCardNumber = req.getBankCardNumber();
         String reservedPhone = req.getReservedPhone();
-        JSONObject jsonObject = MyBankCardService.verifyBankCard(bankCardNumber, user.getOpenAccountRealname(), user.getOpenAccountIdentityCardNumber(), reservedPhone);
+        JSONObject jsonObject = ApistoreService.verifyBankCard(bankCardNumber, user.getOpenAccountRealname(), user.getOpenAccountIdentityCardNumber(), reservedPhone);
         if (jsonObject.getIntValue("error_code") != 0) {
             throw new ApiExecuteException(ErrorCodeEnum.bankCard_authentication_failed, jsonObject.getString("reason"));
         }
@@ -50,9 +51,7 @@ public class BindBankCard_SubmitBankCard_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -62,9 +61,7 @@ public class BindBankCard_SubmitBankCard_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "银行卡号")
-        @Required(value = true)
-        private String bankCardNumber;
+        @Comment(value = "银行卡号") @Required(value = true) private String bankCardNumber;
 
         public String getBankCardNumber() {
             return bankCardNumber;
@@ -74,9 +71,7 @@ public class BindBankCard_SubmitBankCard_Api implements Api {
             this.bankCardNumber = bankCardNumber;
         }
 
-        @Comment(value = "预留手机号")
-        @Required(value = true)
-        private String reservedPhone;
+        @Comment(value = "预留手机号") @Required(value = true) private String reservedPhone;
 
         public String getReservedPhone() {
             return reservedPhone;
