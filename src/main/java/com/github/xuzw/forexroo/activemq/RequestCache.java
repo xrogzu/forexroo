@@ -11,13 +11,13 @@ import com.google.common.cache.CacheBuilder;
  * @time 2017年6月6日 上午11:08:11
  */
 public class RequestCache {
-    private final Cache<String, JsonResponseCallback> cache = CacheBuilder.newBuilder().expireAfterWrite(5, TimeUnit.MINUTES).build();
+    private final Cache<String, JsonMessageCallback> cache = CacheBuilder.newBuilder().expireAfterWrite(5, TimeUnit.MINUTES).build();
 
-    public void put(String requestId, JsonResponseCallback callback) {
+    public void put(String requestId, JsonMessageCallback callback) {
         cache.put(requestId, callback);
     }
 
-    public JsonResponseCallback getIfPresent(String requestId) {
+    public JsonMessageCallback getIfPresent(String requestId) {
         return cache.getIfPresent(requestId);
     }
 
