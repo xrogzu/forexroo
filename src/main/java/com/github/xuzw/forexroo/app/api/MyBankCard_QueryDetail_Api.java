@@ -16,7 +16,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我的银行卡 - 查询详情")
-@GenerateByApiEngineSdk(time = "2017.06.12 12:45:53.980", version = "v0.0.36")
+@GenerateByApiEngineSdk(time = "2017.06.12 01:21:10.984", version = "v0.0.37")
 public class MyBankCard_QueryDetail_Api implements Api {
 
     @Override()

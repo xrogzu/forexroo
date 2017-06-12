@@ -18,7 +18,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "开户 - 第一步：提交实名信息（姓名和身份证号）")
-@GenerateByApiEngineSdk(time = "2017.06.12 12:45:53.831", version = "v0.0.36")
+@GenerateByApiEngineSdk(time = "2017.06.12 01:21:10.817", version = "v0.0.37")
 public class OpenAccount_SubmitRealName_Api implements Api {
 
     @Override()

@@ -14,7 +14,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 修改登录密码")
-@GenerateByApiEngineSdk(time = "2017.06.12 12:45:53.662", version = "v0.0.36")
+@GenerateByApiEngineSdk(time = "2017.06.12 01:21:10.666", version = "v0.0.37")
 public class User_UpdateLoginPassword_Api implements Api {
 
     @Override()

@@ -16,7 +16,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "我关注的交易大师 - 查询列表")
-@GenerateByApiEngineSdk(time = "2017.06.12 12:45:53.929", version = "v0.0.36")
+@GenerateByApiEngineSdk(time = "2017.06.12 01:21:10.937", version = "v0.0.37")
 public class MyMasterTrader_QueryAll_Api implements Api {
 
     @Override()

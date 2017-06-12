@@ -6,18 +6,18 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @ModelAnnotation()
-@GenerateByApiEngineSdk(time = "2017.06.12 12:45:54.323", version = "v0.0.36")
+@GenerateByApiEngineSdk(time = "2017.06.12 01:21:11.291", version = "v0.0.37")
 public class DepositOrWithdraw {
 
     @Comment(value = "类型（1:出金 2:入金 3:增加信用 4:减少信用 101:佣金入金 102:分享入金 103:奖励入金）")
     @Required(value = true)
-    private String type;
+    private Integer type;
 
-    public String getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 
@@ -35,13 +35,13 @@ public class DepositOrWithdraw {
 
     @Comment(value = "时间")
     @Required(value = true)
-    private String time;
+    private Long time;
 
-    public String getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 }
