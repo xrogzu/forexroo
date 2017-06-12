@@ -2,6 +2,7 @@ package com.github.xuzw.forexroo.app.api;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
@@ -35,6 +36,7 @@ public class Deposit_SubmitAmount_Api implements Api {
         mt4Request.put("operationtype", type.getValue());
         mt4Request.put("amount", amount);
         DepositAndWithdraw entity = new DepositAndWithdraw();
+        entity.setRawRequest(JSON.toJSONString(request));
         entity.setUserId(user.getId());
         entity.setType(type.getValue());
         entity.setAmount(String.valueOf(amount));
