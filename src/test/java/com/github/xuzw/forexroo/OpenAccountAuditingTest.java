@@ -25,11 +25,11 @@ public class OpenAccountAuditingTest {
         Druid.init();
         ActiveMq.init();
         UserDao userDao = new UserDao(Jooq.buildConfiguration());
-        User user = userDao.fetchOneByPhone("13550311857");
+        User user = userDao.fetchOneByPhone("13641122206");
         JSONObject json = new JSONObject();
         json.put("username", user.getPhone());
         json.put("leverage", 100);
-        json.put("groupname", "xiaozhang");
+        json.put("groupname", "testssss");
         json.put("password", "abc123456");
         json.put("investor", "abc123456");
         json.put("phonepwd", "abc123456");
