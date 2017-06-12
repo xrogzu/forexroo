@@ -2,7 +2,6 @@ package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.MY_BANK_CARD;
 import static com.github.xuzw.forexroo.entity.Tables.USER;
-
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
@@ -22,7 +21,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "解绑银行卡 - 提交预留手机号和验证码")
-@GenerateByApiEngineSdk(time = "2017.06.07 04:47:02.436", version = "v0.0.34")
+@GenerateByApiEngineSdk(time = "2017.06.09 02:55:53.285", version = "v0.0.35")
 public class UnbindBankCard_Submit_Api implements Api {
 
     @Override()
@@ -51,7 +50,9 @@ public class UnbindBankCard_Submit_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -61,7 +62,9 @@ public class UnbindBankCard_Submit_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "预留手机号") @Required(value = true) private String reservedPhone;
+        @Comment(value = "预留手机号")
+        @Required(value = true)
+        private String reservedPhone;
 
         public String getReservedPhone() {
             return reservedPhone;
@@ -71,7 +74,9 @@ public class UnbindBankCard_Submit_Api implements Api {
             this.reservedPhone = reservedPhone;
         }
 
-        @Comment(value = "验证码") @Required(value = true) private String verificationCode;
+        @Comment(value = "验证码")
+        @Required(value = true)
+        private String verificationCode;
 
         public String getVerificationCode() {
             return verificationCode;

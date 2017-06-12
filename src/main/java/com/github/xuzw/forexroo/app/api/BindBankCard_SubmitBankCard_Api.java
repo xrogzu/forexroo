@@ -18,7 +18,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "绑定银行卡 - 第一步：提交银行卡信息（银行卡号和预留手机号）")
-@GenerateByApiEngineSdk(time = "2017.06.07 04:47:02.391", version = "v0.0.34")
+@GenerateByApiEngineSdk(time = "2017.06.09 02:55:53.249", version = "v0.0.35")
 public class BindBankCard_SubmitBankCard_Api implements Api {
 
     @Override()

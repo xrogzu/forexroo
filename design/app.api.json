@@ -242,6 +242,11 @@
                 "java.util.List"
             ],
             "javaClassName": "MasterTraderRankings_QueryAll_Api",
+            "requestDefinition": {
+                "fieldDefinitions": [
+                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true }
+                ]
+            },
             "responseDefinition": {
                 "fieldDefinitions": [
                     { "comment": "列表", "javaType": "List<MasterTraderRankings>", "name": "list", "required": true }
@@ -508,5 +513,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.34"
+    "version": "v0.0.35"
 }

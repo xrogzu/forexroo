@@ -20,7 +20,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 登录即注册")
-@GenerateByApiEngineSdk(time = "2017.06.07 04:47:02.065", version = "v0.0.34")
+@GenerateByApiEngineSdk(time = "2017.06.09 02:55:52.990", version = "v0.0.35")
 public class User_Login_Api implements Api {
 
     @Override()
@@ -49,7 +49,7 @@ public class User_Login_Api implements Api {
             mySymbolDao.insert(new MySymbol("USDJPY", userId, time, null));
             mySymbolDao.insert(new MySymbol("AUDUSD", userId, time, null));
             mySymbolDao.insert(new MySymbol("XAUUSD", userId, time, null));
-            mySymbolDao.insert(new MySymbol("XBPUSD", userId, time, null));
+            mySymbolDao.insert(new MySymbol("UKOUSD", userId, time, null));
         } else {
             // 旧用户
             String oldToken = user.getToken();

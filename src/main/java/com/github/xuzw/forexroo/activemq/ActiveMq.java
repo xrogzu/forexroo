@@ -39,6 +39,7 @@ public class ActiveMq {
         responseTopics.add("Register_User_Info_Result_Topic");
         responseTopics.add("Get_Tick_Last_Result_Topic");
         responseTopics.add("Get_User_Info_Result_Topic");
+        responseTopics.add("Deposit_User_Info_Result_Topic");
         new JsonResponseListener(session, requestCache, responseTopics);
     }
 

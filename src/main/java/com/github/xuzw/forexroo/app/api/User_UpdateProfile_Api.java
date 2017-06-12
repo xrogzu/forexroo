@@ -15,7 +15,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 修改个人信息")
-@GenerateByApiEngineSdk(time = "2017.06.07 04:47:02.126", version = "v0.0.34")
+@GenerateByApiEngineSdk(time = "2017.06.09 02:55:53.040", version = "v0.0.35")
 public class User_UpdateProfile_Api implements Api {
 
     @Override()

@@ -14,7 +14,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "交易大师排行榜 - 查询全部")
-@GenerateByApiEngineSdk(time = "2017.06.07 04:47:02.340", version = "v0.0.34")
+@GenerateByApiEngineSdk(time = "2017.06.09 02:55:53.196", version = "v0.0.35")
 public class MasterTraderRankings_QueryAll_Api implements Api {
 
     @Override()
@@ -35,6 +35,21 @@ public class MasterTraderRankings_QueryAll_Api implements Api {
         }
         resp.setList(list);
         return resp;
+    }
+
+    public static class Req extends Request {
+
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
     }
 
     public static class Resp extends Response {
