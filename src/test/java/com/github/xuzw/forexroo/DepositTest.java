@@ -14,7 +14,7 @@ public class DepositTest {
         // json.put("login", 996000489);
         // json.put("login", 996000490);
         // json.put("login", 996000492);
-        json.put("login", 996000493);
+        json.put("login", 996000492);
         json.put("operationtype", 1);
         json.put("amount", 10000);
         json.put("comment", "2017年6月9日入金10000美元");

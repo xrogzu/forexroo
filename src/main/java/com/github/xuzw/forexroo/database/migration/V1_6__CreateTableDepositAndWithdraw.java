@@ -18,8 +18,11 @@ public class V1_6__CreateTableDepositAndWithdraw implements JdbcMigration {
     public void migrate(Connection connection) throws Exception {
         Migration migration = new Migration();
         Table table = migration.createTable("deposit_and_withdraw");
+        table.addColumn("raw_request", "原始请求", C.TEXT);
         table.addColumn("mt4_raw_request", "MT4-原始请求", C.TEXT);
         table.addColumn("mt4_raw_response", "MT4-原始响应", C.TEXT);
+        table.addColumn("mt4_request_time", "MT4-发送请求时间戳", C.BIGINT);
+        table.addColumn("mt4_response_time", "MT4-收到响应时间戳", C.BIGINT);
         table.addColumn("type", "类型", C.INT);
         table.addColumn("order_id", "订单ID", C.STRING);
         table.addColumn("amount", "金额", C.STRING);
