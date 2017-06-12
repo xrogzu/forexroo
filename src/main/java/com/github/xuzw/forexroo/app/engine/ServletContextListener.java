@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.github.xuzw.forexroo.activemq.ActiveMq;
+import com.github.xuzw.forexroo.app.service.QuotedPriceService;
 import com.github.xuzw.forexroo.database.Druid;
 
 /**
@@ -24,6 +25,9 @@ public class ServletContextListener implements javax.servlet.ServletContextListe
         Druid.init();
         try {
             ActiveMq.init();
+            ActiveMq.onMessage("Market_Data_Info_Topic", x -> {
+                QuotedPriceService.putBid(x.getString("symbol"), x.getString("bid"));
+            });
         } catch (JMSException e) {
             log.error("", e);
         }
