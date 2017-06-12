@@ -29,13 +29,11 @@ public class OpenAccountAuditingTest {
         JSONObject json = new JSONObject();
         json.put("username", user.getPhone());
         json.put("leverage", 100);
-        json.put("groupname", "testssss");
+        json.put("groupname", "xiaozhang");
         json.put("password", "abc123456");
         json.put("investor", "abc123456");
         json.put("phonepwd", "abc123456");
-        System.out.println(json.toJSONString());
         JSONObject resp = ActiveMq.sendRequestAndAwait("Register_User_Info_Topic", json);
-        System.out.println(resp.toJSONString());
         String mt4Account = resp.getString("login");
         Map<Field<?>, Object> map = new HashMap<>();
         map.put(USER.MT4_REAL_ACCOUNT, mt4Account);
