@@ -2,7 +2,6 @@ package com.github.xuzw.forexroo.app.api;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -17,7 +16,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "出入金 - 查询列表")
-@GenerateByApiEngineSdk(time = "2017.06.12 01:21:11.023", version = "v0.0.37")
+@GenerateByApiEngineSdk(time = "2017.06.13 11:51:28.151", version = "v0.0.38")
 public class DepositAndWithdraw_QueryList_Api implements Api {
 
     @Override()
@@ -41,7 +40,9 @@ public class DepositAndWithdraw_QueryList_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -54,7 +55,9 @@ public class DepositAndWithdraw_QueryList_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "列表") @Required(value = true) private List<DepositOrWithdraw> list;
+        @Comment(value = "列表")
+        @Required(value = true)
+        private List<DepositOrWithdraw> list;
 
         public List<DepositOrWithdraw> getList() {
             return list;

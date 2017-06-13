@@ -20,7 +20,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "出金 - 提交出金金额")
-@GenerateByApiEngineSdk(time = "2017.06.12 01:21:11.038", version = "v0.0.37")
+@GenerateByApiEngineSdk(time = "2017.06.13 11:51:28.239", version = "v0.0.38")
 public class Withdraw_SubmitAmount_Api implements Api {
 
     @Override()

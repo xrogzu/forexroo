@@ -12,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 查询个人信息详情")
-@GenerateByApiEngineSdk(time = "2017.06.12 01:21:10.717", version = "v0.0.37")
+@GenerateByApiEngineSdk(time = "2017.06.13 11:51:27.660", version = "v0.0.38")
 public class User_QueryProfile_Api implements Api {
 
     @Override()
