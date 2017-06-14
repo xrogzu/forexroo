@@ -12,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 查询个人信息详情")
-@GenerateByApiEngineSdk(time = "2017.06.13 11:51:27.660", version = "v0.0.38")
+@GenerateByApiEngineSdk(time = "2017.06.14 10:35:02.182", version = "v0.0.39")
 public class User_QueryProfile_Api implements Api {
 
     @Override()
@@ -175,7 +175,7 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountSignUrl = openAccountSignUrl;
         }
 
-        @Comment(value = "开户-状态")
+        @Comment(value = "开户-状态（0:未开户 1:开户中 2:审核中 3:审核成功 4:审核失败）")
         @Required(value = true)
         private Integer openAccountStatus;
 
@@ -211,7 +211,7 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestSignUrl = brokerRequestSignUrl;
         }
 
-        @Comment(value = "经纪人申请-状态")
+        @Comment(value = "经纪人申请-状态（0:未申请 1:申请中 2:审核中 3:审核成功 4:审核失败）")
         @Required(value = true)
         private Integer brokerRequestStatus;
 
