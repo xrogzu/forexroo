@@ -4,6 +4,7 @@ import com.github.xuzw.forexroo.database.model.BrokerRequestStatusEnum;
 import com.github.xuzw.forexroo.database.model.NamedValue;
 import com.github.xuzw.forexroo.database.model.NamedValues;
 import com.github.xuzw.forexroo.database.model.OpenAccountStatusEnum;
+import com.github.xuzw.forexroo.database.model.UserStatusEnum;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
@@ -13,7 +14,7 @@ public class NamedValueEnumSdk {
     public static void main(String[] args) {
         System.out.println(NamedValues.toText(BrokerRequestStatusEnum.values()));
         System.out.println(toHtml(OpenAccountStatusEnum.values()));
-        System.out.println(toJs(OpenAccountStatusEnum.values()));
+        System.out.println(toJs(UserStatusEnum.values()));
     }
 
     public static String toJs(Enum<? extends NamedValue>[] namedValues) {
