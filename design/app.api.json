@@ -190,7 +190,7 @@
         },
         {
             "comment": "开户 - 签订协议",
-            "description": "后台调用“全国身份证实名认证”接口，成功后进行下一步",
+            "description": "后台调用“全国身份证实名认证”接口",
             "imports": [
                 "java.util.List"
             ],
@@ -515,5 +515,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v1.0.4"
+    "version": "v1.0.5"
 }
