@@ -1,13 +1,17 @@
 package com.github.xuzw.forexroo.app.engine;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.jms.JMSException;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.annotation.WebListener;
 
+import org.apache.activemq.ActiveMQConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.xuzw.forexroo.activemq.ActiveMq;
+import com.github.xuzw.activemq_utils.ActiveMq;
 import com.github.xuzw.forexroo.app.service.QuotedPriceService;
 import com.github.xuzw.forexroo.database.Druid;
 
@@ -24,7 +28,14 @@ public class ServletContextListener implements javax.servlet.ServletContextListe
         log.info("contextInitialized");
         Druid.init();
         try {
-            ActiveMq.init();
+            String brokerUrl = "failover:tcp://119.23.62.18:61616";
+            List<String> responseTopics = new ArrayList<>();
+            responseTopics.add("History_Rates_Info_Result_Topic");
+            responseTopics.add("Register_User_Info_Result_Topic");
+            responseTopics.add("Get_Tick_Last_Result_Topic");
+            responseTopics.add("Get_User_Info_Result_Topic");
+            responseTopics.add("Deposit_User_Info_Result_Topic");
+            ActiveMq.init(ActiveMQConnection.DEFAULT_USER, ActiveMQConnection.DEFAULT_PASSWORD, brokerUrl, responseTopics);
             ActiveMq.onMessage("Market_Data_Info_Topic", x -> {
                 QuotedPriceService.putBid(x.getString("symbol"), x.getString("bid"));
             });

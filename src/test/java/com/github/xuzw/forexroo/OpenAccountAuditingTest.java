@@ -2,14 +2,17 @@ package com.github.xuzw.forexroo;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.apache.activemq.ActiveMQConnection;
 import org.jooq.Field;
 import org.jooq.impl.DSL;
 
 import com.alibaba.fastjson.JSONObject;
-import com.github.xuzw.forexroo.activemq.ActiveMq;
+import com.github.xuzw.activemq_utils.ActiveMq;
 import com.github.xuzw.forexroo.database.Druid;
 import com.github.xuzw.forexroo.database.Jooq;
 import com.github.xuzw.forexroo.database.model.OpenAccountStatusEnum;
@@ -23,9 +26,16 @@ import com.github.xuzw.forexroo.entity.tables.pojos.User;
 public class OpenAccountAuditingTest {
     public static void main(String[] args) throws Exception {
         Druid.init();
-        ActiveMq.init();
+        String brokerUrl = "failover:tcp://119.23.62.18:61616";
+        List<String> responseTopics = new ArrayList<>();
+        responseTopics.add("History_Rates_Info_Result_Topic");
+        responseTopics.add("Register_User_Info_Result_Topic");
+        responseTopics.add("Get_Tick_Last_Result_Topic");
+        responseTopics.add("Get_User_Info_Result_Topic");
+        responseTopics.add("Deposit_User_Info_Result_Topic");
+        ActiveMq.init(ActiveMQConnection.DEFAULT_USER, ActiveMQConnection.DEFAULT_PASSWORD, brokerUrl, responseTopics);
         UserDao userDao = new UserDao(Jooq.buildConfiguration());
-        User user = userDao.fetchOneByPhone("13641122206");
+        User user = userDao.fetchOneByPhone("13426290598");
         JSONObject json = new JSONObject();
         json.put("username", user.getPhone());
         json.put("leverage", 100);

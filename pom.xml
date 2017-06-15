@@ -112,9 +112,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>22.0</version>
+            <groupId>com.github.xuzw</groupId>
+            <artifactId>activemq-utils</artifactId>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.aliyun.oss</groupId>
@@ -171,11 +171,6 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>4.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-client</artifactId>
-            <version>5.14.5</version>
         </dependency>
         <dependency>
             <groupId>com.sun.jersey</groupId>

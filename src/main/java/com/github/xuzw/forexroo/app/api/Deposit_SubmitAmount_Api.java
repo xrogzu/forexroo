@@ -1,14 +1,15 @@
 package com.github.xuzw.forexroo.app.api;
 
 import org.apache.commons.lang3.StringUtils;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.github.xuzw.activemq_utils.ActiveMq;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_runtime.exception.ApiExecuteException;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
-import com.github.xuzw.forexroo.activemq.ActiveMq;
 import com.github.xuzw.forexroo.database.Jooq;
 import com.github.xuzw.forexroo.database.model.DepositAndWithdrawTypeEnum;
 import com.github.xuzw.forexroo.entity.Tables;
@@ -58,9 +59,7 @@ public class Deposit_SubmitAmount_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -70,9 +69,7 @@ public class Deposit_SubmitAmount_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "入金金额")
-        @Required(value = true)
-        private String amount;
+        @Comment(value = "入金金额") @Required(value = true) private String amount;
 
         public String getAmount() {
             return amount;

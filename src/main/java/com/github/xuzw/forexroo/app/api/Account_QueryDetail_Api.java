@@ -1,12 +1,13 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
+
 import com.alibaba.fastjson.JSONObject;
+import com.github.xuzw.activemq_utils.ActiveMq;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
-import com.github.xuzw.forexroo.activemq.ActiveMq;
 import com.github.xuzw.forexroo.database.Jooq;
 import com.github.xuzw.forexroo.entity.tables.daos.UserDao;
 import com.github.xuzw.forexroo.entity.tables.pojos.User;
@@ -38,9 +39,7 @@ public class Account_QueryDetail_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -53,9 +52,7 @@ public class Account_QueryDetail_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -65,9 +62,7 @@ public class Account_QueryDetail_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "Forexroo账号")
-        @Required(value = true)
-        private String account;
+        @Comment(value = "Forexroo账号") @Required(value = true) private String account;
 
         public String getAccount() {
             return account;
@@ -77,9 +72,7 @@ public class Account_QueryDetail_Api implements Api {
             this.account = account;
         }
 
-        @Comment(value = "MT4真实账号")
-        @Required(value = true)
-        private String mt4RealAccount;
+        @Comment(value = "MT4真实账号") @Required(value = true) private String mt4RealAccount;
 
         public String getMt4RealAccount() {
             return mt4RealAccount;
@@ -89,9 +82,7 @@ public class Account_QueryDetail_Api implements Api {
             this.mt4RealAccount = mt4RealAccount;
         }
 
-        @Comment(value = "MT4模拟账号")
-        @Required(value = true)
-        private String mt4AnalogAccount;
+        @Comment(value = "MT4模拟账号") @Required(value = true) private String mt4AnalogAccount;
 
         public String getMt4AnalogAccount() {
             return mt4AnalogAccount;
@@ -101,9 +92,7 @@ public class Account_QueryDetail_Api implements Api {
             this.mt4AnalogAccount = mt4AnalogAccount;
         }
 
-        @Comment(value = "净值")
-        @Required(value = true)
-        private String balance;
+        @Comment(value = "净值") @Required(value = true) private String balance;
 
         public String getBalance() {
             return balance;
@@ -113,9 +102,7 @@ public class Account_QueryDetail_Api implements Api {
             this.balance = balance;
         }
 
-        @Comment(value = "信用")
-        @Required(value = true)
-        private String credit;
+        @Comment(value = "信用") @Required(value = true) private String credit;
 
         public String getCredit() {
             return credit;
@@ -125,9 +112,7 @@ public class Account_QueryDetail_Api implements Api {
             this.credit = credit;
         }
 
-        @Comment(value = "利率")
-        @Required(value = true)
-        private String interestrate;
+        @Comment(value = "利率") @Required(value = true) private String interestrate;
 
         public String getInterestrate() {
             return interestrate;
@@ -137,9 +122,7 @@ public class Account_QueryDetail_Api implements Api {
             this.interestrate = interestrate;
         }
 
-        @Comment(value = "税金")
-        @Required(value = true)
-        private String taxes;
+        @Comment(value = "税金") @Required(value = true) private String taxes;
 
         public String getTaxes() {
             return taxes;
@@ -149,9 +132,7 @@ public class Account_QueryDetail_Api implements Api {
             this.taxes = taxes;
         }
 
-        @Comment(value = "杠杆率")
-        @Required(value = true)
-        private String leverage;
+        @Comment(value = "杠杆率") @Required(value = true) private String leverage;
 
         public String getLeverage() {
             return leverage;
