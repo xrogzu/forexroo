@@ -96,15 +96,27 @@
                     { "comment": "昵称", "javaType": "String", "name": "nickname", "required": true },
                     { "comment": "性别", "javaType": "String", "name": "sex", "required": true },
                     { "comment": "国家", "javaType": "String", "name": "country", "required": true },
+                    { "comment": "所属经纪人-ID", "javaType": "Long", "name": "myBrokerId", "required": true },
+                    { "comment": "所属经纪人-姓名", "javaType": "String", "name": "myBrokerName", "required": true },
+                    { "comment": "所属代理商-ID", "javaType": "Long", "name": "myAgentId", "required": true },
+                    { "comment": "所属代理商-姓名", "javaType": "String", "name": "myAgentName", "required": true },
                     { "comment": "开户-姓名", "javaType": "String", "name": "openAccountRealname", "required": true },
                     { "comment": "开户-身份证号", "javaType": "String", "name": "openAccountIdentityCardNumber", "required": true },
                     { "comment": "开户-手持身份证正面照URL", "javaType": "String", "name": "openAccountPictureUrl", "required": true },
                     { "comment": "开户-签订协议", "javaType": "String", "name": "openAccountAgreements", "required": true },
                     { "comment": "开户-签名图片URL", "javaType": "String", "name": "openAccountSignUrl", "required": true },
                     { "comment": "开户-状态（0:未开户 1:开户中 2:审核中 3:审核成功 4:审核失败）", "javaType": "Integer", "name": "openAccountStatus", "required": true },
+                    { "comment": "开户-审核人-ID", "javaType": "Long", "name": "openAccountAuditUserId", "required": true },
+                    { "comment": "开户-审核人-姓名", "javaType": "String", "name": "openAccountAuditUserName", "required": true },
+                    { "comment": "开户-审核时间戳", "javaType": "Long", "name": "openAccountAuditTimestamp", "required": true },
+                    { "comment": "开户-审核失败-原因（0:未知 1:手持身份证照不清晰 2:签名不清晰）", "javaType": "Integer", "name": "openAccountAuditFailReason", "required": true },
                     { "comment": "经纪人申请-签订协议", "javaType": "String", "name": "brokerRequestAgreements", "required": true },
                     { "comment": "经纪人申请-签名图片URL", "javaType": "String", "name": "brokerRequestSignUrl", "required": true },
-                    { "comment": "经纪人申请-状态（0:未申请 1:申请中 2:审核中 3:审核成功 4:审核失败）", "javaType": "Integer", "name": "brokerRequestStatus", "required": true }
+                    { "comment": "经纪人申请-状态（0:未申请 1:申请中 2:审核中 3:审核成功 4:审核失败）", "javaType": "Integer", "name": "brokerRequestStatus", "required": true },
+                    { "comment": "经纪人申请-审核人-ID", "javaType": "Long", "name": "brokerRequestAuditUserId", "required": true },
+                    { "comment": "经纪人申请-审核人-姓名", "javaType": "String", "name": "brokerRequestAuditUserName", "required": true },
+                    { "comment": "经纪人申请-审核时间戳", "javaType": "Long", "name": "brokerRequestAuditTimestamp", "required": true },
+                    { "comment": "经纪人申请-审核失败-原因", "javaType": "Integer", "name": "brokerRequestAuditFailReason", "required": true }
                 ]
             }
         },
@@ -514,5 +526,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v0.0.39"
+    "version": "v1.0.0"
 }

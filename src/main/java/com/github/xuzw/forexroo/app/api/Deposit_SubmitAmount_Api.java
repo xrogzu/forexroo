@@ -1,7 +1,6 @@
 package com.github.xuzw.forexroo.app.api;
 
 import org.apache.commons.lang3.StringUtils;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.xuzw.activemq_utils.ActiveMq;
@@ -21,7 +20,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "入金 - 提交入金金额")
-@GenerateByApiEngineSdk(time = "2017.06.14 10:35:02.488", version = "v0.0.39")
+@GenerateByApiEngineSdk(time = "2017.06.15 11:35:11.022", version = "v1.0.0")
 public class Deposit_SubmitAmount_Api implements Api {
 
     @Override()
@@ -59,7 +58,9 @@ public class Deposit_SubmitAmount_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -69,7 +70,9 @@ public class Deposit_SubmitAmount_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "入金金额") @Required(value = true) private String amount;
+        @Comment(value = "入金金额")
+        @Required(value = true)
+        private String amount;
 
         public String getAmount() {
             return amount;

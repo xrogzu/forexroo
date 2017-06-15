@@ -12,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 查询个人信息详情")
-@GenerateByApiEngineSdk(time = "2017.06.14 10:35:02.182", version = "v0.0.39")
+@GenerateByApiEngineSdk(time = "2017.06.15 11:35:10.676", version = "v1.0.0")
 public class User_QueryProfile_Api implements Api {
 
     @Override()
@@ -115,6 +115,54 @@ public class User_QueryProfile_Api implements Api {
             this.country = country;
         }
 
+        @Comment(value = "所属经纪人-ID")
+        @Required(value = true)
+        private Long myBrokerId;
+
+        public Long getMyBrokerId() {
+            return myBrokerId;
+        }
+
+        public void setMyBrokerId(Long myBrokerId) {
+            this.myBrokerId = myBrokerId;
+        }
+
+        @Comment(value = "所属经纪人-姓名")
+        @Required(value = true)
+        private String myBrokerName;
+
+        public String getMyBrokerName() {
+            return myBrokerName;
+        }
+
+        public void setMyBrokerName(String myBrokerName) {
+            this.myBrokerName = myBrokerName;
+        }
+
+        @Comment(value = "所属代理商-ID")
+        @Required(value = true)
+        private Long myAgentId;
+
+        public Long getMyAgentId() {
+            return myAgentId;
+        }
+
+        public void setMyAgentId(Long myAgentId) {
+            this.myAgentId = myAgentId;
+        }
+
+        @Comment(value = "所属代理商-姓名")
+        @Required(value = true)
+        private String myAgentName;
+
+        public String getMyAgentName() {
+            return myAgentName;
+        }
+
+        public void setMyAgentName(String myAgentName) {
+            this.myAgentName = myAgentName;
+        }
+
         @Comment(value = "开户-姓名")
         @Required(value = true)
         private String openAccountRealname;
@@ -187,6 +235,54 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountStatus = openAccountStatus;
         }
 
+        @Comment(value = "开户-审核人-ID")
+        @Required(value = true)
+        private Long openAccountAuditUserId;
+
+        public Long getOpenAccountAuditUserId() {
+            return openAccountAuditUserId;
+        }
+
+        public void setOpenAccountAuditUserId(Long openAccountAuditUserId) {
+            this.openAccountAuditUserId = openAccountAuditUserId;
+        }
+
+        @Comment(value = "开户-审核人-姓名")
+        @Required(value = true)
+        private String openAccountAuditUserName;
+
+        public String getOpenAccountAuditUserName() {
+            return openAccountAuditUserName;
+        }
+
+        public void setOpenAccountAuditUserName(String openAccountAuditUserName) {
+            this.openAccountAuditUserName = openAccountAuditUserName;
+        }
+
+        @Comment(value = "开户-审核时间戳")
+        @Required(value = true)
+        private Long openAccountAuditTimestamp;
+
+        public Long getOpenAccountAuditTimestamp() {
+            return openAccountAuditTimestamp;
+        }
+
+        public void setOpenAccountAuditTimestamp(Long openAccountAuditTimestamp) {
+            this.openAccountAuditTimestamp = openAccountAuditTimestamp;
+        }
+
+        @Comment(value = "开户-审核失败-原因（0:未知 1:手持身份证照不清晰 2:签名不清晰）")
+        @Required(value = true)
+        private Integer openAccountAuditFailReason;
+
+        public Integer getOpenAccountAuditFailReason() {
+            return openAccountAuditFailReason;
+        }
+
+        public void setOpenAccountAuditFailReason(Integer openAccountAuditFailReason) {
+            this.openAccountAuditFailReason = openAccountAuditFailReason;
+        }
+
         @Comment(value = "经纪人申请-签订协议")
         @Required(value = true)
         private String brokerRequestAgreements;
@@ -221,6 +317,54 @@ public class User_QueryProfile_Api implements Api {
 
         public void setBrokerRequestStatus(Integer brokerRequestStatus) {
             this.brokerRequestStatus = brokerRequestStatus;
+        }
+
+        @Comment(value = "经纪人申请-审核人-ID")
+        @Required(value = true)
+        private Long brokerRequestAuditUserId;
+
+        public Long getBrokerRequestAuditUserId() {
+            return brokerRequestAuditUserId;
+        }
+
+        public void setBrokerRequestAuditUserId(Long brokerRequestAuditUserId) {
+            this.brokerRequestAuditUserId = brokerRequestAuditUserId;
+        }
+
+        @Comment(value = "经纪人申请-审核人-姓名")
+        @Required(value = true)
+        private String brokerRequestAuditUserName;
+
+        public String getBrokerRequestAuditUserName() {
+            return brokerRequestAuditUserName;
+        }
+
+        public void setBrokerRequestAuditUserName(String brokerRequestAuditUserName) {
+            this.brokerRequestAuditUserName = brokerRequestAuditUserName;
+        }
+
+        @Comment(value = "经纪人申请-审核时间戳")
+        @Required(value = true)
+        private Long brokerRequestAuditTimestamp;
+
+        public Long getBrokerRequestAuditTimestamp() {
+            return brokerRequestAuditTimestamp;
+        }
+
+        public void setBrokerRequestAuditTimestamp(Long brokerRequestAuditTimestamp) {
+            this.brokerRequestAuditTimestamp = brokerRequestAuditTimestamp;
+        }
+
+        @Comment(value = "经纪人申请-审核失败-原因")
+        @Required(value = true)
+        private Integer brokerRequestAuditFailReason;
+
+        public Integer getBrokerRequestAuditFailReason() {
+            return brokerRequestAuditFailReason;
+        }
+
+        public void setBrokerRequestAuditFailReason(Integer brokerRequestAuditFailReason) {
+            this.brokerRequestAuditFailReason = brokerRequestAuditFailReason;
         }
     }
 }
