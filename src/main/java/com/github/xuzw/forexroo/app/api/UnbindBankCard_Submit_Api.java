@@ -21,7 +21,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "解绑银行卡 - 提交预留手机号和验证码")
-@GenerateByApiEngineSdk(time = "2017.06.15 11:35:10.985", version = "v1.0.0")
+@GenerateByApiEngineSdk(time = "2017.06.15 11:39:48.020", version = "v1.0.1")
 public class UnbindBankCard_Submit_Api implements Api {
 
     @Override()

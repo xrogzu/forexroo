@@ -20,7 +20,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 登录即注册")
-@GenerateByApiEngineSdk(time = "2017.06.15 11:35:10.589", version = "v1.0.0")
+@GenerateByApiEngineSdk(time = "2017.06.15 11:39:47.647", version = "v1.0.1")
 public class User_Login_Api implements Api {
 
     @Override()
