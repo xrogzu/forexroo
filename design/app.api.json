@@ -469,7 +469,8 @@
         { "code": 1009, "message": "银行卡四要素认证失败", "name": "bankCard_authentication_failed" },
         { "code": 1010, "message": "密码错误", "name": "password_error" },
         { "code": 1011, "message": "状态异常", "name": "status_error" },
-        { "code": 1012, "message": "MT4中间件错误", "name": "mt4_middleware_error" }
+        { "code": 1012, "message": "MT4中间件错误", "name": "mt4_middleware_error" },
+        { "code": 1013, "message": "已开户", "name": "already_open_account" }
     ],
     "javaPackageName": "com.github.xuzw.forexroo.app.api",
     "modelDefinitions": [
@@ -526,5 +527,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v1.0.1"
+    "version": "v1.0.2"
 }

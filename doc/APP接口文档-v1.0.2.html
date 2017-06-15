@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>APP接口文档 v1.0.0</title>
+    <title>APP接口文档 v1.0.2</title>
     <style type="text/css">
     .tail {
           font-size: 14px;
@@ -63,7 +63,7 @@
 </head>
 <body>
     <div>
-        <h4>APP接口文档 v1.0.0</h4>
+        <h4>APP接口文档 v1.0.2</h4>
     </div>
     <h5>小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口，短关键字搜索范围大，长关键字搜索结果精确、接口名、接口描述、参数名、参数描述、响应字段名、响应字段描述等都可作为搜索关键字<br/>每个接口都已定义快速跳转书签，点击超链接即可跳转，跳转后URL末尾会添加路径名做区分，可添加该URL到浏览器书签，以便下次打开时自动定位到该接口</h5>
     <div class="alert alert-warning">
@@ -293,6 +293,11 @@
             <span class="api-field-name">mt4_middleware_error</span>
             <span class="api-field-type">1012</span>
             <span class="api-field-comment">MT4中间件错误</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">already_open_account</span>
+            <span class="api-field-type">1013</span>
+            <span class="api-field-comment">已开户</span>
         </dd>
     </div>
     <div class="alert alert-info">
@@ -1405,7 +1410,7 @@
             <span class="api-field-name">type</span>
             <span class="api-field-type">Integer</span>
             <span class="api-field-required">required</span>
-            <span class="api-field-comment">类型（1:入金 2:出金 3:增加信用 4:减少信用 101:佣金入金 102:分享入金 103:奖励入金）</span>
+            <span class="api-field-comment">类型（1:入金 2:出金 3:增加信用 4:减少信用 101:佣金入金 102:分成入金 103:奖励入金）</span>
         </dd>
         <dd>
             <span class="api-field-name">amount</span>
@@ -1424,7 +1429,7 @@
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/xuzw/api-engine-sdk">ApiEngineSdk</a>
-            <span>2017.06.15 11:35:11.379</span>
+            <span>2017.06.15 02:18:50.532</span>
         </p>
     </div>
 </body>

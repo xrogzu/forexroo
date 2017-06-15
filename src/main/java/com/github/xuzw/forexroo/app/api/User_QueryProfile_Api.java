@@ -12,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 查询个人信息详情")
-@GenerateByApiEngineSdk(time = "2017.06.15 11:39:47.743", version = "v1.0.1")
+@GenerateByApiEngineSdk(time = "2017.06.15 02:18:49.957", version = "v1.0.2")
 public class User_QueryProfile_Api implements Api {
 
     @Override()
@@ -52,7 +52,9 @@ public class User_QueryProfile_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
+        @Comment(value = "用户唯一标识码")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -65,7 +67,9 @@ public class User_QueryProfile_Api implements Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "注册时间") @Required(value = true) private Long registerTime;
+        @Comment(value = "注册时间")
+        @Required(value = true)
+        private Long registerTime;
 
         public Long getRegisterTime() {
             return registerTime;
@@ -75,7 +79,9 @@ public class User_QueryProfile_Api implements Api {
             this.registerTime = registerTime;
         }
 
-        @Comment(value = "头像") @Required(value = true) private String avatar;
+        @Comment(value = "头像")
+        @Required(value = true)
+        private String avatar;
 
         public String getAvatar() {
             return avatar;
@@ -85,7 +91,9 @@ public class User_QueryProfile_Api implements Api {
             this.avatar = avatar;
         }
 
-        @Comment(value = "昵称") @Required(value = true) private String nickname;
+        @Comment(value = "昵称")
+        @Required(value = true)
+        private String nickname;
 
         public String getNickname() {
             return nickname;
@@ -95,7 +103,9 @@ public class User_QueryProfile_Api implements Api {
             this.nickname = nickname;
         }
 
-        @Comment(value = "性别") @Required(value = true) private String sex;
+        @Comment(value = "性别")
+        @Required(value = true)
+        private String sex;
 
         public String getSex() {
             return sex;
@@ -105,7 +115,9 @@ public class User_QueryProfile_Api implements Api {
             this.sex = sex;
         }
 
-        @Comment(value = "国家") @Required(value = true) private String country;
+        @Comment(value = "国家")
+        @Required(value = true)
+        private String country;
 
         public String getCountry() {
             return country;
@@ -115,7 +127,9 @@ public class User_QueryProfile_Api implements Api {
             this.country = country;
         }
 
-        @Comment(value = "所属经纪人-ID") @Required(value = true) private Long myBrokerId;
+        @Comment(value = "所属经纪人-ID")
+        @Required(value = true)
+        private Long myBrokerId;
 
         public Long getMyBrokerId() {
             return myBrokerId;
@@ -125,7 +139,9 @@ public class User_QueryProfile_Api implements Api {
             this.myBrokerId = myBrokerId;
         }
 
-        @Comment(value = "所属经纪人-姓名") @Required(value = true) private String myBrokerName;
+        @Comment(value = "所属经纪人-姓名")
+        @Required(value = true)
+        private String myBrokerName;
 
         public String getMyBrokerName() {
             return myBrokerName;
@@ -135,7 +151,9 @@ public class User_QueryProfile_Api implements Api {
             this.myBrokerName = myBrokerName;
         }
 
-        @Comment(value = "所属代理商-ID") @Required(value = true) private Long myAgentId;
+        @Comment(value = "所属代理商-ID")
+        @Required(value = true)
+        private Long myAgentId;
 
         public Long getMyAgentId() {
             return myAgentId;
@@ -145,7 +163,9 @@ public class User_QueryProfile_Api implements Api {
             this.myAgentId = myAgentId;
         }
 
-        @Comment(value = "所属代理商-姓名") @Required(value = true) private String myAgentName;
+        @Comment(value = "所属代理商-姓名")
+        @Required(value = true)
+        private String myAgentName;
 
         public String getMyAgentName() {
             return myAgentName;
@@ -155,7 +175,9 @@ public class User_QueryProfile_Api implements Api {
             this.myAgentName = myAgentName;
         }
 
-        @Comment(value = "开户-姓名") @Required(value = true) private String openAccountRealname;
+        @Comment(value = "开户-姓名")
+        @Required(value = true)
+        private String openAccountRealname;
 
         public String getOpenAccountRealname() {
             return openAccountRealname;
@@ -165,7 +187,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountRealname = openAccountRealname;
         }
 
-        @Comment(value = "开户-身份证号") @Required(value = true) private String openAccountIdentityCardNumber;
+        @Comment(value = "开户-身份证号")
+        @Required(value = true)
+        private String openAccountIdentityCardNumber;
 
         public String getOpenAccountIdentityCardNumber() {
             return openAccountIdentityCardNumber;
@@ -175,7 +199,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountIdentityCardNumber = openAccountIdentityCardNumber;
         }
 
-        @Comment(value = "开户-手持身份证正面照URL") @Required(value = true) private String openAccountPictureUrl;
+        @Comment(value = "开户-手持身份证正面照URL")
+        @Required(value = true)
+        private String openAccountPictureUrl;
 
         public String getOpenAccountPictureUrl() {
             return openAccountPictureUrl;
@@ -185,7 +211,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountPictureUrl = openAccountPictureUrl;
         }
 
-        @Comment(value = "开户-签订协议") @Required(value = true) private String openAccountAgreements;
+        @Comment(value = "开户-签订协议")
+        @Required(value = true)
+        private String openAccountAgreements;
 
         public String getOpenAccountAgreements() {
             return openAccountAgreements;
@@ -195,7 +223,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountAgreements = openAccountAgreements;
         }
 
-        @Comment(value = "开户-签名图片URL") @Required(value = true) private String openAccountSignUrl;
+        @Comment(value = "开户-签名图片URL")
+        @Required(value = true)
+        private String openAccountSignUrl;
 
         public String getOpenAccountSignUrl() {
             return openAccountSignUrl;
@@ -205,7 +235,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountSignUrl = openAccountSignUrl;
         }
 
-        @Comment(value = "开户-状态（0:未开户 1:开户中 2:审核中 3:审核成功 4:审核失败）") @Required(value = true) private Integer openAccountStatus;
+        @Comment(value = "开户-状态（0:未开户 1:开户中 2:审核中 3:审核成功 4:审核失败）")
+        @Required(value = true)
+        private Integer openAccountStatus;
 
         public Integer getOpenAccountStatus() {
             return openAccountStatus;
@@ -215,7 +247,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountStatus = openAccountStatus;
         }
 
-        @Comment(value = "开户-审核人-ID") @Required(value = true) private Long openAccountAuditUserId;
+        @Comment(value = "开户-审核人-ID")
+        @Required(value = true)
+        private Long openAccountAuditUserId;
 
         public Long getOpenAccountAuditUserId() {
             return openAccountAuditUserId;
@@ -225,7 +259,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountAuditUserId = openAccountAuditUserId;
         }
 
-        @Comment(value = "开户-审核人-姓名") @Required(value = true) private String openAccountAuditUserName;
+        @Comment(value = "开户-审核人-姓名")
+        @Required(value = true)
+        private String openAccountAuditUserName;
 
         public String getOpenAccountAuditUserName() {
             return openAccountAuditUserName;
@@ -235,7 +271,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountAuditUserName = openAccountAuditUserName;
         }
 
-        @Comment(value = "开户-审核时间戳") @Required(value = true) private Long openAccountAuditTimestamp;
+        @Comment(value = "开户-审核时间戳")
+        @Required(value = true)
+        private Long openAccountAuditTimestamp;
 
         public Long getOpenAccountAuditTimestamp() {
             return openAccountAuditTimestamp;
@@ -245,7 +283,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountAuditTimestamp = openAccountAuditTimestamp;
         }
 
-        @Comment(value = "开户-审核失败-原因（0:未知 1:手持身份证照不清晰 2:签名不清晰）") @Required(value = true) private Integer openAccountAuditFailReason;
+        @Comment(value = "开户-审核失败-原因（0:未知 1:手持身份证照不清晰 2:签名不清晰）")
+        @Required(value = true)
+        private Integer openAccountAuditFailReason;
 
         public Integer getOpenAccountAuditFailReason() {
             return openAccountAuditFailReason;
@@ -255,7 +295,9 @@ public class User_QueryProfile_Api implements Api {
             this.openAccountAuditFailReason = openAccountAuditFailReason;
         }
 
-        @Comment(value = "经纪人申请-签订协议") @Required(value = true) private String brokerRequestAgreements;
+        @Comment(value = "经纪人申请-签订协议")
+        @Required(value = true)
+        private String brokerRequestAgreements;
 
         public String getBrokerRequestAgreements() {
             return brokerRequestAgreements;
@@ -265,7 +307,9 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestAgreements = brokerRequestAgreements;
         }
 
-        @Comment(value = "经纪人申请-签名图片URL") @Required(value = true) private String brokerRequestSignUrl;
+        @Comment(value = "经纪人申请-签名图片URL")
+        @Required(value = true)
+        private String brokerRequestSignUrl;
 
         public String getBrokerRequestSignUrl() {
             return brokerRequestSignUrl;
@@ -275,7 +319,9 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestSignUrl = brokerRequestSignUrl;
         }
 
-        @Comment(value = "经纪人申请-状态（0:未申请 1:申请中 2:审核中 3:审核成功 4:审核失败）") @Required(value = true) private Integer brokerRequestStatus;
+        @Comment(value = "经纪人申请-状态（0:未申请 1:申请中 2:审核中 3:审核成功 4:审核失败）")
+        @Required(value = true)
+        private Integer brokerRequestStatus;
 
         public Integer getBrokerRequestStatus() {
             return brokerRequestStatus;
@@ -285,7 +331,9 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestStatus = brokerRequestStatus;
         }
 
-        @Comment(value = "经纪人申请-审核人-ID") @Required(value = true) private Long brokerRequestAuditUserId;
+        @Comment(value = "经纪人申请-审核人-ID")
+        @Required(value = true)
+        private Long brokerRequestAuditUserId;
 
         public Long getBrokerRequestAuditUserId() {
             return brokerRequestAuditUserId;
@@ -295,7 +343,9 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestAuditUserId = brokerRequestAuditUserId;
         }
 
-        @Comment(value = "经纪人申请-审核人-姓名") @Required(value = true) private String brokerRequestAuditUserName;
+        @Comment(value = "经纪人申请-审核人-姓名")
+        @Required(value = true)
+        private String brokerRequestAuditUserName;
 
         public String getBrokerRequestAuditUserName() {
             return brokerRequestAuditUserName;
@@ -305,7 +355,9 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestAuditUserName = brokerRequestAuditUserName;
         }
 
-        @Comment(value = "经纪人申请-审核时间戳") @Required(value = true) private Long brokerRequestAuditTimestamp;
+        @Comment(value = "经纪人申请-审核时间戳")
+        @Required(value = true)
+        private Long brokerRequestAuditTimestamp;
 
         public Long getBrokerRequestAuditTimestamp() {
             return brokerRequestAuditTimestamp;
@@ -315,7 +367,9 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestAuditTimestamp = brokerRequestAuditTimestamp;
         }
 
-        @Comment(value = "经纪人申请-审核失败-原因") @Required(value = true) private Integer brokerRequestAuditFailReason;
+        @Comment(value = "经纪人申请-审核失败-原因")
+        @Required(value = true)
+        private Integer brokerRequestAuditFailReason;
 
         public Integer getBrokerRequestAuditFailReason() {
             return brokerRequestAuditFailReason;

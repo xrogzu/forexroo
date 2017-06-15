@@ -1,10 +1,13 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
+
 import java.util.HashMap;
 import java.util.Map;
+
 import org.jooq.Field;
 import org.jooq.impl.DSL;
+
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
 import com.github.xuzw.api_engine_runtime.api.Response;
@@ -18,7 +21,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "开户 - 第一步：提交实名信息（姓名和身份证号）")
-@GenerateByApiEngineSdk(time = "2017.06.15 11:39:47.847", version = "v1.0.1")
+@GenerateByApiEngineSdk(time = "2017.06.15 02:18:50.057", version = "v1.0.2")
 public class OpenAccount_SubmitRealName_Api implements Api {
 
     @Override()
@@ -30,6 +33,9 @@ public class OpenAccount_SubmitRealName_Api implements Api {
         if (user == null) {
             throw new ApiExecuteException(ErrorCodeEnum.token_error);
         }
+        if (user.getOpenAccountStatus() == OpenAccountStatusEnum.not.getValue()) {
+            throw new ApiExecuteException(ErrorCodeEnum.already_open_account);
+        }
         Map<Field<?>, Object> map = new HashMap<>();
         map.put(USER.OPEN_ACCOUNT_REALNAME, req.getRealName());
         map.put(USER.OPEN_ACCOUNT_IDENTITY_CARD_NUMBER, req.getIdentityCardNumber());
@@ -40,9 +46,7 @@ public class OpenAccount_SubmitRealName_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -52,9 +56,7 @@ public class OpenAccount_SubmitRealName_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "姓名")
-        @Required(value = true)
-        private String realName;
+        @Comment(value = "姓名") @Required(value = true) private String realName;
 
         public String getRealName() {
             return realName;
@@ -64,9 +66,7 @@ public class OpenAccount_SubmitRealName_Api implements Api {
             this.realName = realName;
         }
 
-        @Comment(value = "身份证号")
-        @Required(value = true)
-        private String identityCardNumber;
+        @Comment(value = "身份证号") @Required(value = true) private String identityCardNumber;
 
         public String getIdentityCardNumber() {
             return identityCardNumber;

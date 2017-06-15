@@ -1,11 +1,14 @@
 package com.github.xuzw.forexroo.app.api;
 
 import static com.github.xuzw.forexroo.entity.Tables.USER;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.jooq.Field;
 import org.jooq.impl.DSL;
+
 import com.alibaba.fastjson.JSON;
 import com.github.xuzw.api_engine_runtime.api.Api;
 import com.github.xuzw.api_engine_runtime.api.Request;
@@ -20,7 +23,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "开户 - 第三步：签订协议")
-@GenerateByApiEngineSdk(time = "2017.06.15 11:39:47.868", version = "v1.0.1")
+@GenerateByApiEngineSdk(time = "2017.06.15 02:18:50.077", version = "v1.0.2")
 public class OpenAccount_SignAgreements_Api implements Api {
 
     @Override()
@@ -32,6 +35,9 @@ public class OpenAccount_SignAgreements_Api implements Api {
         if (user == null) {
             throw new ApiExecuteException(ErrorCodeEnum.token_error);
         }
+        if (user.getOpenAccountStatus() == OpenAccountStatusEnum.opening.getValue() || user.getOpenAccountStatus() == OpenAccountStatusEnum.auditing_fail.getValue()) {
+            throw new ApiExecuteException(ErrorCodeEnum.already_open_account);
+        }
         Map<Field<?>, Object> map = new HashMap<>();
         map.put(USER.OPEN_ACCOUNT_AGREEMENTS, JSON.toJSONString(req.getAgreements()));
         map.put(USER.OPEN_ACCOUNT_SIGN_URL, req.getSignUrl());
@@ -42,9 +48,7 @@ public class OpenAccount_SignAgreements_Api implements Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户唯一标识码")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "用户唯一标识码") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -54,9 +58,7 @@ public class OpenAccount_SignAgreements_Api implements Api {
             this.token = token;
         }
 
-        @Comment(value = "签订协议（1:交易商告知书 2:交易商协议书 3:入市交易协议书 4:本人是该账户的最终且唯一受益拥有人）")
-        @Required(value = true)
-        private List<String> agreements;
+        @Comment(value = "签订协议（1:交易商告知书 2:交易商协议书 3:入市交易协议书 4:本人是该账户的最终且唯一受益拥有人）") @Required(value = true) private List<String> agreements;
 
         public List<String> getAgreements() {
             return agreements;
@@ -66,9 +68,7 @@ public class OpenAccount_SignAgreements_Api implements Api {
             this.agreements = agreements;
         }
 
-        @Comment(value = "签名图片URL")
-        @Required(value = true)
-        private String signUrl;
+        @Comment(value = "签名图片URL") @Required(value = true) private String signUrl;
 
         public String getSignUrl() {
             return signUrl;
