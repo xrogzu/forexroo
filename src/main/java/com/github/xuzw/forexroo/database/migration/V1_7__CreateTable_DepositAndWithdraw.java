@@ -12,7 +12,7 @@ import com.github.xuzw.migration_builder.Table;
  * @author 徐泽威 xuzewei_2012@126.com
  * @time 2017年6月9日 下午3:26:14
  */
-public class V1_6__CreateTableDepositAndWithdraw implements JdbcMigration {
+public class V1_7__CreateTable_DepositAndWithdraw implements JdbcMigration {
 
     @Override
     public void migrate(Connection connection) throws Exception {

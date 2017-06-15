@@ -6,18 +6,22 @@ import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
 
 import com.github.xuzw.migration_builder.C;
 import com.github.xuzw.migration_builder.Migration;
+import com.github.xuzw.migration_builder.Table;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
- * @time 2017年6月14日 上午10:23:34
+ * @time 2017年6月6日 上午9:54:15
  */
-public class V2_3__ModifyTableUser implements JdbcMigration {
+public class V1_4__CreateTable_MySymbol implements JdbcMigration {
 
     @Override
     public void migrate(Connection connection) throws Exception {
         Migration migration = new Migration();
-        migration.addColumn("user", "open_account_audit_timestamp", "开户-审核时间戳", C.BIGINT);
-        migration.addColumn("user", "broker_request_audit_timestamp", "经纪人申请-审核时间戳", C.BIGINT);
+        Table table = migration.createTable("my_symbol");
+        table.addColumn("symbol", "品种", C.STRING);
+        table.addColumn("user_id", "用户ID", C.BIGINT);
+        table.addColumn("time", "时间", C.BIGINT);
+        table.addPKColumn("id", "主键", C.AUTOINC);
         migration.run(connection);
     }
 }

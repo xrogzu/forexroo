@@ -10,19 +10,22 @@ import com.github.xuzw.migration_builder.Table;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
- * @time 2017年6月5日 下午4:52:38
+ * @time 2017年6月1日 下午6:00:49
  */
-public class V1_2__CreateTableFeedback implements JdbcMigration {
+public class V1_3__CreateTable_MasterTraderRankingsHistory implements JdbcMigration {
 
     @Override
     public void migrate(Connection connection) throws Exception {
         Migration migration = new Migration();
-        Table table = migration.createTable("feedback");
-        table.addColumn("content", "意见反馈详细描述", C.TEXT);
+        Table table = migration.createTable("master_trader_rankings_history");
         table.addColumn("user_id", "用户ID", C.BIGINT);
-        table.addColumn("time", "时间", C.BIGINT);
-        table.addColumn("picture_urls", "截图照片URL", C.STRING);
+        table.addColumn("nickname", "昵称", C.STRING);
+        table.addColumn("total_profit", "总盈利", C.STRING);
+        table.addColumn("single_profit", "均单盈利", C.STRING);
+        table.addColumn("success_rate", "成功率", C.STRING);
+        table.addColumn("time", "时间", C.STRING);
         table.addPKColumn("id", "主键", C.AUTOINC);
+        table.addUniqueIndex("user_id");
         migration.run(connection);
     }
 }

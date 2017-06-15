@@ -10,15 +10,15 @@ import com.github.xuzw.migration_builder.Table;
 
 /**
  * @author 徐泽威 xuzewei_2012@126.com
- * @time 2017年6月6日 上午9:54:15
+ * @time 2017年6月6日 下午3:30:55
  */
-public class V1_3__CreateTableMySymbol implements JdbcMigration {
+public class V1_5__CreateTable_MyMasterTrader implements JdbcMigration {
 
     @Override
     public void migrate(Connection connection) throws Exception {
         Migration migration = new Migration();
-        Table table = migration.createTable("my_symbol");
-        table.addColumn("symbol", "品种", C.STRING);
+        Table table = migration.createTable("my_master_trader");
+        table.addColumn("master_trader_user_id", "大师ID", C.BIGINT);
         table.addColumn("user_id", "用户ID", C.BIGINT);
         table.addColumn("time", "时间", C.BIGINT);
         table.addPKColumn("id", "主键", C.AUTOINC);

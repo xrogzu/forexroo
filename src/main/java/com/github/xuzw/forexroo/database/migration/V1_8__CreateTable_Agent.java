@@ -12,7 +12,7 @@ import com.github.xuzw.migration_builder.Table;
  * @author 徐泽威 xuzewei_2012@126.com
  * @time 2017年6月14日 上午10:31:18
  */
-public class V2_1__CreateTableAgent implements JdbcMigration {
+public class V1_8__CreateTable_Agent implements JdbcMigration {
 
     @Override
     public void migrate(Connection connection) throws Exception {

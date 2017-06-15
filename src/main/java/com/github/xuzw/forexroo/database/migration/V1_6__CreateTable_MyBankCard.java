@@ -12,7 +12,7 @@ import com.github.xuzw.migration_builder.Table;
  * @author 徐泽威 xuzewei_2012@126.com
  * @time 2017年6月7日 上午10:00:48
  */
-public class V1_5__CreateTableMyBankCard implements JdbcMigration {
+public class V1_6__CreateTable_MyBankCard implements JdbcMigration {
 
     @Override
     public void migrate(Connection connection) throws Exception {

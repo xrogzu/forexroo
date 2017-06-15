@@ -35,6 +35,7 @@
                     <url>${db.url}</url>
                     <user>${db.user}</user>
                     <password>${db.password}</password>
+                    <baselineOnMigrate>true</baselineOnMigrate>
                     <schemas>
                         <schema>${db.schema}</schema>
                     </schemas>
