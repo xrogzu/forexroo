@@ -33,7 +33,7 @@ public class OpenAccount_SubmitRealName_Api implements Api {
         if (user == null) {
             throw new ApiExecuteException(ErrorCodeEnum.token_error);
         }
-        if (user.getOpenAccountStatus() == OpenAccountStatusEnum.not.getValue()) {
+        if (user.getOpenAccountStatus() != OpenAccountStatusEnum.not.getValue()) {
             throw new ApiExecuteException(ErrorCodeEnum.already_open_account);
         }
         Map<Field<?>, Object> map = new HashMap<>();

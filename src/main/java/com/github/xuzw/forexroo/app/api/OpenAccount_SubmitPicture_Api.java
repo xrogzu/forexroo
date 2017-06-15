@@ -33,7 +33,7 @@ public class OpenAccount_SubmitPicture_Api implements Api {
         if (user == null) {
             throw new ApiExecuteException(ErrorCodeEnum.token_error);
         }
-        if (user.getOpenAccountStatus() == OpenAccountStatusEnum.opening.getValue() || user.getOpenAccountStatus() == OpenAccountStatusEnum.auditing_fail.getValue()) {
+        if (user.getOpenAccountStatus() != OpenAccountStatusEnum.opening.getValue() && user.getOpenAccountStatus() != OpenAccountStatusEnum.auditing_fail.getValue()) {
             throw new ApiExecuteException(ErrorCodeEnum.already_open_account);
         }
         Map<Field<?>, Object> map = new HashMap<>();
