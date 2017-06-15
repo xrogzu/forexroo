@@ -22,8 +22,8 @@ public class V1_1__CreateTable_User implements JdbcMigration {
         table.addColumn("phone", "手机号", C.STRING);
         table.addColumn("password", "登录密码", C.STRING);
         table.addColumn("token", "用户唯一标识码", C.STRING);
-        table.addColumn("is_disable", "是否禁用", C.INT);
-        table.addColumn("is_closing", "是否销户", C.INT);
+        table.addColumn("is_disable", "是否禁用", C.INT, true, "0");
+        table.addColumn("is_closing", "是否销户", C.INT, true, "0");
         // 个人资料
         table.addColumn("register_time", "注册时间戳", C.BIGINT);
         table.addColumn("avatar", "头像", C.STRING);
@@ -43,21 +43,21 @@ public class V1_1__CreateTable_User implements JdbcMigration {
         table.addColumn("open_account_picture_url", "开户-手持身份证正面照URL", C.STRING);
         table.addColumn("open_account_agreements", "开户-签订协议", C.STRING);
         table.addColumn("open_account_sign_url", "开户-签名图片URL", C.STRING);
-        table.addColumn("open_account_status", "开户-状态", C.INT);
+        table.addColumn("open_account_status", "开户-状态", C.INT, true, "0");
         table.addColumn("open_account_audit_user_id", "开户-审核人-ID", C.BIGINT);
         table.addColumn("open_account_audit_user_name", "开户-审核人-姓名", C.STRING);
         table.addColumn("open_account_audit_timestamp", "开户-审核时间戳", C.BIGINT);
-        table.addColumn("open_account_audit_fail_reason", "开户-审核失败-原因", C.INT);
+        table.addColumn("open_account_audit_fail_reason", "开户-审核失败-原因", C.INT, true, "0");
         table.addColumn("open_account_time", "开户-申请时间戳", C.BIGINT);
         table.addColumn("open_account_audit_success_time", "开户-审核通过时间戳", C.BIGINT);
         // 经纪人申请
         table.addColumn("broker_request_agreements", "经纪人申请-签订协议", C.STRING);
         table.addColumn("broker_request_sign_url", "经纪人申请-签名图片URL", C.STRING);
-        table.addColumn("broker_request_status", "经纪人申请-状态", C.INT);
+        table.addColumn("broker_request_status", "经纪人申请-状态", C.INT, true, "0");
         table.addColumn("broker_request_audit_user_id", "经纪人申请-审核人-ID", C.BIGINT);
         table.addColumn("broker_request_audit_user_name", "经纪人申请-审核人-姓名", C.STRING);
         table.addColumn("broker_request_audit_timestamp", "经纪人申请-审核时间戳", C.BIGINT);
-        table.addColumn("broker_request_audit_fail_reason", "经纪人申请-审核失败-原因", C.INT);
+        table.addColumn("broker_request_audit_fail_reason", "经纪人申请-审核失败-原因", C.INT, true, "0");
         table.addColumn("broker_request_time", "经纪人申请-申请时间戳", C.BIGINT);
         table.addColumn("broker_request_audit_success_time", "经纪人申请-审核通过时间戳", C.BIGINT);
         // 交易大师
