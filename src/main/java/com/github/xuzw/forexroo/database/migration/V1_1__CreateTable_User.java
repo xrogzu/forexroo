@@ -22,8 +22,10 @@ public class V1_1__CreateTable_User implements JdbcMigration {
         table.addColumn("phone", "手机号", C.STRING);
         table.addColumn("password", "登录密码", C.STRING);
         table.addColumn("token", "用户唯一标识码", C.STRING);
+        table.addColumn("is_disable", "是否禁用", C.INT);
+        table.addColumn("is_closing", "是否销户", C.INT);
         // 个人资料
-        table.addColumn("register_time", "注册时间", C.BIGINT);
+        table.addColumn("register_time", "注册时间戳", C.BIGINT);
         table.addColumn("avatar", "头像", C.STRING);
         table.addColumn("nickname", "昵称", C.STRING);
         table.addColumn("sex", "性别", C.STRING);
@@ -46,6 +48,8 @@ public class V1_1__CreateTable_User implements JdbcMigration {
         table.addColumn("open_account_audit_user_name", "开户-审核人-姓名", C.STRING);
         table.addColumn("open_account_audit_timestamp", "开户-审核时间戳", C.BIGINT);
         table.addColumn("open_account_audit_fail_reason", "开户-审核失败-原因", C.INT);
+        table.addColumn("open_account_time", "开户-申请时间戳", C.BIGINT);
+        table.addColumn("open_account_audit_success_time", "开户-审核通过时间戳", C.BIGINT);
         // 经纪人申请
         table.addColumn("broker_request_agreements", "经纪人申请-签订协议", C.STRING);
         table.addColumn("broker_request_sign_url", "经纪人申请-签名图片URL", C.STRING);
@@ -54,6 +58,8 @@ public class V1_1__CreateTable_User implements JdbcMigration {
         table.addColumn("broker_request_audit_user_name", "经纪人申请-审核人-姓名", C.STRING);
         table.addColumn("broker_request_audit_timestamp", "经纪人申请-审核时间戳", C.BIGINT);
         table.addColumn("broker_request_audit_fail_reason", "经纪人申请-审核失败-原因", C.INT);
+        table.addColumn("broker_request_time", "经纪人申请-申请时间戳", C.BIGINT);
+        table.addColumn("broker_request_audit_success_time", "经纪人申请-审核通过时间戳", C.BIGINT);
         // 交易大师
         table.addColumn("master_trader_total_profit", "交易大师-总盈利", C.STRING);
         table.addColumn("master_trader_single_profit", "交易大师-均单盈利", C.STRING);

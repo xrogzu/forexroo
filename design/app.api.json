@@ -91,7 +91,9 @@
             },
             "responseDefinition": {
                 "fieldDefinitions": [
-                    { "comment": "注册时间", "javaType": "Long", "name": "registerTime", "required": true },
+                    { "comment": "是否禁用（0:否 1:是）", "javaType": "Integer", "name": "isDisable", "required": true },
+                    { "comment": "是否销户（0:否 1:是）", "javaType": "Integer", "name": "isClosing", "required": true },
+                    { "comment": "注册时间戳", "javaType": "Long", "name": "registerTime", "required": true },
                     { "comment": "头像", "javaType": "String", "name": "avatar", "required": true },
                     { "comment": "昵称", "javaType": "String", "name": "nickname", "required": true },
                     { "comment": "性别", "javaType": "String", "name": "sex", "required": true },
@@ -105,18 +107,22 @@
                     { "comment": "开户-手持身份证正面照URL", "javaType": "String", "name": "openAccountPictureUrl", "required": true },
                     { "comment": "开户-签订协议", "javaType": "String", "name": "openAccountAgreements", "required": true },
                     { "comment": "开户-签名图片URL", "javaType": "String", "name": "openAccountSignUrl", "required": true },
-                    { "comment": "开户-状态（0:未开户 1:开户中 2:审核中 3:审核成功 4:审核失败）", "javaType": "Integer", "name": "openAccountStatus", "required": true },
+                    { "comment": "开户-状态（0:未开户 1:审核中 2:审核成功 3:审核失败）", "javaType": "Integer", "name": "openAccountStatus", "required": true },
                     { "comment": "开户-审核人-ID", "javaType": "Long", "name": "openAccountAuditUserId", "required": true },
                     { "comment": "开户-审核人-姓名", "javaType": "String", "name": "openAccountAuditUserName", "required": true },
                     { "comment": "开户-审核时间戳", "javaType": "Long", "name": "openAccountAuditTimestamp", "required": true },
                     { "comment": "开户-审核失败-原因（0:未知 1:手持身份证照不清晰 2:签名不清晰）", "javaType": "Integer", "name": "openAccountAuditFailReason", "required": true },
+                    { "comment": "开户-申请时间戳", "javaType": "Long", "name": "openAccountTime", "required": true },
+                    { "comment": "开户-审核通过时间戳", "javaType": "Long", "name": "openAccountAuditSuccessTime", "required": true },
                     { "comment": "经纪人申请-签订协议", "javaType": "String", "name": "brokerRequestAgreements", "required": true },
                     { "comment": "经纪人申请-签名图片URL", "javaType": "String", "name": "brokerRequestSignUrl", "required": true },
-                    { "comment": "经纪人申请-状态（0:未申请 1:申请中 2:审核中 3:审核成功 4:审核失败）", "javaType": "Integer", "name": "brokerRequestStatus", "required": true },
+                    { "comment": "经纪人申请-状态（0:未申请 1:审核中 2:审核成功 3:审核失败）", "javaType": "Integer", "name": "brokerRequestStatus", "required": true },
                     { "comment": "经纪人申请-审核人-ID", "javaType": "Long", "name": "brokerRequestAuditUserId", "required": true },
                     { "comment": "经纪人申请-审核人-姓名", "javaType": "String", "name": "brokerRequestAuditUserName", "required": true },
                     { "comment": "经纪人申请-审核时间戳", "javaType": "Long", "name": "brokerRequestAuditTimestamp", "required": true },
-                    { "comment": "经纪人申请-审核失败-原因", "javaType": "Integer", "name": "brokerRequestAuditFailReason", "required": true }
+                    { "comment": "经纪人申请-审核失败-原因", "javaType": "Integer", "name": "brokerRequestAuditFailReason", "required": true },
+                    { "comment": "经纪人申请-申请时间戳", "javaType": "Long", "name": "brokerRequestTime", "required": true },
+                    { "comment": "经纪人申请-审核通过时间戳", "javaType": "Long", "name": "brokerRequestAuditSuccessTime", "required": true }
                 ]
             }
         },
@@ -183,29 +189,8 @@
             }
         },
         {
-            "comment": "开户 - 第一步：提交实名信息（姓名和身份证号）",
+            "comment": "开户 - 签订协议",
             "description": "后台调用“全国身份证实名认证”接口，成功后进行下一步",
-            "javaClassName": "OpenAccount_SubmitRealName_Api",
-            "requestDefinition": {
-                "fieldDefinitions": [
-                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
-                    { "comment": "姓名", "javaType": "String", "name": "realName", "required": true },
-                    { "comment": "身份证号", "javaType": "String", "name": "identityCardNumber", "required": true }
-                ]
-            }
-        },
-        {
-            "comment": "开户 - 第二步：提交手持身份证正面照（URL）",
-            "javaClassName": "OpenAccount_SubmitPicture_Api",
-            "requestDefinition": {
-                "fieldDefinitions": [
-                    { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
-                    { "comment": "手持身份证正面照URL", "javaType": "String", "name": "pictureUrl", "required": true }
-                ]
-            }
-        },
-        {
-            "comment": "开户 - 第三步：签订协议",
             "imports": [
                 "java.util.List"
             ],
@@ -213,6 +198,9 @@
             "requestDefinition": {
                 "fieldDefinitions": [
                     { "comment": "用户唯一标识码", "javaType": "String", "name": "token", "required": true },
+                    { "comment": "姓名", "javaType": "String", "name": "realName", "required": true },
+                    { "comment": "身份证号", "javaType": "String", "name": "identityCardNumber", "required": true },
+                    { "comment": "手持身份证正面照URL", "javaType": "String", "name": "pictureUrl", "required": true },
                     { "comment": "签订协议（1:交易商告知书 2:交易商协议书 3:入市交易协议书 4:本人是该账户的最终且唯一受益拥有人）", "javaType": "List<String>", "name": "agreements", "required": true },
                     { "comment": "签名图片URL", "javaType": "String", "name": "signUrl", "required": true }
                 ]
@@ -527,5 +515,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v1.0.2"
+    "version": "v1.0.4"
 }

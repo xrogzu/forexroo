@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>APP接口文档 v1.0.2</title>
+    <title>APP接口文档 v1.0.4</title>
     <style type="text/css">
     .tail {
           font-size: 14px;
@@ -63,11 +63,11 @@
 </head>
 <body>
     <div>
-        <h4>APP接口文档 v1.0.2</h4>
+        <h4>APP接口文档 v1.0.4</h4>
     </div>
     <h5>小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口，短关键字搜索范围大，长关键字搜索结果精确、接口名、接口描述、参数名、参数描述、响应字段名、响应字段描述等都可作为搜索关键字<br/>每个接口都已定义快速跳转书签，点击超链接即可跳转，跳转后URL末尾会添加路径名做区分，可添加该URL到浏览器书签，以便下次打开时自动定位到该接口</h5>
     <div class="alert alert-warning">
-        <p>共32个接口</p>
+        <p>共30个接口</p>
         <ul>
             <li class="api-name-bookmark">
                 <a href="#System_SendSmsVerificationCode_Api">System_SendSmsVerificationCode_Api 系统 - 发送短信验证码</a>
@@ -109,13 +109,7 @@
                 <a href="#MySymbol_Delete_Api">MySymbol_Delete_Api 我的品种 - 删除</a>
             </li>
             <li class="api-name-bookmark">
-                <a href="#OpenAccount_SubmitRealName_Api">OpenAccount_SubmitRealName_Api 开户 - 第一步：提交实名信息（姓名和身份证号）</a>
-            </li>
-            <li class="api-name-bookmark">
-                <a href="#OpenAccount_SubmitPicture_Api">OpenAccount_SubmitPicture_Api 开户 - 第二步：提交手持身份证正面照（URL）</a>
-            </li>
-            <li class="api-name-bookmark">
-                <a href="#OpenAccount_SignAgreements_Api">OpenAccount_SignAgreements_Api 开户 - 第三步：签订协议</a>
+                <a href="#OpenAccount_SignAgreements_Api">OpenAccount_SignAgreements_Api 开户 - 签订协议</a>
             </li>
             <li class="api-name-bookmark">
                 <a href="#BrokerRequest_SignAgreements_Api">BrokerRequest_SignAgreements_Api 经纪人申请 - 签订协议</a>
@@ -477,6 +471,18 @@
         </dd>
         <dt class="request-and-response-title">响应字段</dt>
         <dd>
+            <span class="api-field-name">isDisable</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">是否禁用（0:否 1:是）</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">isClosing</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">是否销户（0:否 1:是）</span>
+        </dd>
+        <dd>
             <span class="api-field-name">registerTime</span>
             <span class="api-field-type">Long</span>
             <span class="api-field-required">required</span>
@@ -564,7 +570,7 @@
             <span class="api-field-name">openAccountStatus</span>
             <span class="api-field-type">Integer</span>
             <span class="api-field-required">required</span>
-            <span class="api-field-comment">开户-状态（0:未开户 1:开户中 2:审核中 3:审核成功 4:审核失败）</span>
+            <span class="api-field-comment">开户-状态（0:未开户 1:审核中 2:审核成功 3:审核失败）</span>
         </dd>
         <dd>
             <span class="api-field-name">openAccountAuditUserId</span>
@@ -591,6 +597,18 @@
             <span class="api-field-comment">开户-审核失败-原因（0:未知 1:手持身份证照不清晰 2:签名不清晰）</span>
         </dd>
         <dd>
+            <span class="api-field-name">openAccountTime</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">开户-申请时间戳</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">openAccountAuditSuccessTime</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">开户-审核通过时间戳</span>
+        </dd>
+        <dd>
             <span class="api-field-name">brokerRequestAgreements</span>
             <span class="api-field-type">String</span>
             <span class="api-field-required">required</span>
@@ -606,7 +624,7 @@
             <span class="api-field-name">brokerRequestStatus</span>
             <span class="api-field-type">Integer</span>
             <span class="api-field-required">required</span>
-            <span class="api-field-comment">经纪人申请-状态（0:未申请 1:申请中 2:审核中 3:审核成功 4:审核失败）</span>
+            <span class="api-field-comment">经纪人申请-状态（0:未申请 1:审核中 2:审核成功 3:审核失败）</span>
         </dd>
         <dd>
             <span class="api-field-name">brokerRequestAuditUserId</span>
@@ -631,6 +649,18 @@
             <span class="api-field-type">Integer</span>
             <span class="api-field-required">required</span>
             <span class="api-field-comment">经纪人申请-审核失败-原因</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">brokerRequestTime</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">经纪人申请-申请时间戳</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">brokerRequestAuditSuccessTime</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">required</span>
+            <span class="api-field-comment">经纪人申请-审核通过时间戳</span>
         </dd>
     </div>
     <div class="alert alert-info">
@@ -737,9 +767,9 @@
         </dd>
     </div>
     <div class="alert alert-info">
-        <a name="OpenAccount_SubmitRealName_Api">
+        <a name="OpenAccount_SignAgreements_Api">
         </a>
-        <h4 class="api-name">OpenAccount_SubmitRealName_Api 开户 - 第一步：提交实名信息（姓名和身份证号）</h4>
+        <h4 class="api-name">OpenAccount_SignAgreements_Api 开户 - 签订协议</h4>
         <h5 class="api-name">后台调用&ldquo;全国身份证实名认证&rdquo;接口，成功后进行下一步</h5>
         <dt class="request-and-response-title">请求参数字段</dt>
         <dd>
@@ -760,35 +790,11 @@
             <span class="api-field-required">required</span>
             <span class="api-field-comment">身份证号</span>
         </dd>
-    </div>
-    <div class="alert alert-info">
-        <a name="OpenAccount_SubmitPicture_Api">
-        </a>
-        <h4 class="api-name">OpenAccount_SubmitPicture_Api 开户 - 第二步：提交手持身份证正面照（URL）</h4>
-        <dt class="request-and-response-title">请求参数字段</dt>
-        <dd>
-            <span class="api-field-name">token</span>
-            <span class="api-field-type">String</span>
-            <span class="api-field-required">required</span>
-            <span class="api-field-comment">用户唯一标识码</span>
-        </dd>
         <dd>
             <span class="api-field-name">pictureUrl</span>
             <span class="api-field-type">String</span>
             <span class="api-field-required">required</span>
             <span class="api-field-comment">手持身份证正面照URL</span>
-        </dd>
-    </div>
-    <div class="alert alert-info">
-        <a name="OpenAccount_SignAgreements_Api">
-        </a>
-        <h4 class="api-name">OpenAccount_SignAgreements_Api 开户 - 第三步：签订协议</h4>
-        <dt class="request-and-response-title">请求参数字段</dt>
-        <dd>
-            <span class="api-field-name">token</span>
-            <span class="api-field-type">String</span>
-            <span class="api-field-required">required</span>
-            <span class="api-field-comment">用户唯一标识码</span>
         </dd>
         <dd>
             <span class="api-field-name">agreements</span>
@@ -1429,7 +1435,7 @@
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/xuzw/api-engine-sdk">ApiEngineSdk</a>
-            <span>2017.06.15 02:18:50.532</span>
+            <span>2017.06.15 03:28:54.478</span>
         </p>
     </div>
 </body>
