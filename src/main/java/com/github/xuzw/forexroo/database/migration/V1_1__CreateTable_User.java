@@ -70,6 +70,7 @@ public class V1_1__CreateTable_User implements JdbcMigration {
         // 唯一索引
         table.addUniqueIndex("phone");
         table.addUniqueIndex("token");
+        migration.autoIncrement("user", 18000100);
         migration.run(connection);
     }
 }
