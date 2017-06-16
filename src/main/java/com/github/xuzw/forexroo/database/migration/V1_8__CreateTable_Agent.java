@@ -26,9 +26,11 @@ public class V1_8__CreateTable_Agent implements JdbcMigration {
         table.addColumn("is_closing", "是否销户", C.INT, true, "0");
         table.addColumn("register_time", "注册时间戳", C.BIGINT);
         table.addColumn("bank_detail_account_name", "银行资料-开户名称", C.STRING);
-        table.addColumn("bank_detail_account_number", "银行资料-银行账号", C.BIGINT);
+        table.addColumn("bank_detail_account_number", "银行资料-银行账号", C.STRING);
         table.addColumn("bank_detail_opening_bank", "银行资料-开户银行", C.STRING);
         table.addColumn("bank_detail_opening_bank_address", "银行资料-开户地", C.STRING);
+        table.addColumn("creator_user_id", "创建人-ID", C.BIGINT);
+        table.addColumn("creator_user_name", "创建人-姓名", C.STRING);
         table.addPKColumn("id", "主键", C.AUTOINC);
         table.addUniqueIndex("name");
         table.addUniqueIndex("account");
