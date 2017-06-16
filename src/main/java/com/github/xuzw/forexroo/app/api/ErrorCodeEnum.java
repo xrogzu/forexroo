@@ -3,7 +3,7 @@ package com.github.xuzw.forexroo.app.api;
 import com.github.xuzw.api_engine_runtime.api.ResponseCode;
 import com.github.xuzw.api_engine_sdk.annotation.GenerateByApiEngineSdk;
 
-@GenerateByApiEngineSdk(time = "2017.06.16 10:50:20.697", version = "v1.0.6")
+@GenerateByApiEngineSdk(time = "2017.06.16 02:57:35.618", version = "v1.0.7")
 public enum ErrorCodeEnum implements ResponseCode {
 
     /**数据库异常*/
@@ -20,7 +20,8 @@ public enum ErrorCodeEnum implements ResponseCode {
     password_error(1010, "密码错误"), /**状态异常*/
     status_error(1011, "状态异常"), /**MT4中间件错误*/
     mt4_middleware_error(1012, "MT4中间件错误"), /**已开户*/
-    already_open_account(1013, "已开户");
+    already_open_account(1013, "已开户"), /**已申请经纪人*/
+    already_broker_request(1014, "已申请经纪人");
 
     private ErrorCodeEnum(int code, String message) {
         this.code = code;

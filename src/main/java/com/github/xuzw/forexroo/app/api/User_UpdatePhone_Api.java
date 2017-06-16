@@ -16,7 +16,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 更换手机号")
-@GenerateByApiEngineSdk(time = "2017.06.16 10:50:20.279", version = "v1.0.6")
+@GenerateByApiEngineSdk(time = "2017.06.16 02:57:35.165", version = "v1.0.7")
 public class User_UpdatePhone_Api implements Api {
 
     @Override()
