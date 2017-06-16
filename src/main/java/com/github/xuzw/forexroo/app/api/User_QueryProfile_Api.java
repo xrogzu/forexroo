@@ -12,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 查询个人信息详情")
-@GenerateByApiEngineSdk(time = "2017.06.15 03:35:04.714", version = "v1.0.5")
+@GenerateByApiEngineSdk(time = "2017.06.16 10:50:20.215", version = "v1.0.6")
 public class User_QueryProfile_Api implements Api {
 
     @Override()
@@ -421,7 +421,7 @@ public class User_QueryProfile_Api implements Api {
             this.brokerRequestAuditTimestamp = brokerRequestAuditTimestamp;
         }
 
-        @Comment(value = "经纪人申请-审核失败-原因")
+        @Comment(value = "经纪人申请-审核失败-原因（0:未知 1:签名不清晰）")
         @Required(value = true)
         private Integer brokerRequestAuditFailReason;
 

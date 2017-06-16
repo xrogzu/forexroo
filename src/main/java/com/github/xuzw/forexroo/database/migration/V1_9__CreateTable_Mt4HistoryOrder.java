@@ -39,7 +39,7 @@ public class V1_9__CreateTable_Mt4HistoryOrder implements JdbcMigration {
         table.addColumn("margin_rate", "", C.STRING);
         table.addColumn("open_price", "", C.STRING);
         table.addColumn("open_time", "", C.BIGINT);
-        table.addColumn("order_id", "", C.STRING);
+        table.addColumn("order_id", "", C.INT);
         table.addColumn("profit", "", C.STRING);
         table.addColumn("reason", "", C.STRING);
         table.addColumn("sl", "", C.STRING);
@@ -50,6 +50,8 @@ public class V1_9__CreateTable_Mt4HistoryOrder implements JdbcMigration {
         table.addColumn("timestamp", "", C.BIGINT);
         table.addColumn("tp", "", C.STRING);
         table.addColumn("volume", "", C.STRING);
+        table.addPKColumn("id", "主键", C.AUTOINC);
+        table.addUniqueIndex("order_id");
         migration.run(connection);
     }
 }

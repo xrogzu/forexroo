@@ -32,6 +32,7 @@ public class V1_1__CreateTable_User implements JdbcMigration {
         table.addColumn("country", "国家", C.STRING);
         // MT4
         table.addColumn("mt4_real_account", "MT4-真实账号", C.STRING);
+        table.addColumn("mt4_history_order_last_sync_time", "MT4-历史订单-上次同步时间戳", C.BIGINT);
         // 从属关系
         table.addColumn("my_broker_id", "所属经纪人-ID", C.BIGINT);
         table.addColumn("my_broker_name", "所属经纪人-姓名", C.STRING);

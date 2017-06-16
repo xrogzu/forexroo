@@ -12,7 +12,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @Comment(value = "用户 - 退出")
-@GenerateByApiEngineSdk(time = "2017.06.15 03:35:04.634", version = "v1.0.5")
+@GenerateByApiEngineSdk(time = "2017.06.16 10:50:20.135", version = "v1.0.6")
 public class User_Logout_Api implements Api {
 
     @Override()

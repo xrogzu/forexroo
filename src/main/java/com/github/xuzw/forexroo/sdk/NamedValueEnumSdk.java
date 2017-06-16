@@ -1,6 +1,6 @@
 package com.github.xuzw.forexroo.sdk;
 
-import com.github.xuzw.forexroo.database.model.BrokerRequestStatusEnum;
+import com.github.xuzw.forexroo.database.model.BrokerRequestAuditFailReasonEnum;
 import com.github.xuzw.forexroo.database.model.NamedValue;
 import com.github.xuzw.forexroo.database.model.NamedValues;
 import com.github.xuzw.forexroo.database.model.OpenAccountStatusEnum;
@@ -12,7 +12,7 @@ import com.github.xuzw.forexroo.database.model.UserStatusEnum;
  */
 public class NamedValueEnumSdk {
     public static void main(String[] args) {
-        System.out.println(NamedValues.toText(BrokerRequestStatusEnum.values()));
+        System.out.println(NamedValues.toText(BrokerRequestAuditFailReasonEnum.values()));
         System.out.println(toHtml(OpenAccountStatusEnum.values()));
         System.out.println(toJs(UserStatusEnum.values()));
     }

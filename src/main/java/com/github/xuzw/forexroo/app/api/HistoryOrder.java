@@ -6,7 +6,7 @@ import com.github.xuzw.modeler_runtime.annotation.Comment;
 import com.github.xuzw.modeler_runtime.annotation.Required;
 
 @ModelAnnotation()
-@GenerateByApiEngineSdk(time = "2017.06.15 03:35:05.314", version = "v1.0.5")
+@GenerateByApiEngineSdk(time = "2017.06.16 10:50:20.815", version = "v1.0.6")
 public class HistoryOrder {
 
     @Comment(value = "订单类型")

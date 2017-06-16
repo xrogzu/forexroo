@@ -120,7 +120,7 @@
                     { "comment": "经纪人申请-审核人-ID", "javaType": "Long", "name": "brokerRequestAuditUserId", "required": true },
                     { "comment": "经纪人申请-审核人-姓名", "javaType": "String", "name": "brokerRequestAuditUserName", "required": true },
                     { "comment": "经纪人申请-审核时间戳", "javaType": "Long", "name": "brokerRequestAuditTimestamp", "required": true },
-                    { "comment": "经纪人申请-审核失败-原因", "javaType": "Integer", "name": "brokerRequestAuditFailReason", "required": true },
+                    { "comment": "经纪人申请-审核失败-原因（0:未知 1:签名不清晰）", "javaType": "Integer", "name": "brokerRequestAuditFailReason", "required": true },
                     { "comment": "经纪人申请-申请时间戳", "javaType": "Long", "name": "brokerRequestTime", "required": true },
                     { "comment": "经纪人申请-审核通过时间戳", "javaType": "Long", "name": "brokerRequestAuditSuccessTime", "required": true }
                 ]
@@ -515,5 +515,5 @@
         "port": 8080,
         "url": "/forexroo/app/api"
     },
-    "version": "v1.0.5"
+    "version": "v1.0.6"
 }
